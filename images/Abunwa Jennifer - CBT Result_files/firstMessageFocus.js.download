@@ -1,0 +1,54 @@
+//<![CDATA[
+
+var $j = jQuery.noConflict();
+jQuery(document).ready(function() {
+    initFirstMessageFocus();
+});
+
+function initFirstMessageFocus() {
+    var warningOrError = $j(".warning");
+    var advisory = $j(".advisory");
+    var helpfulHints = $j("#helpfulHints");
+    var alerts = $j(".alert").not(".hidden");
+    var updatedMessages = $j(".updated");
+    var capvaModal = $j("#privacyOptInDialog");
+
+    if (warningOrError != undefined && warningOrError.length > 0 && checkMessageIsVisible(warningOrError) === true) {
+        focusOnMessage(warningOrError);
+    } else if (advisory != undefined && advisory.length > 0 && checkMessageIsVisible(advisory) === true) {
+        focusOnMessage(advisory);
+    } else if (helpfulHints != undefined && helpfulHints.length > 0 && checkMessageIsVisible(helpfulHints) === true) {
+        focusOnMessage(helpfulHints);
+    } else if (alerts != undefined && alerts.length > 0 && checkMessageIsVisible(alerts) === true) {
+        focusOnMessage(alerts);
+    } else if (updatedMessages != undefined && updatedMessages.length > 0 && checkMessageIsVisible(updatedMessages) === true) {
+        focusOnMessage(updatedMessages);
+    }
+}
+
+function focusOnMessage(message, infoOnly) {
+    for (var i=0; i<message.length; i++) {
+            if (message[i] != undefined && message[i].offsetHeight > 0) {
+                message[i].setAttribute("tabIndex", "-1");
+                if (navigator.appVersion.indexOf("MSIE") == -1) {
+                    if(!infoOnly) {
+                        message[i].setAttribute("role","alert");
+                    }
+                }
+                message[i].focus();
+                break;
+            }
+        }
+}
+
+function checkMessageIsVisible(message) {
+    for (var i=0; i<message.length; i++) {
+        if (message[i] != undefined && message[i].offsetHeight > 0) {
+            return true;
+            break;
+        }
+    }
+    return false;
+}
+
+/* ]]> */

@@ -1,0 +1,4561 @@
+@charset "UTF-8";
+
+/* open-sans-300 - latin */
+@font-face {
+	font-family: 'Open Sans Light';
+	font-style: normal;
+	font-weight: 300;
+	src: url('../fonts/open-sans-v13-latin-300.eot');
+	src: local('Open Sans Light'), local('OpenSans-Light'), url('../fonts/open-sans-v13-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/open-sans-v13-latin-300.woff2') format('woff2'), /* Super Modern Browsers */ url('../fonts/open-sans-v13-latin-300.woff') format('woff'), /* Modern Browsers */ url('../fonts/open-sans-v13-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/open-sans-v13-latin-300.svg#OpenSans') format('svg');
+
+	/* IE9 Compat Modes */
+	/* Legacy iOS */
+}
+/* open-sans-regular - latin */
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../fonts/open-sans-v13-latin-regular.eot');
+	src: local('Open Sans'), local('OpenSans'), url('../fonts/open-sans-v13-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/open-sans-v13-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */ url('../fonts/open-sans-v13-latin-regular.woff') format('woff'), /* Modern Browsers */ url('../fonts/open-sans-v13-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/open-sans-v13-latin-regular.svg#OpenSans') format('svg');
+
+	/* IE9 Compat Modes */
+	/* Legacy iOS */
+}
+/* open-sans-600 - latin */
+@font-face {
+	font-family: 'Open Sans Semibold';
+	font-style: normal;
+	font-weight: 600;
+	src: url('../fonts/open-sans-v13-latin-600.eot');
+	src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url('../fonts/open-sans-v13-latin-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/open-sans-v13-latin-600.woff2') format('woff2'), /* Super Modern Browsers */ url('../fonts/open-sans-v13-latin-600.woff') format('woff'), /* Modern Browsers */ url('../fonts/open-sans-v13-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/open-sans-v13-latin-600.svg#OpenSans') format('svg');
+
+	/* IE9 Compat Modes */
+	/* Legacy iOS */
+}
+/* open-sans-700 - latin */
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 700;
+	src: url('../fonts/open-sans-v13-latin-700.eot');
+	src: local('Open Sans Bold'), local('OpenSans-Bold'), url('../fonts/open-sans-v13-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../fonts/open-sans-v13-latin-700.woff2') format('woff2'), /* Super Modern Browsers */ url('../fonts/open-sans-v13-latin-700.woff') format('woff'), /* Modern Browsers */ url('../fonts/open-sans-v13-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */ url('../fonts/open-sans-v13-latin-700.svg#OpenSans') format('svg');
+
+	/* IE9 Compat Modes */
+	/* Legacy iOS */
+}
+
+/* Define Font Awesome */
+#locale:before, #welcome .href_link:before, #welcome #homeLinkOnMastHead .displayMobileOnlyView:before, #welcome #clientHomeLinkOnMastHead .displayMobileOnlyView:before, #welcome .first .current .displayMobileOnlyView:before, #welcome #myProfileLinkOnMastHead_li .displayMobileOnlyView:before, #welcome #myOrderLinkOnMastHead .displayMobileOnlyView:before, #welcome #myOrderLinkOnMastHead_li .displayMobileOnlyView:before, #welcome .href_link:before, #welcome #returnLinkOnMastHead .displayMobileOnlyView:before, #welcome #liquidLogoutLinkOnMastHead .displayMobileOnlyView:before, #personalInfo li:before, #RHC li:before, #myAccountSection li:before, #showPreApproved:after, #showHelpModuleContentDSA:after, #showAvailableExams:after, #showMyAccountSection:after, .calculatedTitlePlus:after, .discountLinkPlus:before, .policyLinkPlus:before, .expandLinkPlus:before, .calculatedTitlePlus:before, .discountLinkMinus:before, .policyLinkMinus:before, .expandLinkMinus:before, .calculatedTitleMinus:before, #publicToMilitarySearchLinkProximity:before, .fieldLevelError:before, .printicon a:before, .available:after, .selectButton:before, .examAlertTitle:before, #chargeNote .importantText:before, #printLink:before, .confirmation:before, #printButton:before, .actions .printicon:before, #topBar .actions a:before, .advisory_label:before, .proctorVerificationProcess .advisory:before, #signInPageHeader + p:before, #showPreApproved:after, .averageTestLength:before, .warningAdvisory:before, .futureappt .advisory:before, .emphasizeText:before, .quickDetails:before, .errorContainer label:before, .alertTriangle #notifyText:before, #EOT .printicon:before, #map_unavailable .advisory:before, .iconIndicator:before, #welcome .printLink:before, #welcome .closeWindowLink:before, #OrderSummary .paymentText:before, .sidebar .locale .current span:after, .sidebar .locale .current span:before, .accordion.closed:after, .accordion.open:after, .expandLinkPlus:after, .expandLinkMinus:after, .discountLinkPlus:after, .policyLinkPlus:after, .calculatedTitlePlus:after, .discountLinkMinus:after, .policyLinkMinus:after, .calculatedTitleMinus:after, .pagename-signinpage .container > p:first-child:before, .timer-icon:before, .ui-dialog .ui-dialog-titlebar-close .ui-button-icon.ui-icon.ui-icon-closethick:before {
+	font-family: 'Font Awesome 5 Pro';
+	font-weight: 900;
+	line-height: 0.75em;
+	font-style: normal;
+	position: absolute;
+}
+
+
+
+
+/* START General Page Elements */
+html { height: 100%; }
+body {
+	font: 16px 'Open Sans', Arial, Verdana, Helvetica, san-serif;
+	line-height: 1.42857;
+	margin: 0;
+	height: 100%;
+	padding: 0;
+	color: #333;
+	background: #fafafa;
+}
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.1;
+}
+h1, .serviceName {
+	margin-top: 0;
+	margin-bottom: 10px;
+	font-size: 29px;
+	padding-bottom: 0;
+	clear: right;
+}
+
+h1:focus, h2:focus {
+	outline: none;
+}
+
+h2, #EOT h3, h1.ui-dialog-title {
+	font-size: 21px;
+}
+h3, #APELink, #createAccountContainer .formSectionBlock > h2, .currentExam h2 {
+	font-size: 18px;
+}
+
+#bookingMethodDescriptions h3, #whatIsAPEDialog h3,#creditCardHelpTable h3, #codeHelpTable h3  {
+	font-size: 16px;
+	font-weight: 700;
+	margin: .1em 0;
+	line-height: normal;
+}
+p, #requiredInformationMsg, #chargeNote {
+	margin: 0 0 10px;
+}
+p:empty, #chooseAppointments:empty {
+	display: none;
+}
+/*p:last-of-type {
+	margin-bottom: 0;
+}*/
+#testCenterFormId p:last-of-type {
+	margin-bottom: 10px;
+}
+#vehicleCategoriesExplainedLink {
+	margin-bottom: 10px;
+}
+p.romanAlphabet, p.disclaimer, p .disclaimer, p span#tableSecondaryDescription, p span#secondaryContactEmptyMessage, .requiredText p, .romanAlphabetContainer {
+	margin-bottom: 10px;
+}
+span.disclaimer, span#tableSecondaryDescription, span#secondaryContactEmptyMessage {
+	display: block;
+}
+.pseudoHeader, .boldStyle, .tagalongExamLabel, .authTitle, .tc_name {
+	font-weight: bold;
+}
+.appointmentCenterTable .tc_name {
+	font-weight: normal;
+}
+#availability.boldStyle, h2 b {
+	font-weight: normal;
+}
+body #confirmDialog.ui-dialog-content.ui-widget-content, #noAvailDateLink, .sidebar h2 {
+	font-size: 16px;
+}
+.disclaimer, .candidateInfo, #locale, #steps, #copyright, .fyi, #proximityHint, .beginTagalong, .quantityCol .btn_link {
+	font-size: 14px;
+}
+.ui-datepicker table {
+	font-size: 14px !important;
+}
+
+.displayDesktopOnlyView, #logo_print, .ui-accordion-header-icon.ui-icon.ui-icon-triangle-1-e + .ui-accordion-header-icon.ui-icon.ui-icon-triangle-1-e, .ui-accordion-header-icon.ui-icon.ui-icon-triangle-1-s + .ui-accordion-header-icon.ui-icon.ui-icon-triangle-1-s {
+	display: none;
+}
+.displayMobileOnlyView {
+	display: block;
+}
+.right {
+	text-align: right;
+}
+
+#j_id47 ~ p, form ~ p { /* Authenticate - try to clear a float outside of a form element */
+	clear: both;
+}
+
+#labelkm, #labelmi, #labelHour24, #labelHour12 {
+	font-size: 14px;
+}
+
+
+/* Reset fonts for relevant elements  */
+input,
+button,
+select,
+textarea,
+fieldset {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+input,
+button,
+textarea,
+fieldset {
+	background: none;
+	border: none;
+}
+fieldset {
+	margin: 0;
+	padding: 0;
+}
+
+/* Remove iPhone default button styling */
+input[type="submit"], input[type="button"] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	border-radius: 0;
+}
+
+
+/* Remove auto x-clear button in IE browsers that duplicated our own clearTextButton */
+input[type=text]::-ms-clear {
+	display: none;
+}
+
+.preferredTimeZoneButton {
+	margin-left: 1rem;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  padding-left: 0px;
+  font-size: .875em;
+}
+
+.tooltipbutton {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.tooltipclear {
+  overflow: visible;
+}
+
+.tooltiptext {
+  font-size: .875em;
+  visibility: hidden;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 10px;
+  background-color : #000;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 10;
+}
+
+.tooltip:hover + .tooltiptext {
+  visibility: visible;
+}
+
+.tooltip:focus + .tooltiptext {
+  visibility: visible;
+}
+
+
+.tooltip_overridden {
+	width: 30%;
+}
+
+.timeZoneButtonsDiv, .timeZoneCancelButtonDiv {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.timeZoneLabelDiv {
+	padding-top: 15px;
+}
+
+/* Buttons / Links */
+/* Links and buttons that look like links */
+
+
+.forward, .topForward, .previous + span {
+	float: right;
+}
+#printLink.printicon {
+	clear: right;
+	margin-top: 15px;
+}
+.printicon a {
+	clear: right;
+}
+
+.printicon {
+	display: none; /*Removing via css until it can be removed from code*/
+}
+
+.previous {
+	float: left;
+}
+a, .personalInfo_link, #selectedCentersArea .btn_link, #testCenterCalendarArea .btn_link,  #timeZoneArea .btn_link, .futureappt .btn_link, .orderDetails .btn_link, .orderDetails .btn_remove, .product_remove, .link, .futureappt .btn_link_dialog {
+	color: #007FA3;
+	text-decoration: underline;
+	white-space: normal;
+	display: inline-block;
+	outline: 3px solid transparent;
+	padding: 0;
+	border: 1px solid transparent;
+	cursor: pointer;
+	border-radius: 0;
+}
+
+#timeZoneLabel {
+	margin-right: 10px;
+}
+
+#labelkm, #labelmi, #hour12, #hour24, .btn_orderremove, #changeTimeZone {
+	color: #007FA3;
+	text-decoration: none;
+	white-space: normal;
+	display: inline-block;
+	padding: 0;
+	border: 1px solid transparent;
+	cursor: pointer;
+	border-radius: 0;
+}
+
+.combined_date_search_input { position: relative; }
+.combined_date_search_input input {
+	vertical-align: top;
+	padding: 0px 12px;
+	height: 38px;
+	width:100%;
+}
+.combined_search_datepicker .ui-datepicker-inline {
+	width:100%;
+}
+.combined_date_search_input .calendarIcon-style {
+	position: absolute;
+	top: 0px;
+	right: 5px;
+}
+
+.appointments_available_warning {
+	position: relative;
+	width:100%;
+	height: 69px;
+	color: #D9001B;
+	font-size: 16px;
+}
+
+.combined_search_appointments_available_warning {
+	width:100%;
+	color: #D9001B;
+	font-size: 16px;
+}
+
+.combined_search_appointments_icon {
+	float: left;
+}
+
+.appointments_available_warning .warning_text {
+	position: absolute;
+	left: 17px;
+	top:0px;
+}
+
+.combined_search_appointments_available_warning .warning_text {
+	padding-left: 18px;
+}
+
+.combined_search_calender .ui-datepicker {
+	width: 100%;
+}
+
+.overlay-content {
+	padding-top: 1em;
+	padding-left: 4em;
+}
+
+.cross-button-style {
+    font-size: 32px;
+}
+
+#overlay-cross-button, #testcenter-map-info {
+	cursor: pointer;
+}
+
+#overlay-content-direction {
+	padding-top: 4em;
+}
+.testcenter-info-overlay {
+	 display: none; /* Hidden by default */
+	 position: fixed; /* Stay in place */
+	 z-index: 101; /* Sit on top */
+	 left: 0;
+	 top: 0;
+	 width: 100%; /* Full width */
+	 height: 100%; /* Full height */
+	 overflow: auto; /* Enable scroll if needed */
+	 background-color: rgb(255,255,255); /* Fallback color */
+	 background-color: rgba(255,255,255,1); /* Black w/ opacity */
+}
+
+.testcenter-info-overlay-content {
+ background-color: #fefefe;
+ margin: 2% auto; /* 15% from the top and centered */
+ padding: 10px;
+ /*border: 1px solid #888;*/
+ width: 90%; /* Could be more or less, depending on screen size */
+}
+
+a:hover, .personalInfo_link:hover, #selectedCentersArea .btn_link:hover, #testCenterCalendarArea .btn_link:hover, #timeZoneArea .btn_link:hover, .futureappt .btn_link:hover, .orderDetails .btn_link:hover, .orderDetails .btn_remove:hover, #labelkm:hover, #labelmi:hover, .product_remove:hover, .link:hover, .futureappt .btn_link_dialog:hover {
+	color: #003057;
+}
+
+a:focus, a:active, .personalInfo_link:focus, .personalInfo_link:active, .ui-widget-content a:focus, .ui-widget-content a:active, #selectedCentersArea .btn_link:focus, #testCenterCalendarArea .btn_link:focus, #timeZoneArea .btn_link:focus, #selectedCentersArea .btn_link:active,  #testCenterCalendarArea .btn_link:active, #timeZoneArea .btn_link:active, .futureappt .btn_link:focus, .futureappt .btn_link:active, .orderDetails .btn_link:focus, .orderDetails .btn_link:active, .orderDetails .btn_remove:focus, .orderDetails .btn_remove:active, #labelkm:focus, #labelkm:active, #labelmi:focus, #labelmi:active, .product_remove:focus, .product_remove:active, .link:focus, .link:active, .btn-group a:focus, .btn-group a:active, .btn-group a:focus:hover, .btn-group a:active:hover, .futureappt .btn_link_dialog:active, .futureappt .btn_link_dialog:focus, .abbrStyle:focus {
+	color: #fff;
+	background: #005A70;
+	text-decoration: none;
+	outline: 3px solid #005A70;
+	outline-offset: 0;
+	border: 1px dashed #005A70;
+	padding: 0;
+	border-radius: 0;
+}
+.border_selected {
+	border: 3px solid #005A70;
+}
+
+.border_selected, #select-mode input[type="radio"]:checked + .mode-option {
+	outline: 2px solid #007FA3;
+}
+
+
+a.accordion:active {
+	background: none;
+	color: inherit;
+	outline: none;
+    border: 1px solid transparent;
+}
+a.accordion:focus:after, .calculatedTitlePlus:focus:after, #showPreApproved:focus:after, a.expandLinkPlus:focus:after, .discountLinkPlus:focus:after, .policyLinkPlus:focus:after, .calculatedTitlePlus:focus:after,  a.expandLinkMinus:focus:after, .discountLinkMinus:focus:after, .policyLinkMinus:focus:after, .calculatedTitleMinus:focus:after {
+	color: #fff;
+}
+
+#welcome a {
+	text-decoration: none;
+}
+
+/*.expandLinkPlus:focus, .expandLinkPlus:active, .expandLinkMinus:focus, .expandLinkMinus:active, .discountLinkPlus:focus,  .discountLinkPlus:active, .discountLinkMinus:focus, .discountLinkMinus:active, .policyLinkPlus:focus, .policyLinkPlus:active, .policyLinkMinus:focus, .policyLinkMinus:active, .calculatedTitlePlus:focus, .calculatedTitlePlus:active, .calculatedTitleMinus:focus, .calculatedTitleMinus:active {
+	padding-left: 20px;
+}*/
+.discountLinkPlus, .policyLinkPlus, .expandLinkPlus, .calculatedTitlePlus, .discountLinkMinus, .policyLinkMinus, .expandLinkMinus, .calculatedTitleMinus {
+	text-decoration: none;	/* Remove from hyperlinks that have a toggle indicator */
+}
+/* Font Awesome - keep color same as hyperlink color */
+#welcome .href_link:before, #welcome #homeLinkOnMastHead .displayMobileOnlyView:before, #welcome #clientHomeLinkOnMastHead .displayMobileOnlyView:before, #welcome .first .current .displayMobileOnlyView:before, #welcome #myOrderLinkOnMastHead .displayMobileOnlyView:before, #welcome #myOrderLinkOnMastHead_li .displayMobileOnlyView:before, #welcome .href_link:before, #welcome #returnLinkOnMastHead .displayMobileOnlyView:before, #welcome #liquidLogoutLinkOnMastHead .displayMobileOnlyView:before, #showHelpModuleContentDSA:after, #showAvailableExams:after, #showMyAccountSection:after, .calculatedTitlePlus:after, .discountLinkPlus:before, .policyLinkPlus:before, .expandLinkPlus:before, .calculatedTitlePlus:before, .discountLinkMinus:before, .policyLinkMinus:before, .expandLinkMinus:before, .calculatedTitleMinus:before, #publicToMilitarySearchLinkProximity:before, .printicon a:before, .selectButton:before, #chargeNote .importantText:before, #printLink:before, #printButton:before, .actions .printicon:before, #topBar .actions a:before, .confirmation:before, #signInPageHeader + p:before, #showPreApproved:after, #showPreApproved:after, .averageTestLength:before, .futureappt .advisory:before, #EOT .printicon:before, #welcome .printLink:before, #welcome .closeWindowLink:before, #welcome #myProfileLinkOnMastHead_li .displayMobileOnlyView:before, .discountLinkPlus:after, .policyLinkPlus:after, .calculatedTitlePlus:after, .discountLinkMinus:after, .policyLinkMinus:after, .calculatedTitleMinus:after, .checkmarkIcon {
+	color: #007FA3;
+}
+
+/* Primary Button */
+.btn, .btnPositive, #privateAccessCode.btn_edit, #addressSearch, #accessibleCalendarOptionButton, .btn_select, .cookieMessageLearnMoreButton, #mobileCalendarButton, #jsf_databaseSearch .btn_edit, .receiptsTable .btnPositiveNoModal, .viewScoreReportColumn .btnPositiveNoModal, #FeedbackLink, .combinedHeader .btnPositiveNoModal, #jsf_databaseSearch .btn_edit_display, #returnHomeScheduleCancel1.btn, #returnHomeScheduleCancel.btn, .btn-primary, #addressSearch_testCenterCode {
+	display: inline-block;
+	padding: 6px 12px;
+	background: #007FA3;
+	color: #fff;
+	text-decoration: none;
+	border: 1px solid #007FA3;
+	cursor: pointer;
+	vertical-align: middle;
+}
+.btn:hover, .btnPositive:hover, #privateAccessCode.btn_edit:hover, #triggerFilter.btn_link_dialog:hover, #addressSearch:hover, #accessibleCalendarOptionButton:hover, .btn_select:hover, .cookieMessageLearnMoreButton:hover, #mobileCalendarButton:hover, #jsf_databaseSearch .btn_edit:hover, .receiptsTable .btnPositiveNoModal:hover, .viewScoreReportColumn .btnPositiveNoModal:hover, FeedbackLink:hover, .combinedHeader .btnPositiveNoModal:hover, #jsf_databaseSearch .btn_edit_display:hover, #returnHomeScheduleCancel1.btn:hover, #returnHomeScheduleCancel.btn:hover, .btn-primary:hover, #addressSearch_testCenterCode:hover {
+	background: #005770;
+	border: 1px solid #005770;
+	color: #fff !important;
+}
+
+.ui-datepicker-calendar .ui-datepicker-current-day .ui-state-active {
+	background: #007FA3;
+	color: #fff;
+	border: 1px solid #007FA3;
+}
+
+#appointmentTimesSectionHeader {
+	padding: 0px 15px 15px 30px;
+	border-bottom: 1px solid #ddd;
+}
+
+/* Move the button up to align with input field */
+#privateAccessCode.btn_edit, #triggerFilter.btn_link_dialog, #accessibleCalendarOptionButton, #checkButton.btn_edit, .searchTable .btn_edit_ajx, #clearFilter {
+	margin-top: -10px; /* alignment with form field */
+
+}
+
+#privateAccessCode.btn_edit, #clearFilter {
+	margin-left: 8px;
+}
+.filterInput {
+	margin-right: 10px;
+}
+
+
+/* Secondary / Previous */
+.previous .btn_link, .sectionEdit .btn_edit, #checkButton.btn_edit, #passwordScorebar, #triggerFilter.btn_link_dialog, .cookieMessageCloseMessageButton, #addAnotherExamBottom, #applyDiscount.btn, #cancelButton, #cancelButtonResched, #addExam, #canelAddBackToBackExam, .sectionEdit .btn_edit_ajx, .closeWindowBtnContainer .btn_link, #takeSnapshot, #editBiometricPhoto, .searchByDateApptCol .btn_edit_display, .searchButton input, .singleSelectButton .btnPositiveNoModal, #homeButton.btn_link, #closeWindowButton, .removeButtonColumn .btn_remove, .searchTable .btn_edit_ajx, .submit-box input, #canelAddAExam, #moduleSelection .btn_remove, .btn-secondary, .removeVoucher .btn_remove, .refeshExamList .btn_link, .languageButton, #acceptUnSupportedBrowserPolicyId, #clearFilter {
+	display: inline-block;
+	padding: 6px 12px;
+	background: #eee;
+	color: #333;
+	text-decoration: none;
+	border: 1px solid #ccc;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+a.btn-secondary:focus, a.btn-secondary:active {
+	padding: 6px 12px;
+}
+
+.cookieMessageCloseMessageButton {
+	background: #fff;
+}
+
+#acceptUnSupportedBrowserPolicyId {
+	background: #fff;
+}
+
+.previous .btn_link:hover, .sectionEdit .btn_edit:hover, #checkButton.btn_edit:hover, #triggerFilter.btn_link_dialog:hover, .cookieMessageCloseMessageButton:hover, #addAnotherExamBottom:hover, #applyDiscount.btn:hover, #cancelButton:hover, #cancelButtonResched:hover, #addExam:hover, #canelAddBackToBackExam:hover, .sectionEdit .btn_edit_ajx:hover, .closeWindowBtnContainer .btn_link:hover, #takeSnapshot:hover, #editBiometricPhoto:hover, .searchByDateApptCol .btn_edit_display:hover, .searchButton input:hover, .singleSelectButton .btnPositiveNoModal:hover, #homeButton.btn_link:hover, #closeWindowButton:hover, .removeButtonColumn .btn_remove:hover, .searchTable .btn_edit_ajx:hover, #filterExamListForm #triggerFilter.btn_link_dialog:hover, .submit-box input:hover, #canelAddAExam:hover, #moduleSelection .btn_remove:hover, .btn-secondary:hover, .removeVoucher .btn_remove:hover, .refeshExamList .btn_link:hover, .languageButton:hover, #acceptUnSupportedBrowserPolicyId:hover, #clearFilter:hover, #retunExternalHomeButton.btn-secondary:hover, #retunExternalHomeButton1.btn-secondary:hover {
+	background-color: #d5d5d5;
+	border: 1px solid #adadad;
+}
+.languageButton:hover {
+	background-color: #d5d5d5 !important;
+	border: 1px solid #adadad !important;
+}
+.pagename-myappointmentrequests .btn-secondary:hover {
+	color: #333;
+}
+.pagename-myappointmentrequests .btn-secondary:focus, .pagename-myappointmentrequests .btn-secondary:active {
+	background-color: #d5d5d5;
+	color: #333;
+}
+
+.btn_disabled {
+	opacity: .5;
+}
+
+#OrderConfirmSubmitForm #cancelButton, #OrderConfirmSubmitForm #cancelButtonResched {
+	margin-left: 12px;
+}
+
+#canelAddBackToBackExam {
+	margin-bottom: 16px;
+}
+
+
+/* Toggle button - outline */
+.btn-toggle {
+	display: inline-block;
+	padding: 6px 12px;
+	background: transparent;
+	text-decoration: none;
+	border: 1px solid #ccc;
+	cursor: pointer;
+	vertical-align: middle;
+	border-radius: 3px;
+}
+.btn-toggle.active  {
+	border: 2px solid #007FA3;
+}
+
+.btn-toggle.active i {
+	display: inline-block;
+	margin-right: 8px;
+}
+
+
+
+/* Upsell */
+.btn_cart {
+	display: inline-block;
+	padding: 6px 12px;
+	background: #008638;
+	color: #fff;
+	text-decoration: none;
+	border: 1px solid #008638;
+	cursor: pointer;
+	vertical-align: middle;
+}
+.btn_cart:hover {
+	background-color: #00652a;
+	border: 1px solid #00652a;
+}
+
+#OrderConfirmSubmitForm .buttonArea input {
+	margin-bottom: 15px;
+}
+
+#passwordScorebar {
+	text-align: center;
+	font-weight: bold;
+}
+
+/* Set up virtual test env panel on OrderSummaryPage and ExamRegistrationDetailPage */
+.setup-virtual-test-env-area-container > div {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	display: flex;
+}
+
+#setUpTestEnvBtnArea {
+	text-align: center;
+	margin: auto;
+}
+
+#setUpTestEnvBtnArea h2 {
+	margin-top: 0;
+}
+
+.virtual-test-env-panel-img {
+	vertical-align:middle;
+	width: 37px;
+	height: 25px;
+}
+
+#compatibilityCheck {
+	margin-top: 30px;
+}
+
+#examSimulation {
+	margin-top: 15px;
+}
+
+/* Utility (edit) */
+
+/* Clear button (form fields) */
+.clearTextButton {
+	border: 1px solid transparent;
+	display: inline-block;
+}
+
+.clearTextButton:focus, .clearTextButton:active {
+	border: 1px solid transparent;
+}
+
+
+/* Form elements */
+label, legend, .label, #labelPasswordStrength, .infoOnlyLabel, .ft_label_question td span, #vouchersAvailableLabel  {
+	display: block;
+	padding-bottom: 5px;
+	/*font-weight: bold;*/
+	padding-top: 20px;
+}
+
+.infoOnlyLabel label {
+	padding-top: 0;
+}
+
+.cartSpacingRemove {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.cartSpacingAdd  {
+	display: block;
+	/*font-weight: bold;*/
+	padding-top: 10px;
+}
+
+td.ft_label_common label {
+	padding: 0;
+}
+td.ft_value {
+	margin: 0;
+}
+#questionsContainer legend {
+	width: 100%;
+	max-width: 100%;
+	word-break: break-word;
+}
+
+#vouchersORLabel {
+	margin-top: 15px;
+	display: block;
+}
+
+
+#component1_clientQuestionsTable label:first-of-type, #attLabel {
+	padding-top: 0;
+}
+
+#availability .infoOnlyLabel {
+	padding-top: 10px;
+}
+.ft_label_question td span span, .ft_label_question td span:empty {
+	padding: 0;
+	display: inline;
+}
+.infoOnlyLabel:empty, .infoOnlyValue:empty {
+	display: none;
+}
+div:first-child legend, .infoOnlyBlock .infoBlock:first-child .infoOnlyLabel, .formblock:first-child .infoOnlyLabel, .formblock:first-child .infoOnlyLabel label {
+	padding-top: 0;
+}
+
+#collectCommPref div:first-child, div:first-child fieldset.dateComponent legend, div#personalConfigGenderFieldErrorContainer:first-child fieldset legend, div#personalConfigNinoFieldErrorContainer:first-child fieldset legend, div#personalConfigConfirmNinoFieldErrorContainer:first-child fieldset legend {
+	padding-top: 20px;
+}
+
+.selectRow label {
+	padding-top: 0;
+}
+label#optInTextLabel, .radioTable label, .CCIDModalLink, input[type="radio"] + label, #RPPolicies label, .moduleNameCell label, label.normal {
+	font-weight: normal; /* remove bold for radio/checkbox labels */
+}
+
+label.normal {
+	margin-left: 0;
+}
+.labelDescription {
+	display: block;
+	font-weight: normal;
+}
+.radioTable label, #selectedCentersTable label, #LanguageField label {
+	padding-top: 0;
+}
+.moduleNameCell label {
+	padding: 0;
+}
+#candidateId {
+	margin-top: -15px;
+	margin-left: 20px;
+}
+input[type="text"], input[type="password"], select, input[type="search"], #passwordScorebar, .infoOnlyValue, textarea {
+	margin-bottom: 10px;
+	-webkit-appearance: none;
+	width: 100%;
+}
+
+#filterInputTimeZone {
+	margin-top: 10px;
+	margin-left: 0;
+}
+.quantityCol input[type="text"] {
+	width: auto;
+}
+select {
+	-webkit-appearance: menulist;
+}
+
+/* Over-ride input width */
+#editPrimaryAddress_editAddressGridTELEPHONE_COUNTRY_CODE, #editPrimaryAddress_editAddressGridMOBILE_PHONE_COUNTRY, #editSecondaryAddress_editAddressGridTELEPHONE_COUNTRY_CODE, #billingAddressId_phoneCountryCodeId, #editPrimary_editAddressGridTELEPHONE_COUNTRY_CODE, #editPrimary_editAddressGridMOBILE_PHONE_COUNTRY, #editSecondary_editAddressGridTELEPHONE_COUNTRY_CODE, .mobilePhonePlusIndicator + input {
+	width: 60px !important;
+	margin-right: 12px;
+}
+#selectMonthOption, #SecurityCodeField, #maskedSelectMonthOption, #maskedSecurityCodeField {
+	margin-right: 12px;
+}
+#editPrimaryAddress_editAddressGridTELEPHONE, #editPrimaryAddress_editAddressGridMOBILE_PHONE, #editPrimaryAddress_editAddressGridTELEPHONE_EXTENSION, #editSecondaryAddress_editAddressGridTELEPHONE, #editSecondaryAddress_editAddressGridTELEPHONE_EXTENSION, #selectMonthOption, #maskedSelectMonthOption, #selectYearOption, #maskedSelectYearOption, #SecurityCodeField, #maskedSecurityCodeField, #billingAddressId_phoneCountryCodeId, #billingAddressId_telephoneFieldId, #editPrimaryAddress_editAddressGridPOSTAL_CODE, #billingAddressId_postalCodeFieldId, #editPrimary_editAddressGridPOSTAL_CODE, #editPrimary_editAddressGridTELEPHONE, #editPrimary_editAddressGridTELEPHONE_EXTENSION, #editPrimary_editAddressGridMOBILE_PHONE, #editSecondary_editAddressGridTELEPHONE, #editSecondary_editAddressGridPOSTAL_CODE, #editSecondary_editAddressGridTELEPHONE_EXTENSION, #nativeAddressComponentJPN_inputPostalCode, .dateComponent select, #personalConfigNinonino1, #personalConfigNinonino2, #personalConfigNinonino3, #personalConfigNinonino4, #personalConfigNinonino5, #inputNinonino1, #inputNinonino2, #inputNinonino3, #inputNinonino4, #inputNinonino5, #personalConfigSsnssn1, #personalConfigSsnssn2, #personalConfigSsnssn3, #inputSsnssn1, #inputSsnssn2, #inputSsnssn3, #MOBILE_PHONE_COUNTRY_139, #MOBILE_PHONE_139, #personalConfigArnarn, #inputArnarn, #personalConfigI94ni94n1, #personalConfigI94ni94n2, #inputI94ni94n1, #inputI94ni94n2, .auto-width, .countryCodeInput, .telephoneNumberInput, .mobilePhonePlusIndicator + input {
+	width: auto !important;
+}
+
+#maskedRefundMsg {
+   text-align: right;
+   margin-bottom: 0.2em;
+   font-size: 15px;
+}
+#showMaskedCreditCardForRefund {
+   background: #fff;
+   padding: 1em;
+   box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+   border-radius: 4px;
+   overflow: hidden;
+}
+#maskedRefundButton {
+	background-color : #FFB81C;
+	color:#000000;
+}
+.mobilePhonePlusIndicator, #personalConfigNinonino1, #personalConfigNinonino2, #personalConfigNinonino3, #personalConfigNinonino4, #personalConfigNinonino5, #inputNinonino1, #inputNinonino2, #inputNinonino3, #inputNinonino4, #inputNinonino5, #personalConfigSsnssn1, #personalConfigSsnssn2, #personalConfigSsnssn3, #inputSsnssn1, #inputSsnssn2, #inputSsnssn3, #personalConfigArnarn, #inputArnarn, #personalConfigI94ni94n1, #personalConfigI94ni94n2, #inputI94ni94n1, #inputI94ni94n2, .dateComponent select, .componentSeparator, #addAnotherExamBottom, .dateComponent span {
+	margin-right: 12px;
+}
+
+.dateComponent span.required {
+	margin-right: 0;
+}
+.CCIDModalLink {
+	display: block;
+}
+.componentSeparator, .dateComponent span {
+	display: inline-block;
+}
+
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input, select {
+	border: 1px solid #333;
+	vertical-align: middle;
+	box-sizing: border-box;
+	padding: 6px 12px;
+	display: inline-block;
+	background: #fff;
+}
+/* tooltips for abbr */
+
+ .abbrStyle {
+   position: relative;
+
+	/* ensure consistent styling across browsers */
+	text-decoration: underline dotted;
+ }
+
+.abbrStyle:focus::after, .abbrStyle:hover::after {
+	content: attr(data-title);
+
+	/* position tooltip like the native one */
+	position: absolute;
+	left: 0;
+	bottom: -30px;
+	width: auto;
+	white-space: nowrap;
+
+	/* style tooltip */
+	background-color: #fff;
+	color: #000000;
+	border-color:#000000;
+	border-style:solid;
+	border-radius: 3px;
+	border-width: thin;
+	font-size: 14px;
+	padding: 3px 5px;
+}
+/* tooltips for abbr */
+input:focus, input:active, select:focus, select:active, button:focus, button:active, #checkButton.btn_edit:focus, #checkButton.btn_edit:active, #retunInternalHomeButton:focus, #retunInternalHomeButton:active, .ui-widget-content .ui-datepicker-calendar a:active, .ui-widget-content .ui-datepicker-calendar a:focus, .receiptsTable .btnPositiveNoModal:active, .receiptsTable .btnPositiveNoModal:focus , #editBiometricPhoto:focus, #editBiometricPhoto:active, .top-btn-container a.btn:active, .top-btn-container a.btn:focus, .viewScoreReportColumn .btnPositiveNoModal:focus, .viewScoreReportColumn .btnPositiveNoModal:active, .singleSelectButton .btnPositiveNoModal:focus, .singleSelectButton .btnPositiveNoModal:active, #FeedbackLink:focus, #FeedbackLink:active, .combinedHeader .btnPositiveNoModal:focus, .combinedHeader .btnPositiveNoModal:active, a.btn-primary:focus, a.btn-primary:active, .ui-dialog-titlebar:focus, .ui-dialog-titlebar:active, .ui-dialog:focus, .ui-dialog:active, .top-btn-container a.btn-secondary:focus, .top-btn-container a.btn-secondary:active, #retunExternalHomeButton.btn-secondary:focus, #retunExternalHomeButton1.btn-secondary:focus, #retunExternalHomeButton.btn-secondary:active, #retunExternalHomeButton1.btn-secondary:active, a#retunExternalHomeButton.btn-secondary:focus, a#retunExternalHomeButton1.btn-secondary:focus, a#retunExternalHomeButton.btn-secondary:active, a#retunExternalHomeButton1.btn-secondary:active, .abbrStyle:focus, a#retunInternalHomeButton1:focus, a#retunInternalHomeButton1:active, #select-mode input[type="radio"]:focus + .mode-option, .tooltip:focus {
+	outline: 3px solid #FFB81C;
+	box-shadow: none;
+	border: 2px solid #000;
+	outline-offset: 0;
+}
+
+#select-mode input[type="radio"]:focus:checked + .mode-option {
+	border: none !important;
+}
+
+a.btn-primary:focus, a.btn-primary:active, .top-btn-container a.btn:focus, .top-btn-container a.btn:active, .btn-container a.btn:focus, .btn-container a.btn:active, a.btn:focus, a.btn:active, .pagename-myappointmentrequests .btn-secondary:focus, .pagename-myappointmentrequests .btn-secondary:active, .top-btn-container a.btn-secondary:focus, .top-btn-container a.btn-secondary:active {
+	padding: 6px 12px;
+}
+#examTable input[type="image"]:focus, #examTable input[type="image"]:active, #historyTableContainer input[type="image"]:focus, #historyTableContainer input[type="image"]:active, .historyTable input[type="image"]:focus,.historyTable input[type="image"]:active, .srchRsltsTable input[type="image"]:focus, .srchRsltsTable input[type="image"]:active, .pagename-myappointmentrequests .btn-secondary:focus, .pagename-myappointmentrequests .btn-secondary:active {
+	border: 1px solid transparent;
+}
+
+.table_header_btn_link:focus, .table_header_btn_link:active {
+	border: none;
+}
+input[type="radio"], input[type="checkbox"] {
+	margin-right: 6px;
+	display: inline-block;
+}
+input[type="radio"] + label, input[type="checkbox"] + label {
+	display: inline-block;
+}
+
+#privacyCheckBoxContainer, #militaryAccessConfirmationCheckBoxProximity, #militaryAccessConfirmationCheckBoxSearchInput, #questionsContainer input[type="checkbox"] {
+	display: inline-block;
+	float: left;
+}
+#militaryAccessConfirmationTextLabelProximity, #militaryAccessConfirmationTextLabelSearchInput, #questionsContainer input[type="checkbox"] + label {
+	margin-left: 25px;
+	margin-top: -40px;
+}
+
+#questionsContainer .selectBooleanCheckbox_container input[type="checkbox"] + label{
+	margin-left: 25px;
+    margin-top: -18px;
+    padding-top: 0px;
+}
+
+#questionsContainer td input[type="checkbox"] + label {
+	padding-top: 0;
+	margin-top: 0;
+	margin-left: 0;
+}
+
+#militaryAccessConfirmationTextLabelProximity strong, #questionsContainer input[type="checkbox"] + label {
+	font-weight: normal;
+}
+#privacyOptInAcceptanceCheckBoxLabel, #errorOptInUnCheckedAndHitOK, #errorOptInUnCheckedAndHitFixed {
+	float: right;
+	display: inline-block;
+	font-weight: normal;
+	cursor: pointer;
+	padding-top: 0;
+}
+
+.termsAndConditionsSpacing {
+	margin-top: 30px;
+}
+
+.termsAndConditionsNoSpacing {
+	margin-top: -20px;
+	padding-top: 0px !important;
+}
+
+#termsandconditions > div.panel {
+	padding: 0;
+	box-shadow: none;
+}
+
+.signInHelpSpacing {
+	margin-top: 30px;
+}
+
+/* Faking the Grid */
+#container, #copyright, #copyright, #tcDirectionsContainer, #footerLinks {
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+
+
+/*#maincontent {
+	overflow: hidden;
+}
+#maincontent {
+	padding: 15px;
+}*/
+
+
+/* Emulate Row */
+
+
+/* Emulate columns */
+#signinArea, #SignInForm, #DashBoardForm > div, #registrationSection, #upcomingNoAppt, #upcomingAppt, #dashboard3, #myAccountSection, #onlineExams, #signinChatLinkArea, #regLicSection, #readyToSchedule {
+	position: relative;
+	min-height: 1px;
+}
+
+#testCenterList {
+	margin-bottom: 24px;
+	/*border: 1px solid #ddd;*/
+	padding: 16px;
+	background: #fff; /* card-like */
+	box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+	border-radius: 4px;
+}
+
+/*imitate panels/cards */
+.panel, #SignInForm, #signinArea, #registrationSection, #upcomingNoAppt, #upcomingAppt, #personalInfo, #myAccountSection, #questionsContainer, #singleSearch, #collectCCID, #collectPersonalInfo, #collectEmailInfo, #signinArea2, #infoBox, #signinAreaMobile, #collectPrimaryAddress, #collectSecondaryAddress, #collectCommPref, #createAccountContainer .formSectionBlock, #SelectExamLanguageForm > div:first-child, #allDetails, #deliveryModeContainer, #availableProducts, #confirmPersonalInfoPanel, #policies, #showCC, #orderSummaryArea, #jsf_databaseSearch, #changePassword, #changeSecurityQuestion, #viewPersonalInfoGroup, #primaryAddressInfoGroup, #secondaryAddressInfoGroup, #correspondenceInfoGroup, #collectPersonalInformation, #collectCorrespondencePreferences, #RPPolicies, #switchTestingProgramsContainer, #j_id_2d > div:first-child, #examRegistrationQuestionsTable, #policyArea, #onlineExams, .userNameLookupTable, .usernameRetrievalTable, .requestPasswordTable, .requestPasswordContainer, #requestPasswordContainer, #authenticateContainer, #authenticateResultsContainerNoBiometrics, #authenticateResultsContainer, #showCheckSection, #selectPaymentType, .proctorVerificationProcess, #photoCapture, #additionalContentDiv, #OrderSummary #None, #regLicSection, #readyToSchedule, #attNumber, #OrderConfirmSubmitForm #policyArea #policies, #category1InfoGroup, #EOT .summaryArea, #voucherModeContainer, #candidateExamInfo, #proctorAuthenticationContainer, #editNativeAddressForm .profileContainer, #personalInformationForm .profileContainer .infoOnlyBlock, #MyProfileForm .profileContainer .infoOnlyBlock, #startExamDetails, #multiSearch .proximity, #multiSearch .testCenterCode, #websitePreferencesContainer .formSectionBlock, div[id^="nativeAddressInfoGroup_"], #testCenterList, table#examTable, #SelectExamForm .anywhereProctoredPac, #filterExamList, .futureappt, #backtobackArea, .backtobackDisclaimer, #selectedCentersArea, #timeZoneArea, #calendarArea, #testCenterCalendarArea, #chooseAppointments, .orderDetails, .historyTable, #requestAvailableSection, #otherSection, .receiptsTable, .login-help #section1, .login-help #section2, .login-help #section3, .checkPassTableHolder, .searchTable, .searchResults, .srchSelection, .pagename-backgroundinformationquestions .ft_Table, #primaryAddressInfoGroup_Container, #category2InfoGroup_Container, #category3InfoGroup_Container, #category4InfoGroup_Container, #category5InfoGroup_Container, #MyProfileForm #correspondenceInfoGroup_Container, .pagename-verifyprofilepage #personalInfoGroup {
+	margin-bottom: 24px;
+	/*border: 1px solid #ddd;*/
+	padding: 16px;
+	overflow: hidden; /* Added to clear last element rtl floats */
+	background: #fff; /* card-like */
+	box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+	border-radius: 4px;
+}
+
+.reverse-card {
+	margin-bottom: 24px;
+	padding: 16px;
+	overflow: hidden; /* Added to clear last element rtl floats */
+	background: #eee; /* card-like */
+	box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+	border-radius: 4px;
+}
+.invisible-card {
+	margin-bottom: 24px;
+	padding: 16px;
+	overflow: hidden; /* Added to clear last element rtl floats */
+	border-radius: 4px;
+}
+
+.ui-dialog #policies, .pagename-additionalinformationmultipage .searchTable, .pagename-additionalinformationmultipage .srchSelection, .pagename-dashboard .futureappt, .proctorVerificationProcess .orderDetails, #MyProfileForm .profileContainer .infoOnlyBlock #correspondenceInfoGroup, .srchSelection.organizationSearchSelection {
+	box-shadow: none;
+}
+
+.pagename-additionalinformationmultipage .searchTable, .pagename-additionalinformationmultipage .srchSelection, .pagename-dashboard .futureappt, #MyProfileForm .profileContainer .infoOnlyBlock #correspondenceInfoGroup, .srchSelection.organizationSearchSelection {
+	padding: 0;
+}
+
+.pagename-myprofilepage .infoOnlyBlock h3 + div + div {
+	padding-top: 16px;
+}
+
+.accent {
+	box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+	border-radius: 4px;
+	padding: 16px;
+	overflow: hidden; /* Added to clear last element rtl floats */
+	background: #fff;
+}
+
+/*Move cards up for 100% container-fluid width*/
+#singleSearch, .tag-along, #filterExamList {
+	margin-top: -15px;
+}
+
+#backtobackArea, .backtobackDisclaimer {
+	text-align: center;
+}
+
+.container-fluid {
+	border-radius: 0 !important;
+}
+
+
+#policyArea #policies, #personalInfoGroup #correspondenceInfoGroup, #addressAndDateSearch #jsf_databaseSearch, #OrderConfirmSubmitForm #policyArea #policies {
+	border: none;
+	padding: 0;
+	margin: 0;
+	box-shadow: none;
+}
+
+
+#MyProfileForm #primaryAddressInfoGroup_Container h3, #MyProfileForm #category2InfoGroup_Container h3, #MyProfileForm #category3InfoGroup_Container h3, #MyProfileForm #category4InfoGroup_Container h3, #MyProfileForm #category5InfoGroup_Container h3 {
+	padding: 0;
+	margin: 0;
+}
+
+.pagename-backgroundinformationquestions h3 {
+	margin-top: 0;
+}
+div[id^="nativeAddressInfoGroup_"] h3, #MyProfileForm #correspondenceInfoGroup_Container h3 {
+	padding: 0;
+	margin: 0;
+}
+#primaryAddressInfoGroup_Container .sectionEdit, #category2InfoGroup_Container .sectionEdit, #category3InfoGroup_Container .sectionEdit, #category4InfoGroup_Container .sectionEdit, #category5InfoGroup_Container .sectionEdit {
+	margin-top: -47px;
+	margin-right: 15px;
+}
+
+#MyProfileForm #primaryAddressInfoGroup_Container .sectionEdit, #MyProfileForm #category2InfoGroup_Container .sectionEdit, #MyProfileForm #category3InfoGroup_Container .sectionEdit, #MyProfileForm #category4InfoGroup_Container .sectionEdit, #MyProfileForm #category5InfoGroup_Container .sectionEdit, #MyProfileForm #correspondenceInfoGroup_Container .sectionEdit {
+	margin-top: -20px;
+	margin-right: 0;
+}
+
+div[id^="nativeAddressInfoGroup_"] .sectionEdit {
+	margin-top: -20px;
+}
+
+
+div[id^="nativeAddressInfoGroup_"] div[id^="nativeAddressInfoGroup_"] {
+	margin: 30px -15px 0 -15px;
+	clear: both;
+}
+
+.checkPassTableHolder {
+	margin: 30px 0;
+}
+
+.orderDetails, .secondTableHeader, #quickResultsTableRecent, #historicArea table, #preApproved table, #unRestrictedPreApprovedTable {
+	margin-bottom: 24px;
+}
+
+
+#orderItems + h2, #currentAppt {
+	border: 1px solid #ddd;
+	padding: 15px;
+	margin-bottom: 0;
+}
+
+#createAccountContainer .formSectionBlock .formSectionBlock, #primaryAddressInfoGroup_Container #primaryAddressInfoGroup {
+	border: none;
+	padding: 0;
+	box-shadow: none;
+}
+
+
+
+
+.LoginTable h3, #signinArea h3, #homePage h2, #collectCCID h3, #collectPersonalInfo h3, #collectEmailInfo h3, #signinArea2 h2, #infoBox h2, #signinAreaMobile h2, #collectPrimaryAddress h3, #collectSecondaryAddress h3, #collectCommPref h3, #createAccountContainer .formSectionBlock h3, #createAccountContainer .formSectionBlock > h2, #showCC h2, #changePassword h2, #changeSecurityQuestion h2, #viewPersonalInfoGroup h2, #primaryAddressInfoGroup h2, #secondaryAddressInfoGroup h2, #correspondenceInfoGroup h2, #collectCorrespondencePreferences h3, #examRegistrationQuestionsTable h2, #policyArea h2, #requestPasswordContainer h3, #viewPersonalInfoGroup h3, #primaryAddressInfoGroup h3, #secondaryAddressInfoGroup h3, #correspondenceInfoGroup h3, #showCheckSection h3, #selectPaymentType h3, .proctorVerificationProcess h2, #OrderSummary #None h2, #regLicSection h2, #readyToSchedule h2, .panel h2, .panel h3, #category1InfoGroup h3, #candidateExamInfo h2, #proctorAuthenticationContainer h2, #editNativeAddressForm .profileContainer h3, #personalInformationForm .profileContainer .infoOnlyBlock h3, #MyProfileForm .profileContainer .infoOnlyBlock h2, #multiSearch .proximity h2, #multiSearch .testCenterCode h2, .pagename-dashboard h2, h2#cartPaymentInfo, #requestAvailableSection h2, #otherSection h2, #personalInfoGroup h3 {
+	/*border-bottom: 1px solid #ddd;
+	padding: 0 15px 15px 15px;
+	margin-left: -15px;
+	margin-right: -15px;*/
+	font-weight: normal;
+	margin-top: 0;
+	background: #fff; /* card-like */
+}
+
+.pagename-dashboard h1.ui-dialog-title {
+	background: none;
+	padding: 0;
+	font-size: 18px;
+}
+h2#cartPaymentInfo {
+	background: none;
+}
+
+
+#topBar {
+	padding: 15px;
+	border: 1px solid #ddd;
+	margin-top: 15px;
+}
+
+#policyArea h2:nth-of-type(2) {
+	border-top: 1px solid #ddd;
+	margin-top: 15px;
+	padding-top: 15px;
+}
+#footerCopyOutputText {
+	margin-top: 15px;
+}
+
+
+#footerCopyOutputText {
+	display: block;
+}
+
+#tc_Info {
+	border: 1px solid #ddd;
+	border-top: 0;
+	padding: 15px;
+}
+#voucherEntry {
+	margin-top: 15px;
+}
+
+#currentAppt {
+	margin: 15px 0;
+}
+
+.LoginTable h3, #signinArea h3, #homePage h2, #collectCCID h3, #collectPersonalInfo h3, #collectEmailInfo h3, #signinArea2 h2, #infoBox h2, #signinAreaMobile h2, #examTable h2, #showCC h2, #orderItems + h2, #orderSummaryArea h3, #viewPersonalInfoGroup h2, #primaryAddressInfoGroup h2, #secondaryAddressInfoGroup h2, #correspondenceInfoGroup h2, #collectCorrespondencePreferences h3, #tcDirectionsContainer h1, #examRegistrationQuestionsTable h2, #policyArea h2, #requestPasswordContainer h3, #showCheckSection h3, #selectPaymentType h3, .proctorVerificationProcess h3, .proctorVerificationProcess h2, #OrderSummary #None h2, .panel h2, .panel h3, #candidateExamInfo h2, #proctorAuthenticationContainer h2, #editNativeAddressForm .profileContainer h3, #personalInformationForm .profileContainer .infoOnlyBlock h3, #MyProfileForm .profileContainer .infoOnlyBlock h2, #multiSearch .proximity h2, #multiSearch .testCenterCode h2, .pagename-dashboard h2, #requestAvailableSection h2, #otherSection h2 {
+	font-size: 21px;
+}
+
+#historyTableContainer h2 {
+	font-size: 18px;
+}
+
+#collectPrimaryAddress h3, .pageflow-fasttrack #editPrimaryContactForm #createAccountContainer #collectPrimaryAddress h3 {
+	border-top: 1px solid #ddd;
+	padding-top: 15px;
+	margin-top: 30px;
+}
+#contactInformationForm #collectPrimaryAddress h3 {
+	border-top: 0;
+}
+
+#editPrimaryContactForm #createAccountContainer #collectPrimaryAddress h3 {
+	border-top: none;
+	padding-top: 0;
+}
+
+#editPrimaryContactForm #createAccountContainer #collectPrimaryAddress #j_id188 h3 {
+	margin-top: 30px;
+	padding-top: 15px;
+	border-top: 1px solid #ddd;
+}
+
+#PACFormOnDashboard {
+	border-top: 1px solid #ddd;
+	padding: 15px;
+	margin: 15px -15px 0 -15px;
+}
+
+
+#publicToMilitarySearchLinkProximity {
+	display: block;
+	border-top: 1px solid #ddd;
+	padding-top: 15px;
+	margin-top: 15px;
+}
+
+
+
+.infoOnlyBlock.noHeader {
+	border-top: 1px solid #ddd;
+	padding-top: 16px;
+	margin-top: 30px;
+}
+
+.pageflow-fasttrack .infoOnlyBlock.noHeader, .pageflow-fasttrack #confirmEmailPanelGroup {
+	padding-bottom: 16px;
+}
+
+.infoOnlyLabel.revealEdit, .infoOnlyLabel.revealEdit label {
+	padding-top: 0;
+}
+
+
+.fyi, .currentExam {
+	margin: 15px 0;
+}
+
+
+
+/* Tables */
+
+/* Stack the table */
+.futureappt {
+	width: 100%;
+	margin-bottom: 30px;
+}
+#candidateExamInfo .futureappt {
+	margin-bottom: 0;
+}
+th, td {
+	display: block;
+	width: 100%;
+	float: left;
+	clear: left;
+}
+
+/*Keep table format on all MQ */
+.radioTable td,
+#centerTable td, #centerTable th,
+#examTable th, #examTable td,
+#examTable table th, #examTable table td,
+#examTable table th.displayMobileOnlyView, #examTable table td.displayMobileOnlyView,
+table#examTable td.displayMobileOnlyView, table#examTable td.displayMobileOnlyView,
+#selectedCentersTable td, #selectedCentersTable th,
+#apptTable td, #apptTable th, #displayMorningAppts td, #displayMorningAppts th, #displayAfternoonAppts td, #displayAfternoonAppts th, #summaryHolder table td, #subtotal table td, #subtotal table th, .paymentTotal td, #historyTableContainer table td, #historyTableContainer table th, .historyTable td, .historyTable th, #examQuestionGrid td, #None #summary table[role=presentation] td, #preApproved td, #preApproved th, #cancelSummaryArea table[role=presentation] td, .checkPassTable th, .checkPassTable td, #billingAddressId_countryCodeTableId th, #billingAddressId_countryCodeTableId td, #addressCountryCodeTable_editPrimary th, #addressCountryCodeTable_editPrimary td, #addressCountryCodeTable_editPrimaryAddress th, #addressCountryCodeTable_editPrimaryAddress td, #addressCountryCodeTable_editSecondaryAddress th, #addressCountryCodeTable_editSecondaryAddress td, #schoolSearchQuestionId_searchResultsTableJs .srchRsltsTable th, #schoolSearchQuestionId_searchResultsTableJs .srchRsltsTable td, .tg th, .tg td, #summary #None table[role=presentation] td, .ui-datepicker-calendar td, .ui-datepicker-calendar th, #correspondenceCountryCodeTable th, #correspondenceCountryCodeTable td, #selectedModulesTable #moduleSelection th, #selectedModulesTable #moduleSelection td, .examDetailsModal th, .examDetailsModal td {
+	display: table-cell;
+	width: auto;
+	float: none;
+	clear: none;
+}
+
+
+
+th, td, #selectedCentersTable td, #summaryHolder table td, #None #summary table[role=presentation] td, #cancelSummaryArea table[role=presentation] td,  table.futureappt[role=presentation] td, #unRestrictedPreApprovedTable td, #unRestrictedPreApprovedTable th, #summary #None table[role=presentation] th, #summary #None table[role=presentation] td, #subtotal table[role=presentation] td, table.orderDetails[role=presentation] td, table.examDetailsModal[role=presentation] td {
+	padding: 12px 8px;
+}
+td.sectionEdit {
+	padding-left: 15px !important;
+}
+th, #unRestrictedPreApprovedTableForModal th, #unRestrictedPreApprovedTable th {
+	border-bottom: 2px solid #ddd;
+	text-align: left;
+	font-weight: bold;
+}
+td, #selectedCentersTable td {
+	vertical-align: top;
+}
+
+tr:not(:last-of-type) td {
+	border-bottom: 1px solid #ddd;
+}
+
+.appointmentCenterTable th[scope=row] {
+	vertical-align: top;
+	font-weight: normal;
+	border-bottom: 1px solid #ddd;
+}
+
+.pagename-backgroundinformationquestions th {
+	border-bottom: none;
+}
+
+.appointmentCenterTable tr:last-of-type th[scope=row] {
+	border-bottom: none;
+}
+
+
+.paymentTotal th, .paymentTotal td, #unRestrictedPreApprovedTableForModal th, #unRestrictedPreApprovedTable th {
+	vertical-align: top;
+}
+#unRestrictedPreApprovedTableForModal th, #unRestrictedPreApprovedTable th {
+	white-space: nowrap;
+}
+
+#categoryContainer td {
+	border-bottom: 0;
+}
+
+#apptTable th {
+	font-weight: normal;
+}
+#apptTable td {
+	border-bottom: none;
+	padding: 0;
+}
+
+
+#chooseAppointments.noSelectedCenters #apptTable {
+	width: 100%;
+}
+
+#chooseAppointments.remoteProctor #apptTable {
+	width: 100%;
+}
+
+#subtotal table td, .paymentTotal td, .paymentTotal th, #subtotal table th {
+	border-bottom: none;
+	color: #333;
+}
+
+
+#displayMorningAppts td, #displayAfternoonAppts td, #displayMorningAppts th, #displayAfternoonAppts th, #unRestrictedPreApprovedTableForModal th {
+	padding: 12px 8px;
+}
+
+.searchTable td {
+	border-bottom: none;
+}
+
+#displayMorningAppts td, #displayAfternoonAppts td, #displayMorningAppts th, #displayAfternoonAppts th {
+	text-align: center;
+	vertical-align: middle;
+}
+.displayMorningApptsAMHeading {
+	text-align: center !important;
+	padding-left: 0 !important;
+}
+.displayAfternoonApptsPMHeading {
+	padding-right: 0 !important;
+}
+
+#centerTable th.displayDesktopOnlyView, #centerTable td.displayDesktopOnlyView {
+	display: none;
+}
+
+
+
+th input {
+	margin-left: -6px;
+}
+
+
+table[role=presentation] td, table[role=presentation] th, .radioTable td, .policyContent td, #component1_SELECT_MANY_CHECKBOX_13367 td {
+	border: none;
+	padding: 0;
+}
+
+table#centerTable[role=presentation] td, table#centerTable[role=presentation] th {
+	border-bottom: 2px solid #ddd;
+	padding: 12px 8px;
+}
+
+#examTable table, table#examTable, #historyTableContainer table, .historyTable, .receiptsTable, .examSelection, .srchRsltsTable, .checkPassTable, .srchSelection {
+	width: 100%;
+}
+
+/* Move copy off screen for WebNG PTE enhancements */
+.pagename-selecttestcenterproximity label.testCentersNearAddressLabel, .pagename-selecttestcenterproximitysearch label.testCentersNearAddressLabel, #selectedCentersArea h2, .pagename-selecttestcenteranddateproximitysearch #jsf_databaseSearch p:first-of-type, #submit h2, .pagename-selecttestcenteranddateproximity .requiredText, .pagename-selecttestcenteranddateproximity .requiredText + h2, .pagename-selecttestcenteranddateproximitysearch .requiredText, .pagename-selecttestcenteranddateproximitysearch .requiredText + h2, .pagename-selecttestcenteranddatedb p + h2 {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	border: 0;
+}
+
+#submit #setUpTestEnvBtnArea h2 {
+	position: relative;
+	width: auto;
+	height: auto;
+	clip: auto;
+	margin: 0 0 15px 0;
+}
+
+/* Temporary hide XLIFF elements for sighted and non-sighted users */
+#proximityHint {
+	display: none;
+}
+
+.hide-from-screenreader {
+	visibility: hidden;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+}
+
+/* A11Y */
+.skip, .hidden, .screenreaderHint {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	border: 0;
+}
+.skip:active, .skip:focus {
+	position: absolute;
+	width: 100%;
+	height: auto;
+	margin: 0;
+	overflow: visible;
+	clip: auto;
+	top: 0 !important;
+	left: 0;
+	z-index: 150;
+}
+.access, .outOfTheWay {
+	left: -999em;
+	position: absolute;
+	top: -999em;
+}
+
+/* JQuery UI Override */
+.ul-menu-item {
+	padding: 3px;
+}
+.ui-menu-item-wrapper {
+	display: inline-block;
+	width: 100%;
+}
+.ui-menu.ui-widget-content a.ui-menu-item-wrapper {
+	text-decoration: none;
+}
+.ui-menu.ui-widget-content a.ui-menu-item-wrapper:focus, .ui-menu.ui-widget-content a.ui-menu-item-wrapper:active {
+	padding: 3px 1em 3px .4em;
+}
+
+
+
+#signedIn #container {
+	position: relative;
+}
+
+
+/* Header */
+header, #signin, #signedIn {
+	height: 75px;
+}
+header #topnav {
+    margin: 0;
+    padding: 5px 0 0 0;
+    height: auto;
+}
+.clientlogo, #clientlogo {
+	text-align: center;
+	height: 65px;
+}
+.ccid_information {
+	height: 65px;
+}
+.ccid_information_div {
+	float: right;
+	padding-right: 5%;
+}
+.returnToOrderLabel {
+	font-size: 0.70em;
+}
+.clientlogo img, #clientlogo img, .ccid_information {
+	max-height: 60px;
+	max-width: 100%;
+}
+.cart {
+	position: absolute;
+	font-size: 1.25em;
+	right: 15px;
+}
+.cart_align {
+	text-align: end;
+}
+.cart-rtl {
+	postion: absolute;
+	font-size: 1.25em;
+	margin-left: 15px;
+}
+
+.cart-with-caret {
+	right: 50px !important;
+	top: 25px;
+}
+
+.expandLinkMinus, .expandLinkPlus{
+	vertical-align:middle;
+}
+
+/* Custom header toggle for CCID info */
+.ccid-button-container {
+	position: absolute;
+	right: 10px;
+	cursor: pointer;
+	top: 10px;
+}
+
+.container-fluid {
+	background: #fff;
+}
+
+#page-header {
+	margin-top: -20px;
+	text-align: center;
+	position: relative;
+	border-bottom: 1px solid #e4e4e4;
+}
+#pseudoHeader {
+	margin-top: -20px;
+	position: relative;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.tag-along {
+	text-align: center;
+	background: #f9f9f9;
+	box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+}
+
+#page-header, .tag-along {
+
+	padding: 16px;
+	margin-bottom: 15px;
+}
+
+
+
+#page-header h1 {
+	margin: 0;
+	padding: 0;
+}
+#page-header .helper-text {
+	text-align: center;
+	font-size: 14px;
+}
+
+#pseudoHeader .prev, #page-header .prev {
+	position: absolute;
+	top: 5px;
+	left: 15px;
+}
+
+#pseudoHeader .prev-rtl, #page-header .prev-rtl {
+   right: 15px;
+   position: absolute;
+   top: 5px;
+}
+
+.tag-along span {
+	display: block;
+}
+.tag-along .examSelectionDetails {
+	margin-right: 20px;
+}
+
+#TagAlongArea, .TagAlongArea {
+	margin-top: 15px;
+}
+
+.tag-along #TagAlongArea, .tag-along .TagAlongArea {
+	margin-top: 0;
+}
+
+#locale {
+	text-align: left;
+}
+#locale span {
+	position: absolute;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+}
+#locale:before {
+	font-weight: 900;
+	content: "\f0ac";
+	font-size: 1.25em;
+	padding-right: 5px;
+	position: inherit;
+}
+
+header #locale {
+	float: right;
+	padding-right: 15px;
+	padding-top: 18px;
+}
+
+#welcome {
+	position: absolute;
+	right: 15px;
+	font-size: 14px;
+}
+#welcome ul {
+	margin: 0;
+	padding: 0;
+}
+#welcome li {
+	margin: 0;
+	padding: 0 30px;
+	list-style-type: none;
+	display: inline-block;
+}
+#welcome li .displayMobileOnlyView img {
+	display: none;
+}
+#welcome .current {
+	font-weight: bold;
+}
+#welcome .href_link:before, #welcome #homeLinkOnMastHead .displayMobileOnlyView:before, #welcome #clientHomeLinkOnMastHead .displayMobileOnlyView:before, #welcome .first .current .displayMobileOnlyView:before, #welcome #myOrderLinkOnMastHead .displayMobileOnlyView:before, #welcome #myOrderLinkOnMastHead_li .displayMobileOnlyView:before, #welcome .href_link:before, #welcome #returnLinkOnMastHead .displayMobileOnlyView:before, #welcome #liquidLogoutLinkOnMastHead .displayMobileOnlyView:before, #welcome #myProfileLinkOnMastHead_li .displayMobileOnlyView:before {
+	font-size: 2em;
+}
+#welcome #homeLinkOnMastHead .displayMobileOnlyView:before, #welcome .first .current .displayMobileOnlyView:before, #welcome #clientHomeLinkOnMastHead .displayMobileOnlyView:before {
+	content: "\f015";
+}
+#welcome #myProfileLinkOnMastHead_li .displayMobileOnlyView:before {
+	content: "\f007";
+}
+#welcome #myOrderLinkOnMastHead .displayMobileOnlyView:before, #welcome #myOrderLinkOnMastHead_li .displayMobileOnlyView:before {
+	content: "\f07a";
+}
+#welcome #returnLinkOnMastHead .displayMobileOnlyView:before {
+	content: "\f112";
+}
+#welcome #liquidLogoutLinkOnMastHead .displayMobileOnlyView:before {
+	content: "\f08b";
+}
+
+.signout {
+	padding-right: 0;
+}
+
+#steps li {
+	list-style-type: none;
+}
+
+/* Notifications: Errors, warnings, etc. */
+.warning {
+	border: 1px solid #DB0020;
+	border-left: 8px solid #DB0020;
+	margin: 15px 0 30px 0;
+	padding: 10px;
+	display: block;
+	background: #fff;
+}
+#sendConfirmModalErrors .warning {
+	margin-bottom: 0;
+}
+h1.warning, .warning h1 {
+	font-size: 24px;
+	margin-bottom: 0;
+}
+h2.error-heading, h3.error-heading {
+	font-size: 16px;
+	font-weight: bold;
+}
+table.warning td {
+	padding: 0;
+}
+table.warning .advisory, #map_unavailable .advisory {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+.pagename-selecttestcenteranddatedb #map_unavailable .advisory {
+	background: none;
+}
+#map_unavailable img {
+	margin-top: 15px;
+}
+
+#errorOptInUnCheckedAndHitOKTop {
+	font-size: 18px;
+	margin-bottom: 15px;
+}
+.warning_label, .fieldLevelError, .warning_textonly label, .errorContainer label, .alert, #confirmPoliciesError label, .errorContainer .warning_textonly, .errorContainer fieldset.dateComponent legend, .none-available {
+	color: #DB0020;
+}
+.warning_textonly .labelDescription {
+	color: #333;
+}
+.warning_textonly label, .errorContainer label.warning_label, .errorContainer .warning_textonly, .errorContainer #EmailField_Message + #editEmailPanelGroupEMAILlabel, .errorContainer label, .errorContainer legend .warning_textonly, div:first-child .errorContainer fieldset.dateComponent legend,
+div#personalConfigNinoFieldErrorContainer.errorContainer:first-child fieldset legend, div#personalConfigConfirmNinoFieldErrorContainer.errorContainer:first-child fieldset legend, div#personalConfigGenderFieldErrorContainer.errorContainer:first-child fieldset legend {
+	padding-top: 0;
+}
+#voucherModeContainer .errorContainer label, #paymentMethod .errorContainer .warning_textonly {
+	padding-top: 20px;
+}
+.fieldLevelError {
+	display: block;
+	padding-top: 20px;
+	font-weight: bold;
+}
+.fieldLevelError:before, #voucherModeContainer .errorContainer label:before {
+	content: "\f00d";
+	padding-right: 6px;
+	position: relative;
+}
+
+/*.errorContainer .warning_textonly label:before, .errorContainer .radioTable label:before, .errorContainer label#editEmailPanelGroupEMAILlabel:before {
+	display: none;
+}*/
+
+.error, textarea.error, input[type="text"].error, input[type="password"].error, input[type="datetime"].error, input[type="datetime-local"].error, input[type="date"].error, input[type="month"].error, input[type="time"].error, input[type="week"].error, input[type="number"].error, input[type="email"].error, input[type="url"].error, input[type="search"].error, input[type="tel"].error, input[type="color"].error, select.error {
+	border: 3px solid #DB0020;
+}
+table.error {
+	border: none;
+}
+div.error:empty {
+	display: none;
+}
+
+/* Success notification - green */
+.updated, .successMessage, .confirmation {
+	border: 1px solid #569E50;
+	border-left: 8px solid #569E50;
+	margin: 15px 0 30px 0;
+	padding: 10px;
+	display: block;
+	background: #fff;
+}
+.available {
+	color: #008638;
+	font-weight: bold;
+}
+.success {
+	color: #008638;
+}
+.available:after {
+	content: "\f00c";
+	margin-left: 6px;
+	margin-top: 3px;
+}
+.emphasizeText, .boldText {
+	font-weight: bold;
+}
+.emphasizeText:before, .iconIndicator:before {
+	content: "\f071";
+	margin-right: 6px;
+	color: #DB0020;
+	position: relative;
+}
+
+/* Head's up (warning) notifications - orange */
+.examAlertTitle:before, .advisory_label:before, .proctorVerificationProcess .advisory:before, .warningAdvisory:before, .alertTriangle #notifyText:before, #map_unavailable .advisory:before, #OrderSummary .paymentText:before {
+	content: "\f071";
+	margin-right: 6px;
+	color: #EA7600;
+	position: relative;
+
+}
+
+
+
+.advisory, #addressInfo .importantText, .veryImportantText, #warnInfoMessage, .proctorNotification, p.veryImportantTextForTime, .verifyText, .startExamText, .resumeExamText {
+	border: 1px solid #EA7600;
+	border-left: 8px solid #EA7600;
+	margin: 15px 0 30px 0;
+	padding: 10px;
+	display: block;
+	background: #fff;
+}
+
+.proctorVerificationProcess .advisory {
+	border: none;
+}
+
+
+.veryImportantText:empty {
+	display: none;
+}
+
+#preApproved .veryImportantText {
+	font-size: 16px;
+	padding: 10px;
+}
+
+.advisory_field, textarea.advisory_field, input[type="text"].advisory_field, input[type="password"].advisory_field, input[type="datetime"].advisory_field, input[type="datetime-local"].advisory_field, input[type="date"].advisory_field, input[type="month"].advisory_field, input[type="time"].advisory_field, input[type="week"].advisory_field, input[type="number"].advisory_field, input[type="email"].advisory_field, input[type="url"].advisory_field, input[type="search"].advisory_field, input[type="tel"].advisory_field, input[type="color"].advisory_field, select.advisory_field {
+	border: 3px solid #EA7600;
+}
+
+
+/* Basic informational message */
+.info-message, .ibtMessage {
+	border: 1px solid #007FA3;
+    border-left: 8px solid #007FA3;
+	margin: 15px 0 30px 0;
+	padding: 15px;
+	display: block;
+	background: #fff;
+	text-align: left;
+}
+.info-message h2, .info-message h3 {
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.exam-message {
+	padding-bottom: 40px;
+}
+.exam-message:last-of-type {
+	padding: 0;
+}
+
+#learnMoreClientMessageLink {
+	margin-left: 0.5em
+}
+
+.info-icon {
+    color: #007FA3;
+    font-size: 1.5rem;
+    margin-right: .5rem;
+}
+/* Main body */
+
+.candidateInfo {
+	text-align: right;
+	margin-bottom: 10px;
+}
+.btn-container {
+	padding-top: 16px;
+	padding-bottom: 16px;
+	clear: both;
+}
+
+.btn-container.btn-fixed {
+	padding: 16px;
+	text-align: center;
+	border-top: 1px solid #e4e4e4;
+	margin-top: 16px;
+}
+
+.btn-container input {
+	margin: 0 auto;
+}
+
+.top-btn-container {
+	text-align: center;
+	margin-bottom: 24px;
+}
+
+
+.buttonArea {
+	border-top: 1px solid #ddd;
+	padding: 15px 3px 3px 3px;
+	clear: both;
+	overflow: hidden;
+}
+.buttonArea #navigationButtons .buttonArea {
+	border-top: none;
+	padding-top: 3px;
+}
+
+.modalButtonSecondary {
+	float: left;
+}
+.modalButtonPrimary {
+	float: right;
+}
+
+.normal {
+	margin-left: 10px;
+}
+
+.beginTagalong {
+	margin: 7.5px 0;
+}
+.requiredText {
+	margin-top: 15px;
+}
+.requiredText i, p em {
+	font-style: normal;
+}
+p.requiredText:last-of-type {
+	margin-bottom: 10px;
+}
+
+.fyi .tagalongExamLabel {
+	font-weight: bold;
+	padding-right: 10px;
+}
+
+#changeExamButton .displayMobileOnlyView, #changeExamButton img {
+	display: none;
+}
+#changeExamButton .displayDesktopOnlyView {
+	display: block;
+}
+
+#topBar .actions a:before, #welcome .closeWindowLink:before {
+	content: "\f00d";
+	font-size: 1.25em;
+	padding-right: 5px;
+	position: inherit;
+}
+.printicon a:before, #printLink:before, #printButton:before, #topBar .actions a.printicon:before, #EOT .printicon:before, #welcome .printLink:before {
+	content: "\f02f";
+	font-size: 1.25em;
+	padding-right: 5px;
+	position: inherit;
+}
+#EOT .printicon a:before {
+	display: none;
+}
+
+.step-tracker-container {
+	margin-top: -15px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	overflow: hidden;
+}
+#mobileStepTracker {
+	text-align: center;
+	margin: 0;
+}
+
+/* Footer */
+
+div[role="contentinfo"] {
+	position: absolute;
+	clear: both;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+}
+#footerLinks a {
+	margin-left: 5%;
+	margin-right: 5%;
+}
+#copyright, #footerLinks {
+	padding-top: 10px;
+	padding-bottom: 0;
+	min-height: 40px;
+	width: 100%;
+}
+#copyright .closeWindow {
+	text-align: center;
+}
+
+.clearDiv {
+	clear: both;
+}
+
+/* Cookies message */
+#cookiemsgbox {
+	width: 100%;
+	left: 0;
+	text-align: center;
+	background: #000;
+	z-index: 1000;
+	color: #fff;
+	padding: 10px;
+}
+.cookieMessageTitle {
+	font-weight: bold;
+}
+#cookiemsgbox p, .cookieMessageTitle {
+	display: inline-block;
+	margin-top: 5px;
+	margin-right: 15px;
+}
+#cookiemsgbox .cookieMessageLearnMoreButton, #cookiemsgbox .cookieMessageCloseMessageButton {
+	margin-right: 15px;
+}
+
+
+/* Sign in */
+#pageInstruction {
+	display: block;
+	clear: both;
+	margin-bottom: 15px;
+}
+#SignInForm .buttonArea {
+	margin-left: -15px;
+	margin-right: -15px;
+	padding-right: 15px;
+	text-align: right;
+}
+
+#thirdPartypolicyLink {
+	margin-bottom: 15px;
+}
+#signinChatLinkArea {
+	margin-bottom: 30px;
+}
+#signinChatLinkArea img {
+	max-width: 100%;
+}
+#showPasswordLabel {
+	padding-top: 0px;
+}
+#capsLock {
+	display: none;
+}
+
+
+.login-help img {
+	max-width: 100%;
+}
+
+/* Home page (Dashboard) */
+.hasMarketingBanners {
+	margin-bottom: 30px;
+}
+.hasMarketingBanners img {
+	max-width: 100%;
+}
+#personalInfo ul, #RHC ul {
+	padding-left: 20px;
+}
+#RHC ul {
+	padding-left: 0;
+
+}
+#helpModuleContentDSA {
+	margin-left: -15px;
+	margin-right: -15px;
+}
+#personalInfo li, #RHC li, #myAccountSection li {
+	list-style-type: none;
+}
+#personalInfo li:before, #myAccountSectionMenu li:before {
+	content: "\f054";
+	margin-right: 8px;
+	line-height: 0.75em;
+	vertical-align: -15%;
+	margin-left: -16px;
+	position: absolute;
+	margin-top: 6px;
+	font-size: .75em;
+}
+
+
+/* Carets for accordion/hidden content angle-up and angle-down */
+
+.tag-along a.accordion, #helpfulHints a.accordion, a#APELink, #policyLink {
+	display: block;
+	text-decoration: none;
+}
+
+
+
+#showHelpModuleContentDSA:after, #showAvailableExams:after, #showMyAccountSection:after, .calculatedTitlePlus:after, #showPreApproved:after, .accordion.open:after, .accordion.closed:after, a.expandLinkPlus:after, a.expandLinkMinus:after, .discountLinkPlus:after, .policyLinkPlus:after, .calculatedTitlePlus:after, .discountLinkMinus:after, .policyLinkMinus:after, .calculatedTitleMinus:after {
+	float: right;
+	position: relative;
+	font-size: 1em;
+
+}
+.accordion.open:after, .accordion.closed:after {
+	margin-top: -.75em;
+}
+
+.pagename-verifyprofilepage a.expandLinkPlus:after, .pagename-verifyprofilepage a.expandLinkMinus:after, .pagename-myprofilepage a.expandLinkPlus:after, .pagename-myprofilepage a.expandLinkMinus:after {
+	padding-left: 15px;
+}
+
+
+#showHelpModuleContentDSA:after, #showAvailableExams:after, #showMyAccountSection:after, .calculatedTitlePlus:after, #showPreApproved:after, .accordion.closed:after, a.expandLinkPlus:after, .discountLinkPlus:after, .policyLinkPlus:after, .calculatedTitlePlus:after {
+	content: "\f078";
+}
+
+.accordion.open:after, a.expandLinkMinus:after, .discountLinkMinus:after, .policyLinkMinus:after, .calculatedTitleMinus:after {
+	content: "\f077";
+}
+
+.displayMobileOnlyView .displayMobileOnlyView {
+	display: inline;
+}
+#switchClient {
+	text-align: right;
+	margin-top: 30px;
+}
+.personalInfo_link {
+	text-align: left;
+}
+#preApproved p, #upcomingNoAppt p {
+	margin: 0;
+}
+
+#preApproved li a {
+	vertical-align: top;
+}
+
+#sendConfirmModal p {
+	margin: 10px 0 30px 0;
+}
+
+#readyToSchedule a.btn-primary {
+	margin-top: 10px;
+}
+
+#readyToSchedule li {
+	margin-top: 30px;
+}
+
+#readyToSchedule li:first-of-type {
+	margin-top: 0;
+}
+
+
+.anywhereProctoredPac .normal {
+	margin-left: 0;
+}
+
+
+#APEArea {
+	display: block;
+	margin-top: 15px;
+}
+#deliveryModeContainer #APEArea {
+	margin-top: 0;
+}
+
+/* Select Exam */
+
+#filterExamListForm {
+	text-align: center;
+}
+
+
+.srchRsltsTable .multiSelectButton input[type="image"] {
+	display: inline-block;
+}
+
+.table_header_btn_link {
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#examTable.ui-accordion .ui-accordion-content {
+	padding: 15px;
+}
+
+.selectButton:before {
+	content: "\f35a";
+	font-size: 2em;
+	margin-left: -20px;
+	font-weight: 400;
+}
+#examTable td.multiSelectButton {
+	width: 15px;
+}
+
+.right ~ p {
+	margin-top: 30px;
+}
+
+.refeshExamList {
+	text-align: center;
+}
+
+
+/*Select exam multi-level groups */
+.btn-group a {
+	padding: 15px 30px;
+	display: block;
+	width: 100%;
+	text-align: left;
+	text-decoration: none;
+}
+.btn-group a:hover {
+	background: #eee;
+}
+.btn-group a:focus, .btn-group a:active, .btn-group a:focus:hover, .btn-group a:active:hover {
+	padding: 15px 30px;
+	border: none !important;
+	outline: none !important;
+}
+.btn-group .chevron.right {
+	float: right;
+}
+.exam-series {
+	border-bottom: 1px solid #ddd;
+	padding: 15px;
+}
+.exam-series a {
+	display: block;
+}
+.panel .btn-group:last-of-type {
+	border-bottom: none;
+}
+.btn-group.panel-title .exam-group-name {
+	font-weight: bold;
+}
+.exam-code {
+	display: block;
+	font-size: 18px;
+}
+.exam-name {
+	display: block;
+}
+
+#SelectExamForm .panel {
+	padding-bottom: 0;
+}
+
+#SelectExamForm .panel h2 {
+	margin-bottom: 0;
+	padding: 0;
+	font-size: 16px;
+	border-bottom: 1px solid #ddd;
+}
+
+#SelectExamForm .panel {
+	padding: 0;
+}
+
+
+/* Delivery mode - Select exam options */
+
+#select-mode {
+	margin-top: 20px;
+}
+
+#select-mode h2, .mode-info-panel h2 {
+	font-weight: normal;
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+
+
+#select-mode .mode-option {
+	display: block;
+	text-decoration: none;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	text-align: center;
+	margin-bottom: 20px;
+	color: #333;
+	min-height: 80px;
+}
+
+
+#select-mode .mode-option.testCenterSelectedEffect {
+    outline: 2px solid #007FA3;
+}
+
+.mode-option-on-calendar-page {
+	min-height: 150px !important;
+	font-size: 14px !important;
+	padding: 15px !important;
+}
+#select-mode .mode-option:hover, .btn-toggle:hover {
+	background: #eee;
+}
+
+#select-mode img, #select-mode .img-placeholder {
+	height: 30px;
+	margin-right: 10px;
+	margin-bottom: -3px;
+}
+
+#select-mode .img-placeholder {
+	display: inline-block;
+}
+
+#privateAccessCodeValidateBtn {
+	margin-left: 10px;
+	vertical-align: top;
+}
+
+#pacSuccessMessageContainer {
+	display: none;
+}
+
+#PAC {
+	padding-left: 15px;
+}
+
+#pacDeliveryModeMessage {
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+	margin: 40px 0 20px 0;
+}
+
+.mode-option {
+	cursor: pointer;
+}
+
+.mode-info-panel {
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+.mode-info-panel .reverse-card, .mode-info-panel .invisible-card {
+	text-align: center;
+
+}
+
+.single-card .invisible-card img {float: left;
+	margin-right: 15px;}
+
+.mode-info-panel a.reverse-card {
+	text-decoration: none;
+	color: #333;
+	display: block;
+}
+
+.mode-info-panel a.reverse-card:hover, .mode-info-panel .invisible-card:hover {
+	background: #e1e1e1;
+}
+
+.mode-info-panel a.reverse-card:focus, .mode-info-panel a.reverse-card:active {
+	background: inherit;
+	padding: 16px;
+	border-color: inherit;
+	border-radius: 4px;
+	border-style: solid;
+}
+
+.mode-info-panel h3 {
+	font-size: 16px;
+	font-weight: bold;
+	background: transparent;
+	text-align: left;
+}
+
+
+.mode-info-panel p  {
+	text-align: left;
+	font-size: 14px;
+}
+
+.mode-info-panel img {
+	height: 100px;
+	margin: 10px auto;
+}
+
+#pacDeliveryModeImg img{
+   height: 45px;
+   margin: 10px auto;
+}
+
+.mode-info-panel .mode-questions h3 {
+	margin-bottom: 6px;
+}
+
+.mode-info-panel .mode-questions p {
+	font-size: 16px;
+}
+
+
+
+/* Exam Details */
+
+#selectableModulesModalGroup .examTitle {
+	text-align: center;
+	margin: 15px 0;
+}
+
+.authTitle {
+	margin-bottom: 10px;
+}
+
+/* Test Center & Appointment Search */
+
+#addressAndDateSearch #addressSearch {
+	margin-top: 15px;
+}
+
+.pagename-selecttestcenteranddateproximity .tag-along, .pagename-selecttestcenteranddateproximitysearch  .tag-along {
+	margin-bottom: 2px;
+}
+
+
+
+
+/* Test Center */
+
+#testCenterList {
+	z-index: 1000;
+	overflow: visible;
+}
+
+.proximity {
+	text-align: center;
+}
+
+.proximity #jsf_databaseSearch p:first-child {
+	text-align: left;
+	margin-top: 15px;
+}
+
+#showMoreTestCenters {
+	text-align: center;
+	margin-bottom: 0 !important;
+}
+
+
+.searchButtonContainer div {
+	display: inline-block;
+}
+
+#helpfulHints ul {
+	margin-bottom: 0;
+}
+
+#HelpfulHintsArea {
+	margin-top: 10px;
+	padding-left: 10px;
+}
+
+#publicToMilitarySearchLinkProximity:before {
+	content: "\f005";
+	position: inherit;
+	margin-right: 5px;
+}
+
+#centerTable {
+	margin-bottom: 15px;
+	width: 100%;
+}
+
+#centerTable th {
+	vertical-align: bottom;
+}
+#centerTable td {
+	vertical-align: top;
+}
+
+.pagename-selecttestcenterdb #centerTable tr td:first-child, .pagename-selecttestcenteranddatedb #centerTable tr td:first-child {
+	width: 25px;
+	text-align: center;
+}
+
+.pagename-selecttestcenteranddatedb #centerTable tr td:first-child.searchByDateTestCenterCol {
+	width: auto;
+	text-align: left;
+}
+
+
+#testCenterListTitle {
+	display: none; /* Hide h2 when map and check boxes do not appear */
+}
+#testCenterListTitle .normal {
+	margin: 0;
+	font-weight: normal;
+}
+.topButtonArea, .profile_topButtonArea {
+	text-align: right;
+}
+.topButtonArea.align-header .forward {
+	padding-bottom: 30px;
+}
+
+#labelkm, #labelmi, #labelHour24, #labelHour12 {
+	margin-bottom: -3px;
+	margin-left: 0;
+}
+
+#militaryToPublicSearchLinkSearchInput {
+	display: block;
+	margin-top: 15px;
+}
+
+#tc_Info, #tcDirectionsContainer #topBar {
+	overflow: hidden;
+}
+
+
+#tcDirectionsContainer h1, #tcDirectionsContainer h3 {
+	margin: 0;
+}
+
+#tc_Info {
+	padding-top: 15px;
+	clear: both;
+}
+#tc_Info .tc_address {
+	padding: 15px 0;
+}
+#tcDirectionsContainer .actions a:first-of-type {
+	margin-right: 15px;
+}
+
+.tc_address {
+	word-break: break-all;
+}
+.tc_address a {
+	word-break: normal;
+}
+
+.deliminator {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+/* military Testcenter Search Page */
+
+.militaryDiv {
+	background-color: white;
+}
+
+.highlightMilitarySearch {
+	border: inherit;
+	border-bottom-color: #007FA3;
+	border-bottom-width: 2px;
+}
+
+.inactiveMilitarySearch {
+	border: none;
+	outline:none;
+}
+
+.militarySearchTab {
+	border-bottom: 1px solid #ccc;
+}
+
+.militarySearch {
+	width: 200px;
+	padding: 20px;
+	cursor: pointer;
+	border-radius: inherit !important;
+}
+
+.militaryText {
+	width:70%;
+}
+
+
+/* Combined Testcenter Search Page */
+
+.appointmentStyleSelection, .combinedsearchappointmentStyleSelection {
+	width:39%;
+	padding:15px;
+}
+
+.filterPreference{
+	width: 67px;
+	margin: 2px;
+}
+
+.locationContent {
+	display: none;
+}
+
+.showLocationContent {
+	width: 100%;
+	display: block;
+	padding: 10px;
+	background: #fff;
+	display: inline-block;
+	border: 1px solid #333;
+	border-top: none;
+}
+
+#combine-search-container {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#combine-search-container #testCentersNearAddress{
+	width:100%;
+}
+
+/* Combined TestCenter Search - TestResult Card */
+.combined_search_result_card {
+	background-color: white;
+	padding: 25px 10px;
+	border: 2px solid #eee;
+}
+
+.combined_search_result_card:focus, .combined_search_result_card:active, .custom-focus:focus, .custom-focus:active {
+	outline: 3px solid #FFB81C;
+	box-shadow: none;
+	border: 1px solid #333;
+	outline-offset: 0;
+}
+
+.ui-dialog .ui-dialog-content:focus,  .ui-dialog-content:active, .ui-dialog-content:focus-visible {
+	outline: 3px solid #FFB81C;
+	box-shadow: none;
+	border: 1px solid #333;
+	outline-offset: 0;
+}
+
+.combined_search_map_marker {
+	color:#007FA3;
+	font-size:x-large;
+	padding: 15px;
+}
+
+.combined_search_map_marker_icon {
+	padding-top: 5px;
+}
+
+.combined_search_result_card_div {
+	padding-top: 5px !important;
+	min-width: 105px;
+}
+
+#combine-search-container {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#combine-search-container #testCentersNearAddress{
+	width:100%;
+}
+
+.filterPreferenceButton {
+	margin-left: 10px;
+}
+
+/* Choose Appointment (calendar) */
+
+
+#selectedCentersArea table + p, #timeZoneArea table + p {
+	text-align: center;
+}
+
+#calendarDiv h2, #confirmPersonalInfoPanel h2 {
+	margin-top: 0;
+}
+
+#calendarDiv .normal {
+	display: block;
+	margin-left: 0;
+}
+
+#calendarDiv p {
+	font-size: 14px;
+	margin-top: 12px;
+}
+
+.calendarDivParagraph {
+	margin-top: 12px;
+}
+
+#displayMorningAppts, #displayAfternoonAppts {
+	width: 100%;
+}
+
+
+
+.modeTestCenterName {
+	font-weight: bold !important;
+	text-align: start !important;
+}
+
+.modeTestCenterAddress{
+	font-weight: normal !important;
+	cursor: pointer;
+}
+
+a#calendarTypeToggleLink {
+	position: relative;
+}
+
+.averageTestLength {
+	margin-top: 30px;
+}
+.averageTestLength:before {
+	content: "\f017";
+	margin-right: 6px;
+	position: relative;
+}
+
+#calendarDiv .ui-datepicker {
+	margin: 0 auto;
+	width: 100% !important;
+}
+
+#calendarDiv .ui-widget.ui-widget-content {
+	border: none;
+}
+
+.ui-datepicker td > span, .ui-datepicker td a {
+	padding: 5px !important;
+	text-align: center !important;
+}
+.ui-datepicker td span.gregorianDate {
+	text-align: left !important;
+}
+.ui-datepicker td span.hijriDate {
+	text-align: right !important;
+}
+.ui-datepicker td a:focus, .ui-datepicker td a:active {
+	padding: 5px !important;
+}
+
+.ui-datepicker-inline.ui-datepicker.ui-widget.ui-widget-content.ui-helper-clearfix.ui-corner-all.ui-datepicker-multi.ui-datepicker-multi-2 {
+	width: auto !important;
+}
+
+
+/* Appointment preferences */
+#SelectAppointmentSearchPreferenceForm legend {
+	padding-top: 0;
+}
+
+/* My Order (Cart) */
+
+#submit, #reviewAreaWrapper {
+	clear: both;
+}
+
+#addressInfo #personalInfoGroup {
+	margin-top: 24px;
+}
+
+.detailsExamName, .appointmentDetails {
+	padding-bottom: 15px;
+}
+.appointmentDetails + .description + .appointmentDetails {
+	margin-top: 30px;
+}
+.detailsExamAccommodations {
+	padding-top: 15px;
+}
+.productArea {
+	margin-top: 15px;
+	border-top: 1px solid #ddd;
+	padding-top: 15px;
+	clear: both;
+	overflow: hidden;
+}
+.productArea:first-of-type {
+	margin-top: 0;
+	border-top: 0;
+}
+
+.orderDetails, #summaryHolder table, #None #summary table, #cancelSummaryArea table[role=presentation], #summary #None table[role=presentation] {
+	width: 100%;
+}
+#subtotal table td:empty, .paymentTotal td:empty, #summaryHolder table td:empty, #cancelSummaryArea table[role=presentation] td:empty, #summary #None table[role=presentation] td:empty {
+	display: none;
+}
+.paymentTotal th, #summaryHolder table td.summary_label {
+	font-weight: normal;
+	padding-left: 0;
+}
+
+.shippingLine {
+	padding: 0;
+}
+#checkoutButton, #submitButtonOrderConfirm {
+	float: right;
+}
+#checkoutButton + span, #submitButtonOrderConfirm + span {
+	clear: both;
+	text-align: right;
+}
+.add-another, .editOrder {
+	margin-bottom: 24px;
+	text-align: center;
+}
+#subtotal span {
+	padding-top: 30px;
+	text-align: right;
+}
+table[role=presentation] td.charge {
+	border-top: 1px solid #ccc;
+	font-weight: bold;
+}
+
+#subtotalZero, #subtotal {
+	color: #fff;
+}
+.orDivider {
+	display: none;
+}
+
+#verifyRecipientsForm #subtotalZero span, #subtotal span {
+	color: #333;
+}
+
+.feeDisclaimer {
+	display: block;
+	font-size: 16px;
+	margin-top: 10px;
+}
+
+#verifyRecipientsForm #subtotal table th {
+	border: none;
+	font-weight: normal;
+}
+.price, .paymentTotal .total, .paymentTotal td:nth-child(2) {
+	text-align: right;
+}
+
+.accent {
+	background: #fff;
+}
+.subtotal-area.accent table {
+	float: right;
+}
+#checkoutButtonAreaDiv p {
+	clear: both;
+	text-align: center;
+	font-size: 14px;
+	margin-top: 14px;
+}
+
+.estimate {
+	float: left;
+	margin-right: 30px;
+	text-align: left;
+	margin-top: 10px;
+}
+
+.externalSiteProceedDiv {
+	margin-right: 0px;
+	margin-top: 0px;
+	display: flex;
+	align-items: center;
+}
+
+.externalVendorMessage {
+	text-align: right;
+}
+
+/* Policies */
+#policies h3 {
+	margin-top: 30px;
+}
+#policies h3:first-of-type {
+	margin-top: 0;
+}
+#policies span {
+	word-break: break-word;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+#confirmPolicies label {
+	font-weight: normal;
+}
+#termsandconditions {
+	display: block;
+	margin-bottom: 30px;
+}
+#confirmPolicies, #confirmPoliciesError {
+	margin-top: -15px;
+	margin-bottom: 30px;
+}
+
+.backtobackDisclaimer #confirmPolicies, .backtobackDisclaimer #confirmPoliciesError {
+	margin: 0;
+}
+.backtobackDisclaimer label {
+	padding-top: 0;
+}
+
+.closeWindowBtnContainer {
+	text-align: center;
+}
+
+.discountMessage {
+    width: 295px;
+    text-align: left;
+}
+
+
+#policies-area h2 {
+	border-bottom: 1px solid #ddd;
+	padding: 0 15px 15px 15px;
+	margin-left: -15px;
+	margin-right: -15px;
+}
+
+.outerHeadingHeader {
+	border-bottom: 1px solid #ddd;
+	padding: 0 15px 0 30px;
+	margin-left: -15px;
+	margin-right: -15px;
+	margin-top: 5px;
+}
+#testCenterCalendarArea h2, #timeZoneArea h2 {
+	border-bottom: 1px solid #ddd;
+	padding: 0 15px 15px 30px;
+	margin-left: -30px;
+	margin-right: -15px;
+	margin-top: 5px;
+}
+#policies-area .panel h3 {
+	margin-top: 2em;
+}
+
+
+/* Payment */
+
+
+#showCheckSection {
+	display: block;
+}
+#billingSectionOne:empty, #billingAddressPanel:empty, #showCheckSection:empty {
+	display: none;
+}
+
+.right.sampleCheck {
+	text-align: left;
+	margin: 15px 0;
+}
+
+#cardTypes img {
+	margin-right: 12px;
+}
+
+.total.boldStyle {
+	white-space: nowrap;
+}
+
+#chargeNote {
+	font-size: 14px;
+	text-align: right;
+}
+.pagename-orderpayment .accent, .pagename-externalorderpayment .accent {
+	text-align: center;
+}
+.pagename-orderpayment #summary, .pagename-externalorderpayment #summary {
+	display: inline-block;
+	width: auto;
+}
+.pagename-orderpayment #summary h2, .pagename-orderpayment #summary #discountSection h3, .pagename-orderpayment #summary #discountSection label, .pagename-externalorderpayment #summary h2, .pagename-externalorderpayment #summary #discountSection h3, .pagename-externalorderpayment #summary #discountSection label {
+	text-align: left;
+}
+
+#discountSection h3 {
+	font-size: 16px;
+}
+#discountSection .normal {
+	display: block;
+	margin-left: 0;
+}
+
+#discountLink {
+	display: block;
+}
+
+
+
+
+
+
+/* Summary */
+#orderSummaryArea .pseudoHeader {
+	font-weight: normal;
+	margin: 1em 0;
+}
+
+/* Order summary containing email with sticky */
+#orderSummaryConfirmationEmailText {
+	word-wrap: break-word
+}
+
+/* Exam History */
+#historyTableContainer h2 span:first-of-type {
+	display: none;
+	display: none;
+}
+
+.historyTable a {
+	display: inline;
+}
+
+
+/* View score reports */
+#viewScoreReportsForm p {
+	margin-bottom: 30px;
+}
+
+#viewScoreReportsForm #retunInternalHomeButton, #viewScoreReportsForm #retunExternalHomeButton{
+	float: right;
+}
+
+.pagename-viewscorereports .importantText {
+	margin-bottom: 15px;
+}
+
+.pagename-viewscorereports .examTitleColumn a {
+	display: block;
+}
+
+/* Receipts */
+.receiptsTable {
+	margin-bottom: 45px;
+}
+
+caption {
+	text-align: left;
+	padding: 12px 8px;
+}
+.receiptsTable .selectButton {
+	display: none;
+}
+.receiptsTable .displayDesktopOnlyView {
+	display: block;
+}
+
+/* Send score reports */
+.viewScoreReportColumn a + a {
+	margin-left: 15px;
+}
+
+/* Confirm Exam Selection B2B */
+th.tagalongExamLabel {
+	vertical-align: top;
+	border-bottom: 1px solid #ddd;
+}
+
+.buttonArea + .currentExam, #examTable + .currentExam {
+	clear: both;
+	margin-top: 60px;
+	border-top: 1px solid #ddd;
+	padding-top: 15px;
+}
+.examSelection {
+	margin-bottom: 30px;
+}
+.examSelection + #accommodationLink {
+	margin-bottom: 30px;
+	margin-top: -30px;
+}
+
+#backtobackArea h2 {
+	margin-top: 0;
+}
+p.examSelection:empty {
+	display: none;
+}
+
+#additionalContentDiv {
+	position: relative;
+}
+
+
+
+
+
+
+
+/* Proctor check in */
+.proctorNotification img {
+	display: none;
+}
+
+
+.proctorVerificationProcess a.right {
+	float: right;
+	margin-top: -5px;
+}
+
+#photoNotAcceptableText {
+	float: none;
+}
+
+.verifyPhotoContainer {
+	text-align: center;
+}
+
+.verifyPhotoContainer img {
+	margin: 15px auto;
+	display: block;
+}
+#photoNotAcceptableText {
+	margin-bottom: 10px;
+}
+
+.proctorVerificationProcess hr {
+	display: none;
+}
+
+
+/* Photo capture */
+#photoCapture {
+	overflow: hidden;
+	padding-top: 0;
+	margin-top: 10px;
+}
+#photoCapture .inputArea {
+	float: left;
+	margin-right: 30px;
+}
+#webcam, #photoCaptureOutput {
+	border: 5px solid #ddd;
+	background: #e0e0e0;
+	width: 320px;
+	height: 261px;
+	overflow: hidden;
+	margin-bottom: 15px;
+}
+
+/* Search Results */
+.searchResults caption {
+	font-weight: bold;
+
+}
+
+.searchResults caption .searchResultsNumber {
+	font-weight: normal;
+}
+.searchResults .pseudoHeader {
+	padding-top: 0;
+}
+
+
+
+/* End to end Step Tracker */
+
+#endToEndSections {
+	background: #e0e0e0;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	color: #000;
+}
+#endToEndSections li {
+	list-style-type: none;
+	float: left;
+	display: flex;
+	align-items: center;
+	width: 14%;
+	padding: 5px;
+}
+#endToEndSections li span {
+	width: 85%;
+}
+#endToEndSections li:first-of-type {
+	border: none;
+	margin: 0;
+	padding-left: 10px;
+}
+#rescheduleStepTrackerCompletedDoubleLine_1 {
+	padding-left: 10px;
+}
+
+
+/* JQuery over-ride */
+#progressDialog span {
+	/*min-height: 100px !important;*/
+	display: block;
+	margin-bottom: 40px;
+}
+
+/* ASR */
+.searchResults + #showMoreTestCenters {
+	margin-top: 15px;
+}
+
+
+/* Side bar with hamburger menu */
+
+.logo-container {
+	margin-top: -1px;
+}
+.hamburger-container {
+	font-size: 1.5em;
+	position: absolute;
+	padding: 8px 12px;
+	left: 10px;
+	cursor: pointer;
+	top: 10px;
+}
+
+.sticky-container {
+	display: flex;
+}
+
+#maincontent-wrapper {
+	position: relative;
+}
+
+.maincontent-sidebar {
+	width: 100%;
+	position: relative;
+}
+
+.sidebar {
+	top: 0;
+	bottom: 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+	position: sticky; /*supported in > 90% of browsers, IE9+*/
+	position: -webkit-sticky; /*for Safari compatibility*/
+	background: white;
+	z-index: 100;
+	/*height: 100vh;*/
+	min-height: calc(100vh - 115px);
+}
+.sidebar.expanded {
+	width: 320px;
+}
+
+.sidebar.expanded #candidateInfoSection .icon {
+	font-size: 30px;
+}
+
+.sidebar.collapsed {
+	width: 75px;
+}
+.sidebar.left {
+	left: 0;
+	float: left;
+	box-shadow: 0 2px 4px rgba(0,0,0,.5);
+}
+.sidebar.right {
+	right: 0;
+	float: right;
+	box-shadow: 0 2px 4px rgba(0,0,0,.5);
+}
+.sidebar.expanded .toggle-container {
+	padding: 10px;
+}
+.sidebar.expanded.left .toggle-container {
+	text-align: right;
+}
+.sidebar.expanded.right .toggle-container {
+	text-align: left;
+}
+.sidebar.collapsed .toggle-container {
+	padding: 10px 10px 10px 1em;
+	text-align: center;
+}
+.sidebar .arrow {
+	width: auto;
+	font-size: 20px;
+	text-decoration: none;
+	padding: 0;
+}
+
+
+.sidebar.right {
+	top: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.sidebar .arrow {
+	display: none;
+}
+
+
+
+.sidebar .icon {
+	font-size: 20px;
+	margin: 5px 15px 5px 5px;
+}
+
+.expandedSidebarOverlay {
+	background-color: #000000;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.5;
+	z-index: 100;
+}
+
+.menu-dropdown {
+	padding: 0;
+}
+
+#left {
+	margin-right: 0%;
+}
+
+#center {
+	margin: auto;
+}
+
+.menu-dropdown > li {
+	margin: 1em 0;
+}
+
+.sidebar ul {
+	list-style-type: none;
+	margin-left: 0;
+	padding: 0;
+	margin-top: 0;
+    margin-bottom: 0;
+}
+.sidebar .locale ul {
+	margin-top: 0;
+}
+
+.sidebar li {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	box-sizing: border-box;
+	position: relative;
+	height: inherit;
+	height: 56px !important;
+}
+
+.sidebar li.outOfTheWay {
+	height: auto !important;
+}
+
+.sidebar .current, .sidebar .locale {
+	padding-left: 1.3em;
+}
+
+.ccid .current, .ccid .not-active {
+	display: inline-flex;
+    padding-left: 1.3em;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+.collapsed .ccid {
+	height: 56px !important;
+}
+
+.ccid a, .ccid .not-active {
+	padding-bottom: 10px;
+}
+
+.sidebar .current .icon, .cart {
+	color: gray;
+}
+
+.icon-label {
+	display: inline-block;
+	margin-left: 10px;
+}
+
+.sidebar .locale a, .sidebar .locale .current {
+	padding-left: 2.75em;
+}
+.locale li {
+	height: 35px !important;
+}
+.locale h2 , #languageSelectionForm h2 {
+	padding-bottom: 0;
+}
+
+.sidebar a {
+	text-decoration: none;
+	display: inline-flex;
+	padding-left: 1.3em;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+}
+.sidebar a:hover {
+	background: #eee;
+}
+.sidebar a:focus, .sidebar a:active {
+	background: #ccc;
+}
+
+.sidebar a .sidebar-text {
+	color: #333;
+}
+
+.sidebar .current .sidebar-text {
+	width: 100%;
+}
+
+.sidebar.collapsed .sidebar-text {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	border: 0;
+}
+
+
+.sidebar .signout, .sidebar .first {
+	border-top: 1px solid #ddd;
+}
+
+.sidebar #idLabel, .sidebar #idColon, .sidebar #idNumber {
+	font-size: 14px;
+}
+.sidebar .locale .current span:after {
+	content: "\f111";
+	font-size: 8px;
+	color: #569E50;
+	padding-left: 10px;
+	margin-top: 8px;
+}
+
+
+
+#languageSelectionForm h2 {
+	font-size: 16px;
+}
+
+/* Sticky button */
+.container-fluid.btn-container.btn-fixed {
+		margin-top: 0; /* overwrite above margin for sticky button */
+		position: sticky;
+		position: -webkit-sticky; /*for Safari compatibility*/
+		bottom: 0;
+	}
+
+.map_area_Container_fixed {
+    z-index: 0;
+}
+
+.unorderedListWithOutStyle {
+	list-style: none;
+	display: inline-flex;
+	margin-bottom: 5px;
+	margin-top: auto;
+}
+
+.footerListItem {
+	padding: 0 20px;
+}
+
+.floatNone {
+	float: none !important;
+}
+#select-mode button {
+	display: block;
+	text-decoration: none;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	text-align: center;
+	margin-bottom: 20px;
+	color: #333;
+	min-height: 80px;
+	width: 90%
+}
+#select-mode button:focus, #select-mode button:active {
+	background: none;
+	color: inherit;
+	border-radius: 5px;
+}
+#select-mode button:hover {
+	background: #eee;
+}
+
+#map_provider, #map_provider_panel {
+	height: 300px;
+	width: 300px;
+}
+
+@media screen and (max-width:480px) {
+	#page-header h1 {
+		margin-left: 20px;
+	}
+
+
+	#welcome #myProfileLinkOnMastHead_li {
+		padding: 0; /* Remove when dev makes code change to profile link */
+	}
+
+	body {
+		-webkit-text-size-adjust: none;
+	}
+
+
+	#welcome li {
+		padding: 0 25px;
+	}
+
+	.candidateInfo {
+		margin-top: 20px;
+	}
+
+
+
+	#registrationSection h2, #myAccountSection h2, #onlineExams h2 {
+		margin-bottom: 0;
+	}
+	#availableExams {
+		padding-bottom: 15px;
+	}
+	#loginLinkOnMastHead {
+		margin-top: 12px;
+	}
+	#triggerFilter.btn_link_dialog, #schoolSearchQuestionId_searchButton, .searchTable .btn_edit_ajx {
+		margin-top: 5px;
+	}
+	#verifyRecipientsForm #checkoutButton #submitButtonOrderConfirm{
+		margin-top: 15px;
+	}
+
+	#schoolSearchQuestionId_searchButton, .searchTable .btn_edit_ajx {
+		margin-left: -15px;
+	}
+	#privateAccessCode.btn_edit {
+		margin-top: 5px;
+		margin-left: 0;
+	}
+	#checkButton.btn_edit {
+		display: block;
+		margin-top: 5px;
+		width: 100%;
+		text-align: center;
+	}
+	#examHistoryTable .examCodeColumn, #examHistoryTable .examStatusColumn, #historyTableContainer table .examCodeColumn,  #historyTableContainer table .examStatusColumn, #tcDirectionsContainer .printicon, #tcDirectionsContainer .printicon:before, .historyTable th.regIDColumn, .historyTable td.regIDColumn {
+		display: none;
+	}
+	.detailsExamModulesChange .displayDesktopOnlyView {
+		display: block;
+	}
+	#examTable .displayMobileOnlyView a {
+		display: block; /* Fix of select button positioning in mobile */
+	}
+
+	.detailsExamModulesChange .displayMobileOnlyView, #examTable.scoreTable th.examCodeColumn, #examTable.scoreTable td.examCodeColumn, #examTable.scoreTable th.examStatusColumn, #examTable.scoreTable td.examStatusColumn {
+		display: none;
+	}
+
+	#centerTable.testCenterAndApptTable td {
+		display: block;
+		border: none !important;
+	}
+	#centerTable.testCenterAndApptTable td.searchByDateTestCenterCol {
+		border-top: 1px solid #ddd !important;
+	}
+	#primaryAddressInfoGroup_Container .sectionEdit, #category2InfoGroup_Container .sectionEdit, #category3InfoGroup_Container .sectionEdit, #category4InfoGroup_Container .sectionEdit, #category5InfoGroup_Container .sectionEdit, #MyProfileForm #correspondenceInfoGroup_Container .sectionEdit, div[id^="nativeAddressInfoGroup_"] .sectionEdit {
+		float: right;
+	}
+	#primaryAddressInfoGroup_Container .normal, #category2InfoGroup_Container .normal, #category3InfoGroup_Container .normal, #category4InfoGroup_Container .normal, #category5InfoGroup_Container .normal, #MyProfileForm #correspondenceInfoGroup_Container .normal, div[id^="nativeAddressInfoGroup_"] .normal {
+		display: block;
+		margin-left: 0;
+	}
+
+
+	#examTable, #editEmailPanelGroupEMAILReadOnly, #schoolSearchQuestionId_searchResultsTableJs .srchRsltsTable th, #schoolSearchQuestionId_searchResultsTableJs .srchRsltsTable td, td.ft_label_common label, #component1_clientQuestionsTable .ft_label_question {
+		word-break: break-word;
+	}
+	#examTable .moduleDurationCell, #examTable .modulePriceCell {
+		word-break: normal;
+	}
+	#examTable.scoreTable .expandable-row-container .scoreTable td {
+		display: block;
+		width: 100%;
+		float: left;
+		clear: left;
+		border-bottom: 0;
+	}
+	#examTable.scoreTable .expandable-row-container .scoreTable td:last-child {
+		border-bottom: 1px solid #ddd;
+	}
+	#examTable.scoreTable .expandable-row-container .scoreTable th {
+		display: none;
+	}
+	#privacyOptInAcceptanceCheckBoxLabel, #errorOptInUnCheckedAndHitOK, #errorOptInUnCheckedAndHitFixed {
+		width: 90%;
+	}
+	#errorOptInUnCheckedAndHitFixed {
+		margin-top: -12px;
+	}
+	#endToEndStepTracker, #endToEndStepTracker_Reschedule, #endToEndStepTracker_ScoreReports, #endToEndStepTracker_Cancel {
+		margin: 15px 0 30px 0;
+	}
+	.clearTextButton {
+		/*float: right;
+		margin-top: -40px;*/
+		/*display: none !important;*/ /* hiding clear button from smallest mobile for now - this does not work in 1901 either */
+	}
+	.clearTextButtonOverride {
+		float: right;
+		margin-top: -42px;
+		margin-right: 8px;
+		position: relative;
+	}
+	.infoOnlyBlock.noHeader .sectionEdit {
+		float: right;
+	}
+	#addAnotherExamBottom, #addAnotherExamBottom ~ #checkoutButton #submitButtonOrderConfirm {
+		margin-top: 10px;
+	}
+	.paymentTotal {
+		width: 100%;
+	}
+	#moduleForm .topButtonArea {
+		display: none;
+	}
+	#selectedModuleResults {
+		margin: 30px 0;
+	}
+	#moduleSelection {
+		width: 100%;
+	}
+	.horizontalBannerArea img {
+		max-width: 100%;
+	}
+
+	.btn-container {
+		text-align: center;
+	}
+	.btn-container .btn-secondary, .btn-container .btn, #cancelButton, #cancelButtonResched, .top-btn-container .btn {
+		width: 100%;
+	}
+	.estimate {
+		float: none;
+		text-align: center;
+		clear: both;
+		margin-top: 10px;
+	}
+
+	.externalSiteProceedDiv {
+		margin-right: 0px;
+	}
+
+	.appointmentStyleSelection {
+		width: 100%;
+		padding: 10px;
+	}
+
+	.combined_date_search_input input {
+		vertical-align: top;
+		padding: 0px 12px;
+		height: 42px;
+		width:331px;
+	}
+
+	.combined_search_datepicker .ui-datepicker-inline {
+		/*width:331px;*/
+	}
+
+	.appointments_available_warning {
+	  position: relative;
+	  width:350px;
+	  height: 69px;
+	  color: #D9001B;
+	  font-size: 16px;
+	}
+
+	.combined_search_appointments_available_warning {
+		width:220px !important;
+		color: #D9001B;
+		font-size: 16px;
+	}
+
+	.appointments_available_warning .warning_text, combined_search_appointments_available_warning  .warning_text {
+		position: absolute;
+		left: 17px;
+		top:0px;
+	}
+
+	.militarySearch {
+		width: 50%;
+		padding: 20px;
+		cursor: pointer;
+		border-radius: inherit !important;
+	}
+
+	#addExam {
+		white-space: pre-wrap;
+	}
+
+	.ccid_information, .returnToOrderLabel {
+		height: 0px;
+		visibility: hidden;
+	}
+
+	/* Sticky button */
+	.container-fluid.btn-container.btn-fixed {
+		position: relative;
+	}
+	.btn-toggle {
+		width: 100%;
+		margin: 8px 0 !important;
+	}
+}
+@media screen and (min-width:481px) {
+
+	#signinArea, #SignInForm, #DashBoardForm > div, #registrationSection, #upcomingNoAppt, #upcomingAppt, #dashboard3, .tcInfo_cell, #onlineExams, #authenticateResultsContainer, #signinChatLinkArea, #regLicSection, #readyToSchedule {
+		float: left;	 /* Needed to emulate columns */
+	}
+	.tcInfo_cell {
+		width: 42%;
+	}
+	.directions {
+		width: 58%;
+	}
+	#signinArea2, #infoBox, .directions, .scorereport_photo {
+		float: right;
+	}
+	#signinArea, #signinChatLinkArea {
+		width: 41.66666667%;	 /*col-sm-5 */
+		left: 58.33333333%; /*col-sm-push-7 */
+	}
+	#signinChatLinkArea {
+		clear: left;
+	}
+	#SignInForm {
+		width: 50%; /*col-sm-7 */
+		right: 41.66666667%; /* col-sm-pull-5 */
+	}
+	#locale {
+		text-align: right;
+	}
+	#locale span {
+		position: inherit;
+		clip: inherit;
+	}
+	.displayDesktopOnlyView {
+		display: block;
+	}
+	thead.displayDesktopOnlyView {
+		display: table-header-group;
+	}
+	th.displayDesktopOnlyView, td.displayDesktopOnlyView {
+		display: table-cell;
+	}
+	span.displayDesktopOnlyView {
+		display: inline;
+	}
+	.displayMobileOnlyView, #preApproved td.displayMobileOnlyView, #preApproved th.displayMobileOnlyView, .selectButton:before {
+		display: none;
+	}
+	.otherAppointmentCenterTable .displayMobileOnlyView {
+		display: block;
+	}
+	#welcome li {
+		padding: 0 15px;
+	}
+	#DashBoardForm > div, #signinArea2, #infoBox, .scorereport_photo {
+		width: 25%;
+		float: right;
+	}
+
+	#DashBoardForm #registrationSection, #DashBoardForm #upcomingAppt {
+		left: auto;
+		min-height: inherit;
+	}
+
+	#registrationSection, #upcomingNoAppt, #upcomingAppt, #dashboard3, #onlineExams, #authenticateResultsContainer, #regLicSection, #readyToSchedule, #DashBoardForm #registrationSection, .updatedSuccessMessage {
+		width: 66.66666667%;
+	}
+
+	.sectionEdit {
+		float: right;
+	}
+	#ConfirmPersonalInfoForm .sectionEdit {
+		margin-top: 15px;
+	}
+	#examTable table th.displayMobileOnlyView, #examTable table td.displayMobileOnlyView,
+	table#examTable td.displayMobileOnlyView, table#examTable td.displayMobileOnlyView,
+	#examTable table th.displayMobileOnlyView, #examTable table td.displayMobileOnlyView,
+	table#examTable th.displayMobileOnlyView, table#examTable td.displayMobileOnlyView,
+	.historyTable th.displayMobileOnlyView, .historyTable td.displayMobileOnlyView, #historyTableContainer table td.displayMobileOnlyView, #historyTableContainer table th.displayMobileOnlyView {
+		display: none;
+	}
+	#triggerFilter.btn_link_dialog {
+		margin-left: 5px;
+	}
+	#calendarArea th, #testCenterCalendarArea th, #calendarArea td, #testCenterCalendarArea td, #chooseAppointments th, #chooseAppointments td {
+		display: table-cell;
+		width: auto;
+		float: none;
+		clear: none;
+	}
+
+	/* Step tracker */
+
+
+
+	#section {
+		margin: 15px 0 30px 0;
+	}
+	#steps {
+		padding: 0;
+		margin: 0;
+	}
+	#steps li {
+		float: left;
+		list-style-type: none;
+		display: inline-block;
+		padding: 0;
+	}
+	#progress2step, #progress3step, #progress4step, #progress5step {
+		background: url("images/progress_bg.png") repeat scroll 0 0 transparent;
+		height: 20px;
+		margin: 0 0 15px 0;
+		position: relative;
+		width: 100%;
+	}
+	#bar {
+		background: url("images/progress_bar.png") repeat scroll 0 0 transparent;
+		height: 20px;
+		margin: 0 0 5px 0;
+		position: relative;
+		width: 100%;
+	}
+	#steps.text_2step li.step, #steps.text_2step li.stepactive, #progress2step .s1, #progress2step .s2 {
+		width: 50%;
+	}
+	#steps.text_3step li.step, #steps.text_3step li.stepactive, #progress3step .s1, #progress3step .s2, #progress3step .s3 {
+		width: 33.33%;
+	}
+	#steps.text_4step li.step, #steps.text_4step li.stepactive, #progress4step .s1, #progress4step .s2, #progress4step .s3, #progress4step .s4 {
+		width: 25%;
+	}
+	#steps.text_5step li.step, #steps.text_5step li.stepactive, #progress5step .s1, #progress5step .s2, #progress5step .s3, #progress5step .s4, #progress5step .s5 {
+		width: 20%;
+	}
+
+	#progress2step .s1 {
+        width: 50%;
+    }
+    #progress2step .s2 {
+        width: 100%;
+    }
+
+
+
+	#progress3step .s1 {
+		width: 33%;
+	}
+	#progress3step .s2 {
+		width: 66%;
+	}
+	#progress3step .s3 {
+		width: 100%;
+	}
+
+
+	#progress4step .s1 {
+		width: 25%;
+	}
+	#progress4step .s2 {
+		width: 50%;
+	}
+	#progress4step .s3 {
+		width: 75%;
+	}
+	#progress4step .s4 {
+		width: 100%;
+	}
+
+
+	#progress5step .s1 {
+		width: 20%;
+	}
+	#progress5step .s2 {
+		width: 40%;
+	}
+	#progress5step .s3 {
+		width: 60%;
+	}
+	#progress5step .s4 {
+		width: 80%;
+	}
+	#progress5step .s5 {
+		width: 100%;
+	}
+
+	#endToEndStepTracker, #endToEndStepTracker_Reschedule, #endToEndStepTracker_ScoreReports, #endToEndStepTracker_Cancel {
+		margin: 15px 0 30px 0;
+	}
+
+	.examSelection .detailsExamName {
+		float: left;
+	}
+	.examSelection .detailsExamNameRemove {
+		float: right;
+	}
+	.examSelection .detailsExamModules {
+		clear: both;
+	}
+
+	#additionalContentDiv {
+		width: 80%;
+		margin: 30px auto;
+	}
+	#additionalContentDiv img {
+		position: absolute;
+		bottom: -40px;
+		right: -30px;
+	}
+	.marker {
+		display: block;
+	}
+
+
+	#printLink.printicon, .printicon a, #EOT .printicon {
+		float: right;
+	}
+	.clearTextButton {
+		margin-right: 10px;
+		margin-left: -39px;
+	}
+	#selectExamModules {
+		position: relative;
+		overflow: auto;
+	}
+
+	#selectExamModules #examTable {
+		width: 65%;
+		float: left;
+	}
+
+	#moduleSelection {
+		width: 100%;
+		margin-bottom: 1.5em;
+	}
+
+	#moduleList {
+		width: 100%;
+		margin-bottom: 1.5em;
+	}
+
+	#moduleList.withSticky {
+		float: left;
+		width: 50%;
+	}
+
+	#floatContainer {
+		float: left;
+		margin-left: 30px;
+		width: 40%;
+	}
+
+	#selectedModuleResults.fixed_top {
+		position: fixed;
+		top: 0;
+	}
+	#selectedModuleResults.fixed_bottom {
+		position: fixed;
+		bottom: 200px;
+	}
+	.paymentTotal th, #subtotal table td:first-of-type {
+		white-space: nowrap;
+	}
+
+	#tcDirectionsContainer .actions {
+		float: right;
+	}
+
+	#tcDirectionsContainer h1 {
+		float: left;
+		margin-top: -18px;
+	}
+	.outerHeadingHeader2 {
+		padding-left: 25px;
+	}
+
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px){
+	#filterInput, #accessCode, #inputUsername, .searchTable input[type="text"], #preferredDateShown {
+		width: auto;
+	}
+	#SignInForm input[type="text"], #SignInForm input[type="password"] {
+		width: 100%;
+	}
+	#myReceiptsTables .borderContainer {
+		border: 1px solid #ddd;
+		padding: 15px;
+	}
+	#otherAppointmentCenterTable .displayDesktopOnlyView {
+		display: none;
+	}
+	.appointmentCenterTable .pseudoHeader.displayMobileOnlyView {
+		display: block;
+	}
+}
+@media screen and (max-width: 576px){  /* For iphone 5 landscape */
+	#triggerFilter.btn_link_dialog, #schoolSearchQuestionId_searchButton, .searchTable .btn_edit_ajx, #applyDiscount.btn, #clearFilter {
+		margin-top: 5px;
+	}
+	.ccid_information, .returnToOrderLabel {
+		height: 0px;
+		visibility: hidden;
+	}
+
+}
+
+@media screen and (max-width: 767px) {
+
+	.tooltip_overridden {
+		width: 70%;
+        left: auto;
+        display: block;
+	}
+
+	.orderDetails th, .futureappt th, .receiptsTable th, .srchRsltsTable th, .srchSelection th {
+		display: none;
+	}
+	.orderDetails td, .futureappt td, .receiptsTable td, .srchRsltsTable td, .srchSelection td {
+		border-bottom: none;
+	}
+	.srchRsltsTable td.singleSelectButton, .srchSelection td.removeButtonColumn {
+		border-bottom: 1px solid #ddd;
+	}
+	.orderDetails, .futureappt {
+		border: 1px solid #ddd;
+	}
+
+	.orderDetails tr:first-of-type .examDescriptionCol {
+		border-top: none;
+	}
+	#upcomingAppt .futureappt {
+		border: none;
+	}
+	.productThumb {
+		text-align: center;
+		margin-bottom: 15px;
+	}
+
+	.upsellButtonArea {
+		margin: 15px 0;
+		float: right;
+	}
+	.receiptsTable td:last-child {
+		border-bottom: 1px solid #ddd;
+		padding-bottom: 20px;
+	}
+	.backtobackDisclaimer label {
+		margin-left: 26px;
+		margin-top: -25px;
+		padding-top: 0;
+	}
+	#testCenterFormId .topButtonArea, #map_unavailable {
+		display: none;
+	}
+	#centerTable {
+		width: 100%;
+	}
+	#component3_EDU_SEARCH_2608_searchButton {
+		margin-top: 5px;
+		margin-left: -15px;
+	}
+	.viewScoreReportColumn a + a {
+		margin-left: 0;
+		margin-top: 15px;
+	}
+	.orderDetails .actionCol, .orderDetails .price, .futureappt .actionCol, .orderDetails .orderItemFeeRuleDescription{
+		display: none;
+	}
+	.receiptExamName, .receiptExamDate {
+		display: block;
+	}
+	.hidden-mobile {
+		display: none;
+	}
+	.btn-container {
+		padding-bottom: 16px;
+	}
+	.btn-container .btn-secondary, .btn-container .btn, #cancelButton, #cancelButtonResched, .top-btn-container .btn {
+		display: block !important;
+	}
+	.btn-container .btn-secondary {
+		margin-bottom: 8px;
+	}
+	.btn-container .btn, #OrderConfirmSubmitForm #cancelButton  {
+		margin-top: 8px;
+	}
+	.btn-container a.btn {
+		display: table !important;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#OrderConfirmSubmitForm #cancelButton, #OrderConfirmSubmitForm #cancelButtonResched {
+		margin-left: auto;
+	}
+	.pagename-selecttestcenterproximity .container-fluid.btn-container.btn-fixed, .pagename-selecttestcenterproximitysearch .container-fluid.btn-container.btn-fixed {
+		display: none;
+	}
+	#chargeNote {
+		text-align: center;
+	}
+	.ccid_information, .returnToOrderLabel {
+		height: 0px;
+		visibility: hidden;
+	}
+	.mode-info-panel .reverse-card img, .mode-info-panel .invisible-card img {
+		float: left;
+		margin-right: 15px;
+	}
+	#map_provider{
+		height: 1px;
+		width: 1px;
+	}
+
+	.externalSiteProceedDiv {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.externalVendorMessage{
+		order: 1;
+		text-align: center;
+	}
+
+	.externalVendorButton{
+		order: 2;
+
+	}
+	.bottomSpacingMobileOnlyView{
+		margin-bottom: 8px
+	}
+}
+
+@media screen and (min-width: 768px) {
+	#container, #copyright, #tcDirectionsContainer {
+		width: 750px;
+	}
+	input[type="text"], input[type="password"], select, input[type="search"], #passwordScorebar, textarea {
+		width: 50%;
+	}
+	.testCentersNearAddressLabel.hasDatepicker {
+		width: auto;
+	}
+	#discountField {
+		width: 100%;
+	}
+
+	#filterInputTimeZone {
+		margin-left: 10px;
+	}
+	.quantityCol input[type="text"] {
+		width: auto;
+	}
+	#multiSearch input[type="search"] {
+		width: 100%;
+		margin-bottom: 25px;
+	}
+	#sendConfirmModal input[type="text"] {
+		width: 100%;
+	}
+
+	/* normal table */
+	th, td {
+		display: table-cell;
+		width: auto;
+		float: none;
+		clear: none;
+	}
+
+	#examSelectionDetailTable .tagalongExamLabel {
+		width: 15%;
+	}
+	.fyi .changeCell {
+		padding-left: 10px;
+	}
+	#addressSearch, #addressSearch_testCenterCode {
+		margin-top: -10px;
+		margin-bottom: 0;
+	}
+	#singleSearch {
+		padding-bottom: 5px;
+	}
+
+	#testCenterListTitle {
+		display: block;
+	}
+
+
+	#centerTable th.displayDesktopOnlyView, #centerTable td.displayDesktopOnlyView {
+		display: table-cell;
+	}
+	#centerTable th.displayMobileOnlyView, #centerTable td.displayMobileOnlyView, .checkPassTable th.displayMobileOnlyView, .checkPassTable td.displayMobileOnlyView {
+		display: none;
+	}
+
+	.appointmentCenterTable .pseudoHeader.displayMobileOnlyView {
+		display: none;
+	}
+	.selectRow {
+		white-space: nowrap;
+	}
+	/*#testCenterList {
+		float: left;
+		width: 50%;
+	}*/
+	#map_area_Container, #map_unavailable {
+		padding-left: 30px;
+		margin-top: 0;
+		position: relative;
+	}
+	#map_unavailable {
+		float: right;
+	}
+	#map_provider, #map_provider_panel {
+		height: 300px;
+		width: 300px;
+	}
+	#j_id_2g #map_provider, #j_id_2g #map_provider_panel {
+		height: auto; /* Map ID is coming up on exam details page */
+		width: auto;
+	}
+	#floatdiv {
+		position: relative;
+		padding: 0;
+	}
+	#floatdiv.fixed_top, #floatdiv.fixed_bottom {
+		position: fixed;
+		top: 0;
+		display: block;
+		height: 400px;
+	}
+
+
+	#selectedCentersArea, #calendarArea {
+		margin: 15px;
+		box-sizing: border-box;
+		width: calc(50% - 30px);
+		max-width: calc(50% - 30px);
+	}
+	#timeZoneArea, #testCenterCalendarArea {
+		padding-left: 30px;
+	}
+	#chooseAppointments {
+		box-sizing: border-box;
+		width: calc(50% - 30px);
+		max-width: calc(50% - 30px);
+		margin-left: calc(50% + 15px);
+	}
+	.calendarChooseAppointments {
+		max-width: none !important;
+		margin-left:  0px !important;
+		padding: 0px !important;
+	}
+
+	#chooseAppointments.noSelectedCenters {
+		margin-left:  0px !important;
+	}
+
+	.examDescriptionCol, .apptDescriptionCol {
+		width: 40%;
+	}
+	.productThumb {
+		float: left;
+		width: 20%;
+		display: inline-block;
+	}
+	.productThumb img {
+		max-width: 100%;
+	}
+	.modalProductArea .leftColumn {
+		float: left;
+		width: 25%;
+		display: inline-block;
+	}
+	.modalProductArea .leftColumn img {
+		max-width: 100%;
+		margin-bottom: 15px;
+	}
+	.productModalPrice {
+		margin-bottom: 15px;
+	}
+	.productDetails, .modalProductArea .productLongDesc {
+		width: 65%;
+		display: inline-block;
+	}
+	.upsellButtonArea {
+		float: right;
+		text-align: right;
+		padding-right: 3px;
+	}
+	.receiptExamName, .certNumber {
+		float: left;
+		display: inline-block;
+	}
+	.receiptExamDate, .certExpirationDate {
+		float: right;
+		display: inline-block;
+	}
+	.price {
+		width: 15%;
+		text-align: right;
+	}
+	.estimate {
+		float: right;
+	}
+
+	.externalSiteProceedDiv {
+		margin-right: 0px;
+	}
+
+	input.externalVendorButton{
+		margin-left: 30px;
+	}
+
+	.srchSelection .removeButtonColumn {
+		text-align: right;
+	}
+	#multiSearch {
+		position: relative;
+	}
+
+	#multiSearch .proximity {
+		width: 60%;
+		float: left;
+	}
+	.deliminator {
+		float: left;
+		width: 5%;
+		padding-top: 15px;
+	}
+	#multiSearch .testCenterCode {
+		width: 35%;
+		float: right;
+	}
+	.hidden-desktop {
+		display: none;
+	}
+	/*.container {
+		margin-bottom: 80px;  so content doesn't overlap .btn-container
+	}*/
+
+	.btn-container {
+		text-align: inherit;
+		/*margin-top: -50px;  overwrite above margin for sticky button */
+	}
+
+	.ui-dialog .btn-container {
+		margin-top: 0;
+	}
+
+	.ui-dialog .container {
+		margin-bottom: 0;
+	}
+
+
+	.btn-container .btn {
+		float: right;
+	}
+
+	.btn-container .btn-secondary {
+		float: left;
+	}
+
+	.combined_date_search_input input {
+		vertical-align: top;
+		padding: 0px 12px;
+		height: 38px;
+		width:100%;
+	}
+
+	.combined_search_datepicker .ui-datepicker-inline {
+		width:100%;
+	}
+
+	.appointments_available_warning {
+	  position: relative;
+	  width:350px;
+	  height: 69px;
+	  color: #D9001B;
+	  font-size: 16px;
+	}
+
+	.appointments_available_warning .warning_text {
+		position: absolute;
+		left: 17px;
+		top:0px;
+	}
+
+    .test-env-vertical-line {
+		border-right: 1px solid #e4e4e4;
+    }
+	.cart_align {
+		text-align: center;
+	}
+	.mode-info-panel .reverse-card {
+		min-height: 310px;
+	}
+	.pageLevelErrorMessage {
+		padding: 0px;
+	}
+}
+
+@media screen and (min-width:481px) and (max-width: 767px) {
+	.futureappt .displayMobileOnlyView, .orderDetails .displayMobileOnlyView {
+		display: block;
+	}
+	.orderDetails .displayMobileOnlyView .btn_remove {
+		margin-bottom: 15px;
+	}
+	.ccid_information, .returnToOrderLabel {
+		height: 0px;
+		visibility: hidden;
+	}
+	.estimate {
+		float: left;
+		margin-right: 30px;
+		text-align: left;
+		margin-top: 10px;
+	}
+
+	.externalSiteProceedDiv {
+		margin-right: 0px;
+	}
+}
+@media screen and (max-width: 991px) {
+	.sidebar.expanded {
+		position: absolute;
+		top: 75px;
+		z-index: 150;
+	}
+
+	body.scroll-disabled {
+		overflow: hidden;
+	}
+
+	.ccid_information {
+		visibility: visible;
+		max-height: none;
+		text-align: center;
+		width: 100%;
+	}
+
+	#ccid_information_caret {
+		display: none;
+		float: none;
+		padding-right: 0;
+		margin-bottom: 10px;
+	}
+}
+	@media screen and (min-width:481px) and (max-width: 991px) {
+		.providedBy, .helpModule {
+			width: 45%;
+		}
+		.providedBy {
+			float: left;
+		}
+		.helpModule {
+			float: right;
+		}
+	}
+	@media screen and (min-width:992px) {
+		.clientlogo, #clientlogo {
+			text-align: left;
+		}
+		#maincontent.expanded {
+			/*margin-left: 320px; don't need this with display:flex in sticky-container*/
+		}
+		#maincontent.collapsed {
+			/*margin-left: 75px; don't need this with display:flex in sticky-container*/
+		}
+
+		#container, #copyright, #tcDirectionsContainer {
+			width: 992px;
+		}
+
+		.hamburger-container {
+			display: none !important;
+		}
+		.sidebar .arrow {
+			display: inline-block;
+		}
+
+
+
+		#inAccessibleCalendar {
+			font-size: 18px; /** Increase base-font for JQuery calendar **/
+		}
+		#map_area_Container, #map_unavailable {
+			padding-left: 30px;
+		}
+		#tcDirectionsContainer #map_area_Container {
+			padding-left: 0;
+			margin-top: 24px;
+		}
+		#map_provider {
+			height: 400px;
+			width: 400px;
+		}
+		.pagename-examseriesdetailpage #map_provider {
+			height: auto; /* Map ID is coming up on exam details page */
+			width: auto;
+		}
+
+		#RHC {
+			width: 25%;
+			float: right;
+		}
+
+		.topButtonArea.align-header {
+			float: right;
+			margin-top: -44px;
+		}
+		.searchByDateApptCol a {
+			white-space: nowrap;
+		}
+
+		.ccid-button-container {
+			display: none !important;
+		}
+
+		#ccid_information_caret {
+			display:block !important;
+			margin-top: 10px;
+			font-size: 14px;
+		}
+		.displayMorningApptsAMHeading {
+			text-align: center !important;
+			padding-left: 48% !important;
+		}
+		.displayAfternoonApptsPMHeading {
+			padding-right: 48% !important;
+		}
+	}
+
+	@media screen and (min-width:1200px) {
+		#container, #copyright, #tcDirectionsContainer {
+			width: 1170px;
+		}
+	}
+
+	@media print {
+		#logo_print {
+			display: none;
+		}
+
+		#logo, #welcome, #locale, .fyi {
+			display: none;
+		}
+
+		#signin, #signedIn, header {
+			background: none
+		}
+
+		#clientlogo {
+			padding-top: 0;
+		}
+
+		.detailsScheduleFee.displayMobileOnlyView {
+			display: none;
+		}
+	}
+
+
+	@media screen and (-ms-high-contrast: active) {
+		a, .personalInfo_link, #selectedCentersArea .btn_link, #testCenterCalendarArea .btn_link, #timeZoneArea .btn_link, .futureappt .btn_link, .orderDetails .btn_link, .orderDetails .btn_remove, #labelkm, #labelmi, .product_remove, .link {
+			outline: none;
+			border: none;
+		}
+
+	}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+	.tooltip_overridden {
+		width: 80%;
+        left: auto;
+        display: block;
+	}
+	#map_provider_panel {
+		height: 250px;
+		width: 100%;
+		margin-bottom: 10px;
+		margin-top: 10px;
+	}
+	#j_id_2g #map_provider_panel {
+		height: auto; /* Map ID is coming up on exam details page */
+		width: auto;
+	}
+    .combined_search_date_appt_menu {
+        padding: 6px 0px !important;
+		padding-right: 0px !important;
+	}
+	.ccid_information {
+		height: 0px;
+		visibility: hidden;
+	}
+	.mode-option-on-calendar-page {
+		font-size: 14px !important;
+		padding: 15px !important;
+	}
+	.outerHeadingHeader {
+		padding: 0px;
+	}
+	.hour12OnVueButton,.hour24OnVueButton, .noChangeTimeZoneButton, .cancelChangeTimeZoneButton, .preferredTimeZoneButton {
+		margin-bottom: 0.5rem;
+	}
+}
+
+/* For Browsers at 1280px width and 400% zoom*/
+@media screen and (max-width: 320px) {
+	.clientlogo, #clientlogo, .ccid_information, .returnToOrderLabel {
+		background-size: 70%;
+	}
+	#hamburger-button {
+		font-size: 1rem;
+	}
+	.hamburger-container {
+		left: 1%;
+		padding: 5px 0;
+	}
+	.container-fluid.btn-container.btn-fixed {
+		padding: 8px;
+	}
+	.btn-container .btn, #OrderConfirmSubmitForm #cancelButton {
+		margin-top: 4px;
+	}
+	.estimate {
+		margin-top: 0;
+		padding-top: 4px;
+	}
+
+	.externalSiteProceedDiv {
+		margin-right: 0px;
+	}
+
+	.ccid_information, .returnToOrderLabel {
+		height: 0px;
+		visibility: hidden;
+	}
+
+}

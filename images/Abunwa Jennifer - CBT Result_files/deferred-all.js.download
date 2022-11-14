@@ -1,0 +1,922 @@
+/**
+ * Concatenated js files: [C:/vts/vts-web/MontrealRoot/webresources/js/jquery/jquery.json-2.3.0.js, C:/vts/vts-web/MontrealRoot/webresources/js/jquery/jquery.bgiframe-2.1.2.js, C:/vts/vts-web/MontrealRoot/js/pwd_meter.js, C:/vts/vts-web/MontrealRoot/webresources/js/modalSize.js, C:/vts/vts-web/MontrealRoot/webresources/js/cordova.js, C:/vts/vts-web/MontrealRoot/webresources/js/ITSUI.js, C:/vts/vts-web/MontrealRoot/webresources/js/template/timeout.js, C:/vts/vts-web/MontrealRoot/webresources/js/ie9patch.js, C:/vts/vts-web/MontrealRoot/webresources/js/accessibility/modalAccessibility.js, C:/vts/vts-web/MontrealRoot/webresources/js/accessibility/formInputAccessibility.js]
+ */
+
+/**
+ * jQuery JSON Plugin
+ * version: 2.3 (2011-09-17)
+ *
+ * This document is licensed as free software under the terms of the
+ * MIT License: http://www.opensource.org/licenses/mit-license.php
+ *
+ * Brantley Harris wrote this plugin. It is based somewhat on the JSON.org
+ * website's http://www.json.org/json2.js, which proclaims:
+ * "NO WARRANTY EXPRESSED OR IMPLIED. USE AT YOUR OWN RISK.", a sentiment that
+ * I uphold.
+ *
+ * It is also influenced heavily by MochiKit's serializeJSON, which is
+ * copyrighted 2005 by Bob Ippolito.
+ */
+
+(function( $ ) {
+
+	var	escapeable = /["\\\x00-\x1f\x7f-\x9f]/g,
+		meta = {
+			'\b': '\\b',
+			'\t': '\\t',
+			'\n': '\\n',
+			'\f': '\\f',
+			'\r': '\\r',
+			'"' : '\\"',
+			'\\': '\\\\'
+		};
+
+	/**
+	 * jQuery.toJSON
+	 * Converts the given argument into a JSON respresentation.
+	 *
+	 * @param o {Mixed} The json-serializble *thing* to be converted
+	 *
+	 * If an object has a toJSON prototype, that will be used to get the representation.
+	 * Non-integer/string keys are skipped in the object, as are keys that point to a
+	 * function.
+	 *
+	 */
+	$.toJSON = typeof JSON === 'object' && JSON.stringify
+		? JSON.stringify
+		: function( o ) {
+
+		if ( o === null ) {
+			return 'null';
+		}
+
+		var type = typeof o;
+
+		if ( type === 'undefined' ) {
+			return undefined;
+		}
+		if ( type === 'number' || type === 'boolean' ) {
+			return '' + o;
+		}
+		if ( type === 'string') {
+			return $.quoteString( o );
+		}
+		if ( type === 'object' ) {
+			if ( typeof o.toJSON === 'function' ) {
+				return $.toJSON( o.toJSON() );
+			}
+			if ( o.constructor === Date ) {
+				var	month = o.getUTCMonth() + 1,
+					day = o.getUTCDate(),
+					year = o.getUTCFullYear(),
+					hours = o.getUTCHours(),
+					minutes = o.getUTCMinutes(),
+					seconds = o.getUTCSeconds(),
+					milli = o.getUTCMilliseconds();
+
+				if ( month < 10 ) {
+					month = '0' + month;
+				}
+				if ( day < 10 ) {
+					day = '0' + day;
+				}
+				if ( hours < 10 ) {
+					hours = '0' + hours;
+				}
+				if ( minutes < 10 ) {
+					minutes = '0' + minutes;
+				}
+				if ( seconds < 10 ) {
+					seconds = '0' + seconds;
+				}
+				if ( milli < 100 ) {
+					milli = '0' + milli;
+				}
+				if ( milli < 10 ) {
+					milli = '0' + milli;
+				}
+				return '"' + year + '-' + month + '-' + day + 'T' +
+					hours + ':' + minutes + ':' + seconds +
+					'.' + milli + 'Z"';
+			}
+			if ( o.constructor === Array ) {
+				var ret = [];
+				for ( var i = 0; i < o.length; i++ ) {
+					ret.push( $.toJSON( o[i] ) || 'null' );
+				}
+				return '[' + ret.join(',') + ']';
+			}
+			var	name,
+				val,
+				pairs = [];
+			for ( var k in o ) {
+				type = typeof k;
+				if ( type === 'number' ) {
+					name = '"' + k + '"';
+				} else if (type === 'string') {
+					name = $.quoteString(k);
+				} else {
+					// Keys must be numerical or string. Skip others
+					continue;
+				}
+				type = typeof o[k];
+
+				if ( type === 'function' || type === 'undefined' ) {
+					// Invalid values like these return undefined
+					// from toJSON, however those object members
+					// shouldn't be included in the JSON string at all.
+					continue;
+				}
+				val = $.toJSON( o[k] );
+				pairs.push( name + ':' + val );
+			}
+			return '{' + pairs.join( ',' ) + '}';
+		}
+	};
+
+	/**
+	 * jQuery.evalJSON
+	 * Evaluates a given piece of json source.
+	 *
+	 * @param src {String}
+	 */
+	$.evalJSON = typeof JSON === 'object' && JSON.parse
+		? JSON.parse
+		: function( src ) {
+		return eval('(' + src + ')');
+	};
+
+	/**
+	 * jQuery.secureEvalJSON
+	 * Evals JSON in a way that is *more* secure.
+	 *
+	 * @param src {String}
+	 */
+	$.secureEvalJSON = typeof JSON === 'object' && JSON.parse
+		? JSON.parse
+		: function( src ) {
+
+		var filtered =
+			src
+			.replace( /\\["\\\/bfnrtu]/g, '@' )
+			.replace( /"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']')
+			.replace( /(?:^|:|,)(?:\s*\[)+/g, '');
+
+		if ( /^[\],:{}\s]*$/.test( filtered ) ) {
+			return eval( '(' + src + ')' );
+		} else {
+			throw new SyntaxError( 'Error parsing JSON, source is not valid.' );
+		}
+	};
+
+	/**
+	 * jQuery.quoteString
+	 * Returns a string-repr of a string, escaping quotes intelligently.
+	 * Mostly a support function for toJSON.
+	 * Examples:
+	 * >>> jQuery.quoteString('apple')
+	 * "apple"
+	 *
+	 * >>> jQuery.quoteString('"Where are we going?", she asked.')
+	 * "\"Where are we going?\", she asked."
+	 */
+	$.quoteString = function( string ) {
+		if ( string.match( escapeable ) ) {
+			return '"' + string.replace( escapeable, function( a ) {
+				var c = meta[a];
+				if ( typeof c === 'string' ) {
+					return c;
+				}
+				c = a.charCodeAt();
+				return '\\u00' + Math.floor(c / 16).toString(16) + (c % 16).toString(16);
+			}) + '"';
+		}
+		return '"' + string + '"';
+	};
+
+})( jQuery );
+
+/*
+**    Original File: pwd_meter.js
+**    Created by: Jeff Todnem (http://www.todnem.com/)
+**    Created on: 2007-08-14
+**    Last modified: 2007-08-30
+**
+**    License Information:
+**    -------------------------------------------------------------------------
+**    Copyright (C) 2007 Jeff Todnem
+**
+**    This program is free software; you can redistribute it and/or modify it
+**    under the terms of the GNU General Public License as published by the
+**    Free Software Foundation; either version 2 of the License, or (at your
+**    option) any later version.
+**
+**    This program is distributed in the hope that it will be useful, but
+**    WITHOUT ANY WARRANTY; without even the implied warranty of
+**    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+**    General Public License for more details.
+**
+**    You should have received a copy of the GNU General Public License along
+**    with this program; if not, write to the Free Software Foundation, Inc.,
+**    59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+**
+**
+*/
+
+String.prototype.strReverse = function() {
+	var newstring = "";
+	for (var s=0; s < this.length; s++) {
+		newstring = this.charAt(s) + newstring;
+	}
+	return newstring;
+};
+
+
+/*
+**    function: chkPass
+**    purpose: Updates the password scorebar (background color and complexity text)
+**              based upon how a password scores for overall security strength.
+**    parameters:
+**      pwd: The password string to evaluate
+**      targetID: The id of the password scorebar to update
+**      saStrength: A string array of different password strengths (not necessarily english)
+**
+*/
+
+function chkPass(pwd, targetID, saStrength) {
+    var index = { TOOSHORT:0, WEAK:1, MODERATE:2, STRONG:3 };
+    var oScorebar = document.getElementById(targetID);
+	var nScore = 0;
+	var nLength = 0;
+	var nAlphaUC = 0;
+	var nAlphaLC = 0;
+	var nNumber = 0;
+	var nSymbol = 0;
+	var nMidChar = 0;
+	var nRequirements = 0;
+	var nAlphasOnly = 0;
+	var nNumbersOnly = 0;
+	var nRepChar = 0;
+	var nConsecAlphaUC = 0;
+	var nConsecAlphaLC = 0;
+	var nConsecNumber = 0;
+	var nConsecSymbol = 0;
+	var nConsecCharType = 0;
+	var nSeqAlpha = 0;
+	var nSeqNumber = 0;
+	var nSeqChar = 0;
+	var nMultLength = 4;
+	var nMultAlphaUC = 2;
+	var nMultAlphaLC = 2;
+	var nMultNumber = 4;
+	var nMultSymbol = 6;
+	var nMultMidChar = 2;
+	var nMultRequirements = 2;
+	var nMultConsecAlphaUC = 2;
+	var nMultConsecAlphaLC = 2;
+	var nMultConsecNumber = 2;
+	var nMultSeqAlpha = 3;
+	var nMultSeqNumber = 3;
+	var nTmpAlphaUC = "";
+	var nTmpAlphaLC = "";
+	var nTmpNumber = "";
+	var nTmpSymbol = "";
+	var sAlphas = "abcdefghijklmnopqrstuvwxyz";
+	var sNumerics = "01234567890";
+	var sComplexity = saStrength[index.TOOSHORT];
+    var sColor = "#eee";
+    var nMinPwdLen = 8;
+	if (pwd) {
+		nScore = parseInt(pwd.length * nMultLength);
+		nLength = pwd.length;
+		var arrPwd = pwd.replace (/\s+/g,"").split(/\s*/);
+		var arrPwdLen = arrPwd.length;
+
+		/* Loop through password to check for Symbol, Numeric, Lowercase and Uppercase pattern matches */
+		for (var a=0; a < arrPwdLen; a++) {
+			if (arrPwd[a].match(new RegExp(/[A-Z]/g))) {
+				if (nTmpAlphaUC !== "") { if ((nTmpAlphaUC + 1) == a) { nConsecAlphaUC++; nConsecCharType++; } }
+				nTmpAlphaUC = a;
+				nAlphaUC++;
+			}
+			else if (arrPwd[a].match(new RegExp(/[a-z]/g))) {
+				if (nTmpAlphaLC !== "") { if ((nTmpAlphaLC + 1) == a) { nConsecAlphaLC++; nConsecCharType++; } }
+				nTmpAlphaLC = a;
+				nAlphaLC++;
+			}
+			else if (arrPwd[a].match(new RegExp(/[0-9]/g))) {
+				if (a > 0 && a < (arrPwdLen - 1)) { nMidChar++; }
+				if (nTmpNumber !== "") { if ((nTmpNumber + 1) == a) { nConsecNumber++; nConsecCharType++; } }
+				nTmpNumber = a;
+				nNumber++;
+			}
+			else if (arrPwd[a].match(new RegExp(/[^a-zA-Z0-9_]/g))) {
+				if (a > 0 && a < (arrPwdLen - 1)) { nMidChar++; }
+				if (nTmpSymbol !== "") { if ((nTmpSymbol + 1) == a) { nConsecSymbol++; nConsecCharType++; } }
+				nTmpSymbol = a;
+				nSymbol++;
+			}
+			/* Internal loop through password to check for repeated characters */
+			for (var b=0; b < arrPwdLen; b++) {
+				if (arrPwd[a].toLowerCase() == arrPwd[b].toLowerCase() && a != b) { nRepChar++; }
+			}
+		}
+
+		/* Check for sequential alpha string patterns (forward and reverse) */
+		for (var s=0; s < 23; s++) {
+			var sFwd = sAlphas.substring(s,parseInt(s+3));
+			var sRev = sFwd.strReverse();
+			if (pwd.toLowerCase().indexOf(sFwd) != -1 || pwd.toLowerCase().indexOf(sRev) != -1) { nSeqAlpha++; nSeqChar++;}
+		}
+
+		/* Check for sequential numeric string patterns (forward and reverse) */
+		for (var s=0; s < 8; s++) {
+			var sFwd = sNumerics.substring(s,parseInt(s+3));
+			var sRev = sFwd.strReverse();
+			if (pwd.toLowerCase().indexOf(sFwd) != -1 || pwd.toLowerCase().indexOf(sRev) != -1) { nSeqNumber++; nSeqChar++;}
+		}
+
+	/* Modify overall score value based on usage vs requirements */
+
+		/* General point assignment */
+		if (nAlphaUC > 0 && nAlphaUC < nLength) {
+			nScore = parseInt(nScore + ((nLength - nAlphaUC) * nMultAlphaUC));
+		}
+		if (nAlphaLC > 0 && nAlphaLC < nLength) {
+			nScore = parseInt(nScore + ((nLength - nAlphaLC) * nMultAlphaLC));
+		}
+		if (nNumber > 0 && nNumber < nLength) {
+			nScore = parseInt(nScore + (nNumber * nMultNumber));
+		}
+		if (nSymbol > 0) {
+			nScore = parseInt(nScore + (nSymbol * nMultSymbol));
+		}
+		if (nMidChar > 0) {
+			nScore = parseInt(nScore + (nMidChar * nMultMidChar));
+		}
+
+		/* Point deductions for poor practices */
+		if ((nAlphaLC > 0 || nAlphaUC > 0) && nSymbol === 0 && nNumber === 0) {  // Only Letters
+            nAlphasOnly = nLength;
+			nScore = parseInt(nScore - nAlphasOnly);
+		}
+		if (nAlphaLC === 0 && nAlphaUC === 0 && nSymbol === 0 && nNumber > 0) {  // Only Numbers
+            nNumbersOnly = nLength;
+			nScore = parseInt(nScore - nNumbersOnly);
+		}
+		if (nRepChar > 0) {  // Same character exists more than once
+			nScore = parseInt(nScore - nRepChar);
+		}
+		if (nConsecAlphaUC > 0) {  // Consecutive Uppercase Letters exist
+			nScore = parseInt(nScore - (nConsecAlphaUC * nMultConsecAlphaUC));
+		}
+		if (nConsecAlphaLC > 0) {  // Consecutive Lowercase Letters exist
+			nScore = parseInt(nScore - (nConsecAlphaLC * nMultConsecAlphaLC));
+		}
+		if (nConsecNumber > 0) {  // Consecutive Numbers exist
+			nScore = parseInt(nScore - (nConsecNumber * nMultConsecNumber));
+		}
+		if (nSeqAlpha > 0) {  // Sequential alpha strings exist (3 characters or more)
+			nScore = parseInt(nScore - (nSeqAlpha * nMultSeqAlpha));
+		}
+		if (nSeqNumber > 0) {  // Sequential numeric strings exist (3 characters or more)
+			nScore = parseInt(nScore - (nSeqNumber * nMultSeqNumber));
+		}
+
+		/* Determine if mandatory requirements have been met */
+        if (nLength >= nMinPwdLen) {
+            nRequirements++;
+            var nMinReqChars = 3;
+            if (nAlphaUC >= 1) { nRequirements++; }
+            if (nAlphaLC >= 1) { nRequirements++; }
+            if (nNumber >= 1) { nRequirements++; }
+            if (nSymbol >= 1) { nRequirements++; }
+            if (nRequirements > nMinReqChars) {
+                nScore = parseInt(nScore + (nRequirements * nMultRequirements));
+            }
+        }
+
+		/* Determine complexity based on overall score */
+        if (nLength < 2) {
+            sComplexity = saStrength[index.TOOSHORT];
+            sColor = "#eee"; //light gray
+        }
+        else if (nScore < 40) {
+            sComplexity = saStrength[index.WEAK];
+            sColor = "#f00"; //red
+        }
+		else if (nScore < 60) {
+            sComplexity = saStrength[index.MODERATE];
+            sColor = "#ff0"; //yellow
+        }
+		else {
+            sComplexity = saStrength[index.STRONG];
+            sColor = "#0f0"; //green
+        }
+	}
+    oScorebar.innerHTML = sComplexity;
+    oScorebar.style.backgroundColor = sColor;
+}
+/* override the generation of all modal dialogs, allowing us to dynamically
+    resize them to fit 90% of the available real estate if the screen is
+    smaller than the specified dimensions */
+(function($) {
+    var open = $.ui.dialog.prototype.open;
+
+    $.ui.dialog.prototype.open = function() {
+        this.options.width = getModalWidth(this.options.width);
+        this.options.height = getModalHeight(this.options.height);
+
+        open.apply(this, arguments);
+    };
+})(jQuery);
+
+/* modal windows are all should stay recentered when the window is resized , or changed between portrait and
+	landscape screens */
+$$(window).resize(function (){
+	$$(".ui-dialog").position({
+		my: "center", at: "center", of: window
+	});
+});
+
+/* determine the appropriate width/height if we cannot accomodate one
+    or more of the specified dimensions */
+function getModalWidth(defaultWidth) {
+    var dev = new DeviceFactory().getInstance(new DeviceDetector().getDeviceWidth());
+    var widthStrategy = new ModalWidthStrategy().getInstance(dev);
+    return widthStrategy(defaultWidth);
+}
+
+function getModalHeight(defaultHeight) {
+    var dev = new DeviceFactory().getInstance(new DeviceDetector().getDeviceWidth());
+    var heightStrategy = new ModalHeightStrategy().getInstance(dev);
+    return heightStrategy(defaultHeight);
+}
+
+var DEVICE = {
+    PHONE_PORTRAIT : {code: "PHONE_PORTRAIT", minWidth: 0, maxWidth: 480, name: "Phone (Portrait)"},
+    PHONE_LANDSCAPE : {code: "PHONE_LANDSCAPE", minWidth: 481, maxWidth: 800, name: "Phone (Landscape)"},
+    DESKTOP : {code: "DESKTOP", minWidth: 721, maxWidth: 9999, name: "Desktop"}
+};
+
+var DeviceFactory = function() {
+    return {
+        getInstance: function(deviceWidth) {
+            for (var d in DEVICE) {
+                var device = DEVICE[d];
+                if (device.minWidth <= deviceWidth && device.maxWidth >= deviceWidth) {
+                    return device;
+                    break;
+                }
+            }
+            return DEVICE.DESKTOP;
+        }
+    };
+};
+
+var DeviceDetector = function() {
+    return {
+        getDeviceWidth: function() {
+            var $$ = jQuery.noConflict();
+            return $$('body').innerWidth();
+        },
+        getDeviceHeight: function() {
+            var $$ = jQuery.noConflict();
+            //return $$('body').innerHeight();
+            return $$(window).height();
+        }
+    };
+};
+
+var ModalWidthStrategy = function() {
+    return {
+        getInstance: function(device) {
+            var responsiveModalWidth = new DeviceDetector().getDeviceWidth() * 0.9;
+            return function(defaultWidth) {
+                return (responsiveModalWidth < defaultWidth) ? responsiveModalWidth : defaultWidth;
+            }
+            /*if ($$.inArray(device, new Array(DEVICE.PHONE_PORTRAIT, DEVICE.PHONE_LANDSCAPE)) > -1) {
+                return function(defaultWidth) {
+                    return new DeviceDetector().getDeviceWidth() * 0.9;
+                }
+            } else {
+                return function(defaultWidth) {
+                    return defaultWidth;
+                }
+            } */
+        }
+    }
+};
+
+var ModalHeightStrategy = function() {
+    return {
+        getInstance: function(device) {
+            var responsiveModalHeight = new DeviceDetector().getDeviceHeight() * 0.9;
+            return function(defaultHeight) {
+                return (responsiveModalHeight < defaultHeight) ? responsiveModalHeight : defaultHeight;
+            }
+            /*return function(defaultHeight) {
+                var height = new DeviceDetector().getDeviceHeight();
+                if (defaultHeight > height) {
+                    return (height * 0.9);
+                } else {
+                    return defaultHeight;
+                }
+            } */
+        }
+    }
+};
+/**
+ * @version $Revision: #29 $ submitted $DateTime: 2012/05/22 12:44:49 $ by $Author: ugordda $
+ *
+ */
+
+var $$ = jQuery.noConflict();
+
+var timeoutInMilliseconds = timeoutInSeconds * 1000;
+
+var thirtySecondsInMillis = 30 * 1000;
+var fiveSecondsInMillis = 5 * 1000;
+
+var timeoutBuffer = thirtySecondsInMillis + thirtySecondsInMillis;
+
+timeoutInMilliseconds = timeoutInMilliseconds - timeoutBuffer;
+
+var maxTimeoutExtensionReached = false;
+
+var warnPeriodSeconds = warnPeriodMinutes * 60;
+var warnPeriodMilliseconds = warnPeriodSeconds * 1000;
+
+var pageLoadTime = new Date();
+var sessionTimeoutTime = new Date();
+sessionTimeoutTime.setSeconds(sessionTimeoutTime.getSeconds() + timeoutInSeconds);
+// get back to a regular date:
+
+sessionTimeoutTime = new Date(sessionTimeoutTime);
+
+// create the warning dialog:
+var buttonOpts = [{
+    text: timeoutWarningOKButtonText,
+    class: "btn-primary",
+    click: function() {
+        warnOfPendingTimeoutOkClick();
+    }
+}];
+
+$$(document).ready(function() {
+    $$("#warnOfSessionExpiring").dialog({
+        title: sessionWarningModalTitle,
+        width: 300,
+        height: 190,
+        position: { at: "center" } ,
+        resizable: true,
+        autoOpen: false,
+        bgiframe: true,
+        fontSize:15,
+        modal: true,
+        closeOnEscape: false,
+        beforeclose: function(event, ui) {
+            beforeWarnOfPendingTimeoutClose();
+        },
+        buttons: buttonOpts
+    });
+});
+
+var sessionWarningTimer;
+var sessionTimeoutTimer;
+// start when the page is ready:
+$$(function() {
+    startSessionTimer();
+});
+
+function startSessionTimer() {
+    startSessionTimerConditional(true);
+}
+function getWarningPeriod(_timeoutInMilliseconds, _warnPeriodMilliseconds) {
+    var warningPeriod = _timeoutInMilliseconds - _warnPeriodMilliseconds;
+    if (warningPeriod >= _timeoutInMilliseconds || warningPeriod <= 0) {
+        // just incase...never let the warning period be greater than the timeout itself...
+        // so set the warning period to 3/4 of the timeout:
+        warningPeriod = _timeoutInMilliseconds * .75;
+    }
+    return warningPeriod;
+}
+
+function startSessionTimerConditional(startWarningTimerAlso) {
+    sessionTimeoutTime = new Date();
+    sessionTimeoutTime.setSeconds(sessionTimeoutTime.getSeconds() + timeoutInSeconds);
+    // get back to a regular date:
+    sessionTimeoutTime = new Date(sessionTimeoutTime);
+
+    if (startWarningTimerAlso) {
+        var warningPeriod = getWarningPeriod(timeoutInMilliseconds, warnPeriodMilliseconds);
+        sessionWarningTimer = setTimeout(warnOfPendingTimeout, warningPeriod);
+    }
+    sessionTimeoutTimer = setTimeout(sessionTimeoutAction, timeoutInMilliseconds);
+}
+
+function clearSessionTimer() {
+    clearTimeout(sessionWarningTimer);
+    clearTimeout(sessionTimeoutTimer);
+}
+
+function warnOfPendingTimeout() {
+    if (maxTimeoutExtensionReached) {
+        // don't warn, just let the page timeout.
+        closeSessionWarnModal();
+        return;
+    }
+    if (isSessionExpired()) {
+        sessionTimeoutAction();
+    } else {
+        openSessionWarnModal();
+    }
+}
+
+
+
+function beforeWarnOfPendingTimeoutClose() {
+}
+
+
+function warnOfPendingTimeoutOkClick() {
+    // user wants to extend their session:
+    if (isSessionExpired()) {
+        //alert ("Session has expired");
+        sessionTimeoutAction();
+    } else {
+        $$.ajax({
+            type: "POST",
+            dataType: "json",
+            url: "/servlet/SessionKeepAlive",
+            success: handleTimeoutExtension,
+            error: handleTimeoutExtensionError
+        });
+    }
+    closeSessionWarnModal();
+}
+
+
+function warnOfPendingTimeoutCancelClick() {
+    closeSessionWarnModal();
+}
+
+function handleTimeoutExtension(data, textStatus, jqXHR) {
+    maxTimeoutExtensionReached = data.maxTimeoutExtensionReached;
+    clearSessionTimer();
+    if (maxTimeoutExtensionReached) {
+        // don't offer to extend the timeout anymore...
+        startSessionTimerConditional(false);
+    } else {
+        startSessionTimer();
+    }
+    closeSessionWarnModal();  // just in case?
+}
+
+function handleTimeoutExtensionError(xhr, ajaxOptions, thrownError) {
+    if (xhr.status == 412) {
+        // unable to extend timeout...do nothing.
+    }
+    closeSessionWarnModal();  // just in case?
+}
+
+
+function openSessionWarnModal() {
+    $$("#warnOfSessionExpiring").dialog('open');
+}
+
+
+function closeSessionWarnModal() {
+    $$("#warnOfSessionExpiring").dialog('close');
+}
+
+
+function isSessionExpired() {
+    var now = new Date();
+    var sessionExpired = now >= sessionTimeoutTime;
+    return sessionExpired;
+}
+
+
+function sessionTimeoutAction() {
+    // session has timed out...load timeout page:
+    window.location.replace(sessionTimeoutPage);
+}
+
+(function($$) {
+	/**
+	 * Extend ui.dialog widget for accessibility
+	 * ---------------------------------------------
+	 * On modal open:
+	 * 1. Add aria-described by attribute to modals so that modal content is read when the modal opens
+	 * 2. Set aria-hidden background element containers, so that they are not visible to the screen reader in the
+	 *    virtual buffer.
+	 *
+	 * On modal close:
+	 * 1. Remove aria-hidden from background containers.
+	 * 2. Set focus back to the button/link that triggered modal open.
+	 */
+	$$.ui.dialog.prototype._focusTabbable = function(){};
+	$$.widget('ui.dialog', $$.ui.dialog, {
+		open: function() {
+			this.opener = $$(this.document[0].activeElement);
+			this._super();
+			this.uiDialog.attr('aria-describedby', this.element.attr('id'));
+			$$('#container, #copyright').attr('aria-hidden', true);
+			if(this.uiDialogTitlebar[0].childNodes[0].id) {
+				$$('#' + this.uiDialogTitlebar[0].childNodes[0].id).wrap("<h1 class='ui-dialog-title'></h1>");
+			}
+			if(this.uiDialogTitlebar) {
+				this.uiDialogTitlebar.attr('tabindex', 0);
+				this.uiDialogTitlebar[0].focus();
+
+			}else if( this.uiDialogTitlebarClose) {
+				this.uiDialogTitlebarClose.attr('tabindex', 0);
+				this.uiDialogTitlebarClose.focus();
+			}else {
+         		this.uiDialog.focus();
+            }
+
+			if (this.uiDialogTitlebarClose) {
+				this.uiDialogTitlebarClose[0].innerHTML = this.uiDialogTitlebarClose[0].innerHTML.replace("Close", "")
+			}
+
+		},
+		close: function() {
+			$$('#container, #copyright').removeAttr('aria-hidden');
+			this._super();
+			// don't return focus for the progressDialog (ref D-20775)
+			if (!(this.element.attr('id') === 'progressDialog') && !this.opener.filter(":focusable").focus().length) {
+				// Hiding a focused element doesn't trigger blur in WebKit
+				// so in case we have nothing to focus on, explicitly blur the active element
+				// https://bugs.webkit.org/show_bug.cgi?id=47182
+				$$(this.document[0].activeElement).blur();
+			}
+		}
+	});
+})(jQuery.noConflict());
+
+/**
+ * Created by bjorla on 11/9/2016.
+ *
+ * Decorates invalid WebNG inputs with appropriate ARIA attributes:
+ *   - aria-invalid
+ *   - aria-describedby: this will link the input to its field-level error (where applicable)
+ */
+
+WEBNG.A11y.forms = (function ($$) {
+
+	var customDecorators = [];
+
+	// Default invalid input decorator
+	$$(document).ready(function () {
+		createInvalidInputDecorator().decorate();
+	});
+
+	// Public API
+
+	return {
+		addCustomFormErrorContainer: addCustomFormErrorContainer,
+		decorate: doAllDecorators
+	};
+
+	// ------ Public API functions ------
+
+	/**
+	 * To be used only for form inputs that do NOT use standard 'errorContainer' wrapper for error state.
+	 *
+	 * Allows for decoration of form inputs in an error state with aria-invalid and
+	 * aria-describedby (for field-level error messages).
+	 *
+	 * @param selector String : A JQuery selector targeting element(s) that are being used instead of
+	 * 							the standard '.errorContainer' class
+	 */
+	function addCustomFormErrorContainer(selector) {
+		var decorator = createInvalidInputDecorator(selector);
+		customDecorators.push(decorator);
+		decorator.decorate();
+	}
+
+	/**
+	 * Applies all form input aria decorators for a given page. This function is intended to be called when validation is
+	 * performed through an a4j ajax call. When this occurs, we must re-apply the aria decorators to the rerendered
+	 * portion of the page.
+	 *
+	 * See reference implementation on OrderPayment.xhtml.
+	 */
+	function doAllDecorators() {
+		createInvalidInputDecorator().decorate();
+		customDecorators.forEach(function (decorator) {
+			decorator.decorate();
+		});
+	}
+
+	// ------ Private functions ------
+
+	function createInvalidInputDecorator(selector) {
+		// override: if selector provided (for custom decorators)
+		// default: selector excludes inputs with 'error' class that are nested within error container
+		//   - this prevents unnecessary event handler bindings
+		selector = selector || ".errorContainer, .error:not('.errorContainer .error')";
+		return {
+			decorate: function () {
+				return decorateInvalidInputs(selector);
+			}
+		};
+	}
+
+	function decorateInvalidInputs(selector) {
+		$$(selector).each(function (i, val) {
+			var elem = $$(val);
+			addDescribedBy(elem);
+			addInvalid(elem);
+		});
+	}
+
+	function addDescribedBy(elem) {
+		var fieldError = elem.find('.fieldLevelError');
+
+		if (fieldError.length) {
+			findTargetElement(elem).attr('aria-describedby', fieldError.attr('id'));
+		}
+	}
+
+	function addInvalid(elem) {
+		var targetElement = findTargetElement(elem);
+		targetElement.attr('aria-invalid', true);
+		addInvalidEventHandlers(targetElement);
+	}
+
+	function addInvalidEventHandlers(targetElement){
+		var nodeName = targetElement.prop('nodeName');
+		switch (nodeName){
+		case 'FIELDSET' :
+			addInvalidElementEventHandler(targetElement, validateFieldSet);
+			break;
+		case 'INPUT' :
+			addInvalidInputEventHandlers(targetElement);
+			break;
+		case 'SELECT' :
+			addInvalidElementEventHandler(targetElement, validateSelectableInput);
+			break;
+		}
+	}
+
+	function addInvalidElementEventHandler(targetElement, validator, eventName){
+		eventName = eventName || 'focusout.aria';
+		if(targetElement.attr('aria-invalid') === 'true' && !targetElement.data('invalidAttached')) {
+			targetElement.data('invalidAttached', true);
+			$$(targetElement.context).on(eventName, targetElement.selector, function onElementBlur() {
+				if(validator($$(this))){
+					cleanupValidElement(targetElement, onElementBlur);
+				}
+			});
+		}
+	}
+
+	function addInvalidInputEventHandlers(targetElement) {
+		var inputType = targetElement.attr('type');
+		if(inputType !== 'radio' && inputType !== 'checkbox'){
+			// This may be too unrestrictive but for now all other input types
+			// except radio and checkbox will be handled by this function
+			addInvalidElementEventHandler(targetElement, validateStandardInput);
+		}
+		else{
+			addInvalidElementEventHandler(targetElement, validateCheckableInput);
+		}
+	}
+
+	function validateFieldSet(targetElement){
+		//we may need to adjust this to take other input types
+		return targetElement.find("input[type=radio]").toArray().some(function(e){
+			return e.defaultChecked !== e.checked;
+		});
+	}
+
+	function validateStandardInput(targetElement){
+		return targetElement.prop("defaultValue") !== targetElement.val();
+	}
+
+	function validateCheckableInput(targetElement){
+		return targetElement.prop("defaultChecked") !== targetElement.prop("checked");
+	}
+
+	function validateSelectableInput(targetElement){
+		return targetElement.find('option[selected]').val() !== targetElement.val();
+	}
+
+	function cleanupValidElement(targetElement, handler){
+		targetElement.removeAttr('aria-invalid');
+		targetElement.removeData( "invalidAttached");
+		$$(targetElement.context).off(".aria", targetElement.selector, handler);
+	}
+
+	function findTargetElement(elem) {
+		var fieldSet = elem.find('fieldset');
+		var formElement = fieldSet.length ? fieldSet : elem.find('input:visible, select');
+
+		// return elem to handle case where we just have an input with the .error class
+		return formElement.length ? formElement : elem;
+	}
+
+})(jQuery.noConflict());

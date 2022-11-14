@@ -1,0 +1,25 @@
+var $$ = jQuery.noConflict();
+
+alignFooter();
+
+$$(window).resize(function() {
+    alignFooter();
+});
+
+function alignFooter() {
+    //<![CDATA[
+    // set height of sticky-container
+
+    try{
+        setSidebarHeight();
+    } catch (ex) {
+        console.log(ex);
+    }
+
+    // set buffer for footer
+    var DEFAULT_EXTRA_BUFFER = 20;
+    var extraBuffer = $$(".btn-fixed").length > 0 ? 0 : DEFAULT_EXTRA_BUFFER;
+    var footerBuffer = $$("[role=contentinfo]").outerHeight() + extraBuffer;
+    $$("#body-wrapper").css("margin-bottom", footerBuffer);
+    //]]>
+}

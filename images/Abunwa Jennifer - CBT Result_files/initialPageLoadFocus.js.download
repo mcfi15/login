@@ -1,0 +1,34 @@
+//<![CDATA[
+
+var $j = jQuery.noConflict();
+jQuery(document).ready(function() {
+    var warningOrError = $j(".warning");
+    var advisory = $j(".advisory");
+    var alerts =  $j(".alert").not(".hidden");
+    var updatedMessages = $j(".updated");
+	var capvaModal = $j("#privacyOptInDialog");
+    var excludedPages = ["OrderSummaryPage", "MyOrder", "ExamRegistrationQuestions"];
+
+    if ((warningOrError != undefined && warningOrError.length > 0 && warningOrError.is(":visible"))
+        || (advisory != undefined && advisory.length > 0 && advisory.is(":visible"))
+        || (alerts != undefined && alerts.length > 0 && alerts.is(":visible"))
+        || (updatedMessages != undefined && updatedMessages.length > 0 && updatedMessages.is(":visible"))
+        || (capvaModal.length !== 0 && capvaModal.dialog("isOpen")===true)) {
+        //handled in firstMessageFocus, these excludedPages should focus on page title
+        for (const pageNames of excludedPages) {
+            if (location.pathname.indexOf(pageNames) > -1) {
+                focusOnPageTitle();
+                break;
+            }
+        }
+
+	} else {
+        focusOnPageTitle();
+    }
+});
+
+function focusOnPageTitle() {
+    $j("h1:first").focus();
+}
+
+/* ]]> */

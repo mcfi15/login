@@ -1,0 +1,364 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+/* Header */
+
+header, #signin, #signedIn {
+	border-bottom: 5px solid #007FA3;
+	background: #fff;
+    height: auto !important;
+}
+#topnav {
+	background: transparent;
+    margin-bottom: 30px;
+	padding-top: 5px;
+}
+
+#topnav #logo {
+	height: auto;
+}
+
+header #topnav {
+	margin: 0;
+	padding: 5px 0 0 0;
+	height: auto;
+}
+ .logo-container {
+	height: 100%;
+ 	position: relative;
+}
+
+#logo {
+	bottom: 40px;
+}
+
+.sidebar.expanded #logo {
+   background-image: url("/_assets/images/pearson_logo_white_bg.png");
+   display: block !important;
+   height: 60px;
+   width: 210px;
+   background-repeat: no-repeat;
+   background-position: 20px 0;
+}
+.sidebar.collapsed #logo {
+   background-image: url("/_assets/images/pearson_interabang_bg.png");
+   display: block !important;
+   width: 48px;
+	height: 50px;
+   background-repeat: no-repeat;
+   background-position: 20px 0;
+}
+
+.sidebar.expanded #logo.certiportLogo {
+   background-image: url("/webresources/testtaker/certiport/certiport-logo.png") !important;
+   height: 55px;
+   width: 250px;
+    background-position: 20px 0;
+	margin-top: -60px;
+}
+.sidebar.collapsed #logo.certiportLogo {
+   background-image: url("/webresources/testtaker/certiport/certiport-logo-collapsed.png");
+   width: 72px;
+	height: 40px;
+    background-position: 20px 0;
+	margin-top: -60px;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (-moz-min-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2 / 1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
+	.sidebar.expanded #logo {
+		background-image: url("/_assets/images/pearson_logo_white_bg@2x.png");
+		-webkit-background-size: 190px 40px;
+		-moz-background-size: 190px 40px;
+		-o-background-size: 190px 40px;
+		background-size: 190px 40px;
+	}
+	.sidebar.collapsed #logo {
+		background-image: url("/_assets/images/pearson_interabang_bg@2x.png");
+		-webkit-background-size: 28px 30px;
+		-moz-background-size: 28px 30px;
+		-o-background-size: 28px 30px;
+		background-size: 28px 30px;
+	}
+	.sidebar.expanded #logo.certiportLogo {
+   background-image: url("/webresources/testtaker/certiport/certiport-logo.png") !important;
+   height: 55px;
+   width: 250px;
+    background-position: 20px 0;
+	margin-top: -60px;
+}
+.sidebar.collapsed #logo.certiportLogo {
+   background-image: url("/webresources/testtaker/certiport/certiport-logo-collapsed.png");
+   width: 72px;
+	height: 40px;
+    background-position: 20px 0;
+	margin-top: -60px;
+}
+
+}
+
+
+
+.contineShoppingBottom input, .buttonArea input, .proceedbuttonArea input, .topButtonArea input, #previousButton, .btn_select, #checkoutButtonAreaDiv input, .upsellButtonArea input, .profile_topButtonArea input, #EOT input, .topForward.align-header a, .buttonArea a, .btn-primary, .btn-secondary, input[type="submit"], input[type="button"], .top-btn-container .btn, .btn-container .btn, button[type="button"] {
+	border-radius: 4px;
+}
+
+
+/* Primary colors */
+a, .personalInfo_link, #selectedCentersArea .btn_link, #timeZoneArea .btn_link, .futureappt .btn_link, .orderDetails .btn_link, .orderDetails .btn_remove, #labelkm, #labelmi, .link, .futureappt .btn_link_dialog, #hour12, #hour24, .btn_orderremove, #changeTimeZone {
+	color: #007FA3;
+}
+a:hover, .personalInfo_link:link, #selectedCentersArea .btn_link:hover, #timeZoneArea .btn_link:hover, .futureappt .btn_link:hover, .orderDetails .btn_link:hover, .orderDetails .btn_remove:hover, #labelkm:hover, #labelmi:hover, .link:hover, .futureappt .btn_link_dialog:hover, #hour12:hover, #hour24:hover, .btn_orderremove:hover, #changeTimeZone:hover {
+	 color: #003057;
+}
+
+a:focus, a:active, .personalInfo_link:focus, .personalInfo_link:active, .ui-widget-content a:focus, .ui-widget-content a:active, #selectedCentersArea .btn_link:focus, #timeZoneArea .btn_link:focus, #selectedCentersArea .btn_link:active, #timeZoneArea .btn_link:active, .futureappt .btn_link:focus, .futureappt .btn_link:active, .orderDetails .btn_link:focus, .orderDetails .btn_link:active, .orderDetails .btn_remove:focus, .orderDetails .btn_remove:active, #labelkm:focus, #labelkm:active, #labelmi:focus, #labelmi:active, .link:focus, .link:active, .btn-group a:focus, .btn-group a:active, .btn-group a:focus:hover, .btn-group a:active:hover, .futureappt .btn_link_dialog:active, .futureappt .btn_link_dialog:focus,.abbrStyle:focus, #hour12:focus, #hour24:focus, .btn_orderremove:focus, #changeTimeZone:focus, #hour12:active, #hour24:active, .btn_orderremove:active, #changeTimeZone:active, .tooltip:focus {
+	color: #fff;
+    background: #005A70;
+    outline: 3px solid #005A70;
+	border: 1px dashed #005A70;
+}
+
+.border_selected, #select-mode input[type="radio"]:checked + .mode-option {
+	outline: 2px solid #007FA3;
+}
+
+.sidebar a:hover {
+	color: #003057;
+
+}
+.sidebar a:focus, .sidebar a:active {
+	color: #007FA3;
+	outline: 3px solid #ccc;
+    border: 1px dashed #ccc;
+}
+
+/* Font Awesome - keep color same as hyperlink color */
+#welcome .href_link:before, #welcome #homeLinkOnMastHead .displayMobileOnlyView:before, #welcome .first .current .displayMobileOnlyView:before, #welcome #myOrderLinkOnMastHead .displayMobileOnlyView:before, #welcome .href_link:before, #welcome #returnLinkOnMastHead:before, #welcome #liquidLogoutLinkOnMastHead .displayMobileOnlyView:before, #showHelpModuleContentDSA:after, #showAvailableExams:after, #showMyAccountSection:after, .calculatedTitlePlus:after, .discountLinkPlus:before, .policyLinkPlus:before, .expandLinkPlus:before, .calculatedTitlePlus:before, .discountLinkMinus:before, .policyLinkMinus:before, .expandLinkMinus:before, .calculatedTitleMinus:before, #publicToMilitarySearchLinkProximity:before, .printicon a:before, .selectButton:before, #chargeNote .importantText:before, #printLink:before, .confirmation:before, #printButton:before, .actions .printicon:before, #topBar .actions a:before, .confirmation:before, #welcome .printLink:before, #welcome .closeWindowLink:before, #welcome #myProfileLinkOnMastHead_li .displayMobileOnlyView:before, .calculatedTitlePlus:after, #showPreApproved:after, .accordion.closed:after, a.expandLinkPlus:after, .discountLinkPlus:after, .policyLinkPlus:after, .calculatedTitlePlus:after,  .accordion.open:after, a.expandLinkMinus:after, .discountLinkMinus:after, .policyLinkMinus:after, .calculatedTitleMinus:after {
+	color: #007FA3;
+}
+
+/* Primary Button */
+.btn, .btnPositive, #privateAccessCode.btn_edit, #addressSearch, #accessibleCalendarOptionButton, .btn_select, .cookieMessageLearnMoreButton, #mobileCalendarButton, #jsf_databaseSearch .btn_edit, .receiptsTable .btnPositiveNoModal, .combinedHeader .btnPositiveNoModal, #jsf_databaseSearch .btn_edit_display, .btn-primary, #addressSearch_testCenterCode, .top-btn-container a.btn, .btn-container .btn {
+	background: #007FA3;
+	color: #fff;
+	border: 1px solid #007FA3;
+}
+.btn:hover, .btnPositive:hover, #privateAccessCode.btn_edit:hover, #triggerFilter.btn_link_dialog:hover, #addressSearch:hover, #accessibleCalendarOptionButton:hover, .btn_select:hover, .cookieMessageLearnMoreButton:hover, #mobileCalendarButton:hover, #jsf_databaseSearch .btn_edit:hover, .receiptsTable .btnPositiveNoModal:hover, .combinedHeader .btnPositiveNoModal:hover, #jsf_databaseSearch .btn_edit_display:hover, .btn-primary:hover, #addressSearch_testCenterCode:hover, .top-btn-container a.btn:hover, .btn-container .btn:hover {
+	background: #005770;
+	border: 1px solid #005770;
+	color: #fff;
+}
+
+.ui-datepicker-calendar .ui-datepicker-current-day .ui-state-active {
+	background: #007FA3;
+	color: #fff;
+	border: 1px solid #007FA3;
+}
+
+/* Emphasis Primary Button */
+.btn.btn-emphasis {
+	background: #FFB81C;
+	color: #000;
+	border: 1px solid #FFB81C;
+}
+.btn.btn-emphasis:hover {
+	background: #fd9a30;
+	border: 1px solid #fd9a30;
+	color: #000;
+}
+.btn.btn-emphasis:focus, .btn.btn-emphasis:active {
+	outline: 3px solid #000;
+}
+
+.btn-outline-dark {
+  color: #000000;
+  background-color: transparent;
+  background-image: none;
+  border-color: #005770;
+  border-radius: 4px;
+  border-width:3px;
+}
+
+.btn-outline-primary {
+  color: #000000;
+  background-color: transparent;
+  background-image: none;
+  border-color: #000000;
+  border-radius: 4px;
+  border-width:1px;
+}
+.w-100 {
+    width:100%;
+}
+
+/* Secondary / Previous */
+.previous .btn_link, .sectionEdit .btn_edit, #checkButton.btn_edit, #passwordScorebar, #triggerFilter.btn_link_dialog, .cookieMessageCloseMessageButton, #addAnotherExamBottom, #applyDiscount.btn, #cancelButton, #cancelButtonResched, #addExam, #canelAddBackToBackExam, .sectionEdit .btn_edit_ajx, .closeWindowBtnContainer .btn_link, #takeSnapshot, #editBiometricPhoto, #retunExternalHomeButton, .searchByDateApptCol .btn_edit_display, .searchButton input, .singleSelectButton .btnPositiveNoModal, #homeButton.btn_link, #closeWindowButton, .removeButtonColumn .btn_remove, .searchTable .btn_edit_ajx, .submit-box input, #canelAddAExam, #moduleSelection .btn_remove, .btn-secondary, .removeVoucher .btn_remove, .refeshExamList .btn_link, .languageButton, #acceptUnSupportedBrowserPolicyId, #retunExternalHomeButton.btn-secondary, #retunExternalHomeButton1.btn-secondary {
+	display: inline-block;
+	padding: 6px 12px;
+	background: transparent;
+	color: #003057;
+	text-decoration: none;
+	border: 2px solid #003057;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+
+
+.previous .btn_link:hover, .sectionEdit .btn_edit:hover, #checkButton.btn_edit:hover, #triggerFilter.btn_link_dialog:hover, .cookieMessageCloseMessageButton:hover, #addAnotherExamBottom:hover, #applyDiscount.btn:hover, #cancelButton:hover, #cancelButtonResched:hover, #addExam:hover, #canelAddBackToBackExam:hover, .sectionEdit .btn_edit_ajx:hover, .closeWindowBtnContainer .btn_link:hover, #takeSnapshot:hover, #editBiometricPhoto:hover, #retunExternalHomeButton:hover, .searchByDateApptCol .btn_edit_display:hover, .searchButton input:hover, .singleSelectButton .btnPositiveNoModal:hover, #homeButton.btn_link:hover, #closeWindowButton:hover, .removeButtonColumn .btn_remove:hover, .searchTable .btn_edit_ajx:hover, #filterExamListForm #triggerFilter.btn_link_dialog:hover, .submit-box input:hover, #canelAddAExam:hover, #moduleSelection .btn_remove:hover, .btn-secondary:hover, .removeVoucher .btn_remove:hover, .refeshExamList .btn_link:hover, .languageButton:hover, #acceptUnSupportedBrowserPolicyId:hover, .top-btn-container a.btn-secondary:hover, #retunExternalHomeButton.btn-secondary:hover, #retunExternalHomeButton1.btn-secondary:hover {
+	background-color: transparent;
+	border: 2px solid #000;
+	color: #000;
+}
+
+#applyDiscount.btn.btn_disabled {
+	border-color: #000;
+	color: #000;
+}
+
+.cookieMessageCloseMessageButton, .cookieMessageCloseMessageButton:hover {
+	background: #fff;
+}
+
+.top-btn-container a.btn-secondary:focus, .top-btn-container a.btn-secondary:active, #retunExternalHomeButton.btn-secondary:focus, #retunExternalHomeButton1.btn-secondary:focus, #retunExternalHomeButton.btn-secondary:active, #retunExternalHomeButton1.btn-secondary:active {
+	background: transparent;
+	color: #003057;
+}
+
+/* Upsell Button */
+.btn_cart {
+	background: #008638;
+	color: #fff;
+	border: 1px solid #008638;
+}
+.btn_cart:hover {
+	background-color: #00652a;
+    border: 1px solid #00652a;
+}
+
+.accent {
+	background: #D4EAE4;
+}
+
+/* Toggle button - outline - match primary color */
+.btn-toggle.active  {
+	border: 2px solid #007FA3;
+}
+
+
+
+/* Footer */
+div[role="contentinfo"] {
+	background: #007fa3;
+}
+#copyright, #copyright a, #footerLinks, #footerLinks a {
+	color: #fff;
+}
+#copyright a:focus, #copyright a:active, #footerLinks a:focus, #footerLinks a:active {
+	color: #003057;
+	background: #fff;
+	border: 1px dashed #fff;
+	outline: 3px solid #fff;
+}
+
+@media screen and (max-width:480px) {
+
+	#logo.certiportLogo {
+		width: 100%;
+		background-position: center;
+	}
+	.clientlogo img {
+		transform: scale(0.8);
+	}
+}
+
+
+
+@media screen and (min-width:481px) {
+
+	#logo {
+	   height: 90px;
+	   background-position: 0;
+	}
+
+
+	#bar {
+		background: url("images/progress_bar.png") repeat scroll 0 0 transparent;
+	}
+}
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width:992px) {
+	.clientlogo, #clientlogo {
+		text-align: left;
+	}
+	#ccid_information_caret{
+		padding-right: 9em;
+		margin-bottom: 2em;
+	}
+	.cart-with-caret {
+		right: 15px !important;
+		top: 5px;
+	}
+}
+@media screen and (min-width:1200px) {
+
+}
+@media print {
+    #logo_print {
+        display: block;
+        float: left;
+    }
+}
+
+@media screen and (-ms-high-contrast: active) {
+	#logo {
+	  background-image: url("/_assets/images/pearson_logo_white_bg.png");
+	   display: block !important;
+	   height: 60px;
+	   width: 190px;
+	   background-repeat: no-repeat;
+	   background-position: 0 20px;
+	}
+	#logo.certiportLogo {
+		background-image: url("/webresources/testtaker/certiport/certiport-logo.png") !important;
+		display: block !important;
+	   height: 75px;
+	   width: 230px;
+	   background-repeat: no-repeat;
+	   background-position: 0 20px;
+	}
+}
+/*HEADER CHANGES*/
+@media screen and (min-width: 320px) and (max-width: 480px){
+	.ccid_information{
+		visibility: visible !important;
+	}
+}
+@media screen and (min-width: 320px) and (max-width:992px) {
+	.returnToOrderLabel {
+		visibility: hidden !important;
+	}
+	.clientlogo img {
+		transform: scale(0.8);
+	}
+}
+.ccid_information {
+	height: auto;
+}
+@media screen and (min-width: 320px) and (max-width: 767px)	{
+	.cart.cart_align.cart-with-caret {
+		margin-top: 0.5em;
+	}
+	.ccid-button-container {
+		margin-top: 0.6em;
+	}
+}

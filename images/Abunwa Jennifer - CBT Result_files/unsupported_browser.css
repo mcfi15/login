@@ -1,0 +1,57 @@
+.unsupported-browser-wrapper {
+/*	height:100px;	*/
+	border-bottom:none;
+}
+.unsupported-browser-container {
+	background-color: #ededed;
+    border: 2px solid #DB0020;
+	z-index: 1055;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 10px 15px;
+    color: #000;
+/*	position: fixed;	*/
+	width: 100%;
+	box-sizing: border-box;
+}
+.unsupported-browser-container p, .unsupported-browser-container span {
+    margin: 5px auto;
+    font-size: 16px;
+    display: block;
+	text-align: left;
+	max-width: 1170px;
+}
+.unsupported-browser-container i {
+	color: #DB0020;	 
+ }
+.unsupported-browser-container .unsupported-browser-btns {
+    margin-top: 0;
+}
+.btn_nojs {
+	margin: 0 !important;
+}
+.unsupported-browser-container .unsupported-browser-btns input{
+    background-image: none;
+}
+.unsupported-browser-container a {
+	font-size: 16px;
+	color: #007FA3;
+	margin: 0;
+	text-decoration: none;
+}
+.unsupported-browser-container a:focus, .unsupported-browser-container a:active {
+	color: #fff;	
+}
+.unsupported-browser-container a:hover {
+	text-decoration: underline;	
+}
+.unsupported-browser .unsupported-browser-wrapper {
+    display: block!important;
+}
+.unsupported-browser-btns.buttonArea {
+	border-top: none;	
+	color:#000;
+}
+#acceptUnSupportedBrowserPolicyId {
+	margin:5px;
+}

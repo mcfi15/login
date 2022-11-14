@@ -1,0 +1,345 @@
+/*
+ *  This script provides the functionality to left menu content on
+ *  screen as a hidden/expanded sidebar.
+ */
+ 
+var MAX_ADJUSTED_WIDTH_FOR_PHONE = 975;
+$$(document).ready(function () {
+	// All sides
+	var sides = ["left", "top", "right", "bottom"];
+	$$("h1 span.version").text($$.fn.sidebar.version);
+
+	// Initialize sidebars
+	for (var i = 0; i < sides.length; ++i) {
+		var cSide = sides[i];
+		$$(".sidebar." + cSide).sidebar({side: cSide});
+	}
+
+	setSidebarHeight();
+
+    if ($$("#sidebar").hasClass("expanded")){ removeHoverText(); }
+    else { setHoverText(); }
+
+	// Click handlers
+	$$(".toggleButton[data-action]").on("click", function () {
+		var $$this = $$(this);
+		var action = $$this.attr("data-action");
+		var side = $$this.attr("data-side");
+		$$(".sidebar." + side).trigger("sidebar:" + action);
+		return false;
+	});
+
+    $$(".languageToggle[data-action]").on("click", function () {
+        var $$this = $$(this);
+        var action = $$this.attr("data-action");
+        $$(".sidebar").trigger("sidebar:" + action);
+        return false;
+    });
+
+    $$("#sidebar a").on("click", function () {
+    	if ($$(window).width() <= MAX_ADJUSTED_WIDTH_FOR_PHONE) {
+            $$(".sidebar").trigger("sidebar:close");
+        }
+    });
+
+	// Access by 'Enter' key.
+	$$(document).on("keydown", ".toggleButton[data-action]", function(event){
+		if (event.keyCode === 13 || event.which === '13') {
+			var $$this = $$(this);
+			var action = $$this.attr("data-action");
+			var side = $$this.attr("data-side");
+			$$(".sidebar." + side).trigger("sidebar:" + action);
+			return false;
+		}
+	});
+
+	$$("#toggleForm").attr('aria-hidden', 'true');
+    $$("#toggleForm > input").attr('aria-hidden', 'true');
+    $$("#toggleForm > input").attr('type', 'hidden');
+});
+
+
+$$(window).resize( function(){
+    if ($$(window).width() < MAX_ADJUSTED_WIDTH_FOR_PHONE) {
+        $$(".sidebar").attr('aria-hidden', 'true');
+        $$(".sidebar").hide();
+        $$(".hamburger-container").attr('aria-hidden', 'false');
+        $$(".hamburger-container").show();
+	}
+	else {
+        $$(".sidebar").attr('aria-hidden', 'false');
+        $$(".sidebar").show();
+        $$(".hamburger-container").attr('aria-hidden', 'true');
+        $$(".hamburger-container").hide();
+	}
+});
+
+// Get size of sidebar
+function setSidebarHeight() {
+    var $sidebar = $$('.sticky-container');
+
+    var scrollTop = $$(window).scrollTop();
+    var scrollBot = scrollTop + $$(window).height();
+
+    var elTop = $sidebar.offset().top;
+    var elBottom = elTop + $sidebar.outerHeight(true);
+
+    var visibleTop = elTop < scrollTop ? scrollTop : elTop;
+    var visibleBottom = elBottom > scrollBot ? scrollBot : elBottom;
+
+    $$("#sidebar").height(visibleBottom - visibleTop);
+
+
+    setLogoBufferMarginTop();
+}
+
+function setSidebarArrowDirection() {
+	var sideBarToggle = $$("input[id*='sideBarToggle']").val();
+
+	if (document.dir === 'ltr') {
+		if (sideBarToggle === 'collapsed') {
+			$$("#sidebar-button").attr('class', 'far fa-angle-double-right arrow arrow-right toggleButton');
+		} else {
+			$$("#sidebar-button").attr('class', 'far fa-angle-double-left arrow arrow-left toggleButton');
+		}
+	}
+	else {
+		if (sideBarToggle === 'collapsed') {
+			$$("#sidebar-button").attr('class', 'far fa-angle-double-left arrow arrow-left toggleButton');
+		} else {
+			$$("#sidebar-button").attr('class', 'far fa-angle-double-right arrow arrow-right toggleButton');
+		}
+	}
+}
+
+function setLogoBufferMarginTop() {
+    if ($$("#logo").length) {
+        var elementsHeight = $$(".toggle-container").outerHeight(true) + $$(".menu-dropdown").outerHeight(true) + $$("#logo").outerHeight(true);
+
+        var minHeight = 40;
+        var marginTop = $$("#sidebar").outerHeight(true) - elementsHeight;
+        marginTop = marginTop > minHeight ? marginTop : minHeight;
+        $$("#logoBuffer").css('margin-top', marginTop);
+    }
+}
+
+// set the title of the li in the sidebar menu
+function setHoverText() {
+    // My Profile link
+	var profileName = $$("#myProfileLinkOnMastHead > .sidebar-text > #idLoggedInAsNumber").text();
+	var profileId = $$("#myProfileLinkOnMastHead > .sidebar-text > #idNumber").text();
+	var profileHoverText = profileName + ", " + profileId;
+
+	$$("#myProfileLinkOnMastHead").attr("title", profileHoverText);
+
+	// Expand/Collapse button
+    //$$("#sidebar-button").attr("title", "Expand");
+	$$("#sidebar-button-srconly").html($$("#sidebar-button-expand-srconly").html());
+
+	// Other links
+    $$("#sidebar ul > li").each(function(i) {
+        if ($$(this).find("span.sidebar-text").text()) {
+            // console.log($$(this).find("span.sidebar-text").text().trim());
+            $$(this).attr("title", $$(this).find("span.sidebar-text").text().trim());
+        }
+    })
+}
+
+function removeHoverText() {
+    // My Profile link
+    if ($$("#myProfileLinkOnMastHead").attr("title")) {
+        $$("#myProfileLinkOnMastHead").attr("title", "");
+    }
+
+    // Expand/Collapse button
+   // $$("#sidebar-button").attr("title", "Collapse");
+	$$("#sidebar-button-srconly").html($$("#sidebar-button-collapse-srconly").html());
+
+    // Other links
+    $$("#sidebar ul > li").each(function(i) {
+        if ($$(this).attr("title")) {
+            $$(this).attr("title", "");
+        }
+    })
+}
+
+
+$$(window).on('scroll resize', function() {
+	setSidebarHeight();
+	setSidebarArrowDirection();
+});
+
+(function($$) {
+
+	$$.fn.sidebar = function(options) {
+
+		var self = this;
+		if (self.length > 1) {
+			return self.each(function () {
+				$$(this).sidebar(options);
+			});
+		}
+
+		// Width, height
+		var width = self.outerWidth();
+		var height = self.outerHeight();
+
+
+
+
+
+		// Defaults
+		var settings = $$.extend({
+
+			// Animation speed
+			speed: 0,
+
+			// Side: left|right|top|bottom
+			side: "left",
+
+			// Is open
+			isOpen: $$("input[id*='sideBarToggle']").val() == "expanded",
+
+			// Should I close the sidebar?
+			close: $$("input[id*='sideBarToggle']").val() == "collapsed"
+
+		}, options);
+
+
+
+
+		/*!
+         *  Opens the sidebar
+         *  $$([jQuery selector]).trigger("sidebar:open");
+         * */
+		self.on("sidebar:open", function(ev, data) {
+			var properties = {};
+			properties[settings.side] = 0;
+			settings.isOpen = null;
+			self.stop().animate(properties, $$.extend({}, settings, data).speed, function() {
+				settings.isOpen = true;
+				$$("input[id*='sideBarToggle']").val("expanded");
+				$$("input[id*='sideBarToggle']").change();
+				$$(".sidebar").attr('data-sidebar-open', 'true');
+                $$(".sidebar, .hamburger-container").attr('aria-expanded', 'true');
+                $$(".sidebar").attr('aria-hidden', 'false');
+                $$(".sidebar").show();
+				$$(".sidebar, #maincontent").removeClass('collapsed');
+				$$(".sidebar, #maincontent").addClass('expanded');
+                $$(".sidebar .locale").show();
+
+                if ($$(window).width() <= MAX_ADJUSTED_WIDTH_FOR_PHONE) {
+					$$("#maincontent").prepend("<div class=\"expandedSidebarOverlay\"></div>");
+					$$("body").addClass('scroll-disabled');
+                }
+
+				self.trigger("sidebar:opened");
+			});
+			if(settings.side === "left"){
+				$$("#sidebar-button").attr('class', 'far fa-angle-double-left arrow arrow-left toggleButton');
+				//document.getElementById("maincontent").style.marginLeft = "100px";
+			} else {
+				$$("#sidebar-button").attr('class', 'far fa-angle-double-right arrow arrow-right toggleButton');
+				//document.getElementById("maincontent").style.marginRight = "100px";
+			}
+			$$("a > i, .current-icon").css("position","static");
+			if($$(window).width() <= MAX_ADJUSTED_WIDTH_FOR_PHONE){
+				$$(".hamburger").attr('class', 'far fa-times hamburger toggleButton');
+			}
+
+            setLogoBufferMarginTop();
+            removeHoverText();
+		});
+
+
+		/*!
+         *  Closes the sidebar
+         *  $$("[jQuery selector]).trigger("sidebar:close");
+         * */
+		self.on("sidebar:close", function(ev, data) {
+			var properties = {};
+			if (settings.side === "left" || settings.side === "right") {
+				if($$(window).width() >= MAX_ADJUSTED_WIDTH_FOR_PHONE){
+
+
+					if(settings.side === "left"){
+						$$("#sidebar-button").attr('class', 'far fa-angle-double-right arrow arrow-left toggleButton');
+						//$$("a > i, .current-icon").css({"position":"absolute", "right":"0"});
+						//document.getElementById("maincontent").style.marginLeft = "0px";
+					} else {
+						$$("#sidebar-button").attr('class', 'far fa-angle-double-left arrow arrow-right toggleButton');
+						//$$("a > i, .current-icon").css({"position":"absolute", "left":"0"});
+						//document.getElementById("maincontent").style.marginRight = "0px";
+					}
+
+					var sidebarWidth = 45 - self.outerWidth();
+					//properties[settings.side] = sidebarWidth + "px";
+				} else {
+					//properties[settings.side] = -self.outerWidth();
+				}
+			} else {
+				//properties[settings.side] = -self.outerHeight();
+			}
+			$$(".hamburger").attr('class', 'far fa-bars hamburger toggleButton');
+			settings.isOpen = null;
+			self.stop().animate(properties, $$.extend({}, settings, data).speed, function() {
+				settings.isOpen = false;
+				$$("input[id*='sideBarToggle']").val("collapsed");
+				$$("input[id*='sideBarToggle']").change();
+				$$(".sidebar").attr('data-sidebar-open', 'false');
+                $$(".sidebar, .hamburger-container").attr('aria-expanded', 'false');
+                $$(".sidebar .locale").hide();
+
+                if ($$(window).width() <= MAX_ADJUSTED_WIDTH_FOR_PHONE) {
+                    $$(".sidebar").attr('aria-hidden', 'true');
+                    $$(".sidebar").hide();
+                    $$("body").removeClass('scroll-disabled');
+                }
+
+				$$(".sidebar, #maincontent").removeClass('expanded');
+				$$(".sidebar, #maincontent").addClass('collapsed');
+				$$(".expandedSidebarOverlay").remove();
+				self.trigger("sidebar:closed");
+			});
+
+            setLogoBufferMarginTop();
+            setHoverText();
+		});
+
+		/*!
+         *  Toggles the sidebar
+         *  $$("[jQuery selector]).trigger("sidebar:toggle");
+         * */
+		self.on("sidebar:toggle", function(ev, data) {
+			if (settings.isOpen) {
+				self.trigger("sidebar:close", [data]);
+			} else {
+				self.trigger("sidebar:open", [data]);
+			}
+		});
+
+		function closeWithNoAnimation() {
+			$$("body").removeClass('scroll-disabled');
+			self.trigger("sidebar:close", [{
+				speed: 0
+			}]);
+		}
+
+		// Close the sidebar
+		if (settings.close) {
+			closeWithNoAnimation();
+		}
+
+		$$(window).on("resize", function () {
+			if (!settings.isOpen) { return; }
+			closeWithNoAnimation();
+		});
+
+		self.data("sidebar", settings);
+
+		return self;
+	};
+
+	// Version
+	$$.fn.sidebar.version = "3.3.2";
+})(jQuery);
